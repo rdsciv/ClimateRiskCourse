@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Firm methodology · Climate Risk Course</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../index.html"><span class="mark">CR</span><span>Climate Risk Course</span></a>
+      <nav class="nav-links">
+        <a href="../curriculum.html">Curriculum</a>
+        <a href="../clients.html">Clients</a>
+        <a href="../methodology.html">Methodology</a>
+        <a href="../reading.html">Reading</a>
+        <a href="../getting-started.html">Get started</a>
+        <a class="nav-cta" href="https://github.com/rdsciv/ClimateRiskCourse">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-hero">
+      <h1>Firm methodology</h1>
+      <p>Decision-grade climate risk assessments</p>
+    </div>
+    <div class="prose">
+<p>This firm produces <strong>decision-grade</strong> climate risk work: hazard signal joined to portfolio economics, carried through to an action the client can take. Disclosure is a by-product of that work, not the product.</p>
+<p>All training clients are <strong>simulated</strong>. The method is real.</p>
+<h2 id="what-we-optimize-for">What we optimize for</h2>
+<ol>
+<li><strong>Decisions, not scores.</strong> A hazard percentile without pricing, capital, contingency, or exit implications is incomplete.</li>
+<li><strong>Legible epistemology.</strong> Every material number is either <strong>computed</strong> (script + data) or <strong>judged</strong> (mechanism + precedent + label).</li>
+<li><strong>Assurability.</strong> A skeptical reviewer can re-run computations and inspect judgment rationale without trusting the presenter’s CV.</li>
+<li><strong>Graceful degradation.</strong> Thin data widens ranges and grows the watchlist; it does not authorize silent invention.</li>
+</ol>
+<h2 id="engagement-arc-six-weeks">Engagement arc (six weeks)</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>Week</th>
+<th>Question</th>
+<th>Deliverable</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>What does the client need?</td>
+<td>Framing &amp; delivery plan</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Where does risk concentrate?</td>
+<td>Mapped portfolio + hypothesis register</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Which hazard data matters?</td>
+<td>Organized hazard dataset + audit log</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Which scenarios bite?</td>
+<td>Standard + bespoke scenario results</td>
+</tr>
+<tr>
+<td>5</td>
+<td>What should change?</td>
+<td>Portfolio synthesis + pricing/decision implications</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Will it stand up?</td>
+<td>Board/IC judgment + regulatory/stakeholder record</td>
+</tr>
+</tbody></table></div>
+<h2 id="computed-vs-judged">Computed vs judged</h2>
+<h3 id="computed">Computed</h3>
+<ul>
+<li>Portfolio aggregates, concentrations, joins of hazard scores to exposures</li>
+<li>Scenario severity applied through encoded damage/LGD bands from <code>firm/anchors/</code></li>
+<li>Maps, tables, counts of facilities in hazard buckets</li>
+</ul>
+<p><strong>Rule:</strong> Write a Python script, save it under <code>outputs/week-N/scripts/</code>, save stdout or CSV/JSON outputs beside it. Re-run must match.</p>
+<h3 id="judged">Judged</h3>
+<ul>
+<li>How a market reprices, how a lender behaves, how insurance withdrawal transmits</li>
+<li>Which bespoke scenarios are most relevant for <em>this</em> book</li>
+<li>Recommendation priority when multiple robust actions compete</li>
+</ul>
+<p><strong>Rule:</strong> Label <strong>judgment</strong>. Cite a firm scenario card and/or a named real-world precedent. Give a range when the point estimate is false precision.</p>
+<h2 id="scenario-discipline">Scenario discipline</h2>
+<ul>
+<li>Standard scenarios (see <code>scenario-cards/</code>) satisfy “for the record” audiences.</li>
+<li>Bespoke scenarios (2–3) are built from week-2 hypotheses and institutional transmission (insurance, credit, logistics, policy).</li>
+<li>Scenarios are <strong>alternative futures</strong>. Never sum losses across scenarios.</li>
+<li>Prefer severity-ordered, severe-but-plausible framing over false probability precision unless the client methodology demands probabilities.</li>
+</ul>
+<h2 id="data-provenance">Data provenance</h2>
+<ul>
+<li>Simulated training data: <code>source: simulated</code> in audit log and meta tables.</li>
+<li>Bundled hazard sample grids: <code>source: firm_sample_grid</code> with version id.</li>
+<li>Live API pulls: log URL/params/timestamp/hash or row counts; never attribute a real agency name to invented numbers.</li>
+</ul>
+<h2 id="resolution-ladder">Resolution ladder</h2>
+<ol>
+<li>Whole-book screen (sector / geography / role)</li>
+<li>Segment deep-dives where concentration or hypothesis warrants</li>
+<li>Asset-level only for names that earn the cost of depth</li>
+</ol>
+<p>Document why names were escalated or left at screen level.</p>
+<h2 id="outputs-by-audience">Outputs by audience</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>Audience</th>
+<th>Artifact</th>
+<th>Carries</th>
+</tr></thead><tbody>
+<tr>
+<td>Board / IC / exec</td>
+<td>Presentation</td>
+<td>Judgment, priorities, decisions</td>
+</tr>
+<tr>
+<td>Regulator / LP / assurance</td>
+<td>Submission pack</td>
+<td>Record, lineage, assumptions, gaps</td>
+</tr>
+</tbody></table></div>
+<h2 id="tooling">Tooling</h2>
+<p>Grok Build is the harness. Python is the calculator. Firm files are the house methodology. Students direct; the agent accelerates.</p>
+    </div>
+    <p style="margin:2rem 0 3rem;color:var(--muted)">
+      <a href="../reading.html">← Reading room</a> · <a href="../index.html">Home</a>
+    </p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div>Climate Risk Course · Grok Build</div>
+      <div><a href="../reading.html">Reading</a></div>
+    </div>
+  </footer>
+</body>
+</html>

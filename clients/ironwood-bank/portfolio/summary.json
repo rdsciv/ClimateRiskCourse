@@ -1,0 +1,7 @@
+{
+  "client": "Ironwood Bank",
+  "simulated": true,
+  "counterparties": 100,
+  "total_outstanding_usd": 4663330495.27,
+  "seed": 20260724
+}

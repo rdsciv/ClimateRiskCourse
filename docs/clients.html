@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clients · Climate Risk Course</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><span class="mark">CR</span><span>Climate Risk Course</span></a>
+      <nav class="nav-links">
+        <a href="curriculum.html" data-nav="curriculum.html">Curriculum</a>
+        <a href="clients.html" data-nav="clients.html">Clients</a>
+        <a href="methodology.html" data-nav="methodology.html">Methodology</a>
+        <a href="reading.html" data-nav="reading.html">Reading</a>
+        <a href="getting-started.html" data-nav="getting-started.html">Get started</a>
+        <a class="nav-cta" href="https://github.com/rdsciv/ClimateRiskCourse">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-hero">
+      <h1>Three client tracks</h1>
+      <p>Pick the world closest to your work. Stay with one track through the capstone.</p>
+    </div>
+
+    <article id="ironwood" class="card" style="margin-bottom:1rem">
+      <div class="tag">ironwood</div>
+      <h2 style="margin:0 0 0.5rem">Ironwood Bank</h2>
+      <p>U.S. commercial bank, subsidiary of a Frankfurt-based group. Tiered data quality, messy questionnaires, contradictory disclosures.</p>
+      <ul>
+        <li><strong>Scale:</strong> ~100 counterparties (training book)</li>
+        <li><strong>Decision language:</strong> credit pricing, capital, limits</li>
+        <li><strong>Audiences:</strong> CRO, board, parent risk, regulator dry-run</li>
+        <li><strong>Folder:</strong> <code>clients/ironwood-bank/</code></li>
+      </ul>
+    </article>
+
+    <article id="strata" class="card" style="margin-bottom:1rem">
+      <div class="tag">strata</div>
+      <h2 style="margin:0 0 0.5rem">Strata Holdings</h2>
+      <p>Diversified real estate and infrastructure fund. Site-level physical risk mapped to acquisition and exit pricing.</p>
+      <ul>
+        <li><strong>Scale:</strong> ~45 assets</li>
+        <li><strong>Decision language:</strong> acquisition / hold / exit, insurance transmission</li>
+        <li><strong>Audiences:</strong> IC, LPs, risk</li>
+        <li><strong>Folder:</strong> <code>clients/strata-holdings/</code></li>
+      </ul>
+    </article>
+
+    <article id="northwood" class="card" style="margin-bottom:2rem">
+      <div class="tag">northwood</div>
+      <h2 style="margin:0 0 0.5rem">Northwood Capital</h2>
+      <p>Mid-cap industrial with climate-exposed supply chain spanning multiple continents.</p>
+      <ul>
+        <li><strong>Scale:</strong> ~60 facilities / supplier nodes</li>
+        <li><strong>Decision language:</strong> contingency, dual-source, input disruption</li>
+        <li><strong>Audiences:</strong> COO, procurement, exec ops</li>
+        <li><strong>Folder:</strong> <code>clients/northwood-capital/</code></li>
+      </ul>
+    </article>
+
+    <div class="prose">
+      <h2>Activate a track</h2>
+      <pre><code>python3 scripts/set_track.py ironwood   # or strata | northwood
+python3 scripts/seed_all_clients.py     # once after clone</code></pre>
+      <p>All client data is <strong>simulated</strong> and labeled as such in briefings and meta tables.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>Climate Risk Course · Grok Build</div>
+      <div><a href="methodology.html">Methodology →</a></div>
+    </div>
+  </footer>
+  <script src="assets/js/nav.js"></script>
+</body>
+</html>

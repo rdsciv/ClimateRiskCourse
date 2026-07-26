@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get started · Climate Risk Course</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><span class="mark">CR</span><span>Climate Risk Course</span></a>
+      <nav class="nav-links">
+        <a href="curriculum.html" data-nav="curriculum.html">Curriculum</a>
+        <a href="clients.html" data-nav="clients.html">Clients</a>
+        <a href="methodology.html" data-nav="methodology.html">Methodology</a>
+        <a href="reading.html" data-nav="reading.html">Reading</a>
+        <a href="getting-started.html" data-nav="getting-started.html">Get started</a>
+        <a class="nav-cta" href="https://github.com/rdsciv/ClimateRiskCourse">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-hero">
+      <h1>Get started</h1>
+      <p>About 30 minutes to a working environment and your first Grok session on the engagement.</p>
+    </div>
+
+    <div class="prose">
+      <h2>Requirements</h2>
+      <ul>
+        <li><a href="https://x.ai">Grok Build</a> CLI authenticated</li>
+        <li>Python 3.11+</li>
+        <li>Git</li>
+        <li>Access to this private repository</li>
+      </ul>
+
+      <h2>1. Clone</h2>
+      <pre><code>git clone https://github.com/rdsciv/ClimateRiskCourse.git
+cd ClimateRiskCourse</code></pre>
+
+      <h2>2. Seed clients</h2>
+      <pre><code>python3 scripts/seed_all_clients.py
+python3 scripts/set_track.py ironwood   # or strata | northwood
+python3 scripts/course_lint.py</code></pre>
+
+      <h2>3. Open Grok Build</h2>
+      <p>Start Grok in the repo root. Root <code>AGENTS.md</code> loads automatically. Ask:</p>
+      <pre><code>Summarize firm/methodology.md in five bullets.
+Do not open any exercises/**/solution/ folders.</code></pre>
+
+      <h2>4. Orientation</h2>
+      <p>Work through <code>exercises/00-orientation/</code>, then week 1.</p>
+      <ul>
+        <li>Read <strong>explainer</strong> variants first</li>
+        <li>Complete <strong>problem</strong> with Grok</li>
+        <li>Open <strong>solution</strong> only after an honest attempt</li>
+        <li>Write outputs to <code>clients/&lt;track&gt;/outputs/week-N/</code></li>
+      </ul>
+
+      <h2>Epistemic rules</h2>
+      <ol>
+        <li><strong>Computed</strong> figures come from saved Python scripts.</li>
+        <li><strong>Judged</strong> figures carry mechanism + precedent + the word <em>judgment</em>.</li>
+        <li>Never invent government/vendor data pulls.</li>
+        <li>Document gaps; do not fill them silently.</li>
+        <li>Do not sum losses across scenarios.</li>
+      </ol>
+
+      <h2>Reference pipelines (optional)</h2>
+      <pre><code>python3 scripts/reference_week1_overview.py
+python3 scripts/reference_week3_score.py
+python3 scripts/reference_week4_scenarios.py</code></pre>
+
+      <div class="banner">These references show a clean path — attempt problems yourself before relying on them.</div>
+
+      <h2>Need help?</h2>
+      <p>See <a href="reading.html">Reading</a> for methodology and exercise guides, or open an issue in the private repo.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>Climate Risk Course · Grok Build</div>
+      <div><a href="curriculum.html">Curriculum →</a></div>
+    </div>
+  </footer>
+  <script src="assets/js/nav.js"></script>
+</body>
+</html>

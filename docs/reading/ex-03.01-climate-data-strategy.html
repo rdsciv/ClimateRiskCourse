@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Climate data strategy · Climate Risk Course</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../index.html"><span class="mark">CR</span><span>Climate Risk Course</span></a>
+      <nav class="nav-links">
+        <a href="../curriculum.html">Curriculum</a>
+        <a href="../clients.html">Clients</a>
+        <a href="../methodology.html">Methodology</a>
+        <a href="../reading.html">Reading</a>
+        <a href="../getting-started.html">Get started</a>
+        <a class="nav-cta" href="https://github.com/rdsciv/ClimateRiskCourse">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-hero">
+      <h1>Climate data strategy</h1>
+      <p>Exercise explainer · 03-hazard-data</p>
+    </div>
+    <div class="prose">
+<h2 id="slot-architecture">Slot architecture</h2>
+<p>Hazard data sits in a <strong>swappable slot</strong>. Training uses <code>firm/sample-hazard/county_hazard_scores.csv</code>. Live APIs or vendor files can replace the slot if provenance is updated.</p>
+<h2 id="resolution-trade-offs">Resolution trade-offs</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>Grid</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr></thead><tbody>
+<tr>
+<td>County / coarse</td>
+<td>Fast whole-book</td>
+<td>Misses site nuance</td>
+</tr>
+<tr>
+<td>High-res flood</td>
+<td>Engineering detail</td>
+<td>Costly; false precision if building data thin</td>
+</tr>
+</tbody></table></div>
+<p>Match resolution to decision. Pricing triage can start coarse.</p>
+<h2 id="structure-backward">Structure backward</h2>
+<p>Week 6 needs tables with: entity id, hazard scores, scenario severities, $ metric, lineage. Design week-3 tables for that join, not for pretty maps alone.</p>
+    </div>
+    <p style="margin:2rem 0 3rem;color:var(--muted)">
+      <a href="../reading.html">← Reading room</a> · <a href="../index.html">Home</a>
+    </p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div>Climate Risk Course · Grok Build</div>
+      <div><a href="../reading.html">Reading</a></div>
+    </div>
+  </footer>
+</body>
+</html>

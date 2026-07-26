@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clients overview · Climate Risk Course</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../index.html"><span class="mark">CR</span><span>Climate Risk Course</span></a>
+      <nav class="nav-links">
+        <a href="../curriculum.html">Curriculum</a>
+        <a href="../clients.html">Clients</a>
+        <a href="../methodology.html">Methodology</a>
+        <a href="../reading.html">Reading</a>
+        <a href="../getting-started.html">Get started</a>
+        <a class="nav-cta" href="https://github.com/rdsciv/ClimateRiskCourse">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-hero">
+      <h1>Clients overview</h1>
+      <p>How to choose a track</p>
+    </div>
+    <div class="prose">
+<p>You complete the <strong>same six-week method</strong> on <strong>one</strong> simulated client. Pick the world closest to your work.</p>
+<div class="table-wrap"><table><thead><tr>
+<th>Track key</th>
+<th>Folder</th>
+<th>Who they are</th>
+<th>Decision language</th>
+</tr></thead><tbody>
+<tr>
+<td><code>ironwood</code></td>
+<td><code>ironwood-bank/</code></td>
+<td>Commercial bank credit book</td>
+<td>Pricing, capital, limits, board + regulator</td>
+</tr>
+<tr>
+<td><code>strata</code></td>
+<td><code>strata-holdings/</code></td>
+<td>RE + infrastructure fund</td>
+<td>Acquisition / hold / exit pricing, IC, LPs</td>
+</tr>
+<tr>
+<td><code>northwood</code></td>
+<td><code>northwood-capital/</code></td>
+<td>Industrial + supply chain</td>
+<td>Contingency, dual-source, input disruption</td>
+</tr>
+</tbody></table></div>
+<h2 id="activate-a-track">Activate a track</h2>
+<pre><code>python3 scripts/set_track.py ironwood   # or strata | northwood
+python3 scripts/seed_all_clients.py     # once after clone</code></pre>
+<p>This writes <code>CLIENT_TRACK</code> to <code>.env</code> and creates <code>clients/active</code> → your folder.</p>
+<h2 id="whats-in-each-client-folder">What’s in each client folder</h2>
+<pre><code>briefing/     engagement context
+portfolio/    CSV + summary JSON
+documents/    messy real-world-style files
+db/           portfolio.sqlite
+outputs/      your weekly deliverables
+AGENTS.md     track-specific agent brief</code></pre>
+<p>All data is <strong>simulated</strong> and labeled as such.</p>
+    </div>
+    <p style="margin:2rem 0 3rem;color:var(--muted)">
+      <a href="../reading.html">← Reading room</a> · <a href="../index.html">Home</a>
+    </p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div>Climate Risk Course · Grok Build</div>
+      <div><a href="../reading.html">Reading</a></div>
+    </div>
+  </footer>
+</body>
+</html>

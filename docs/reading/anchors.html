@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Damage &amp; LGD anchors · Climate Risk Course</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../index.html"><span class="mark">CR</span><span>Climate Risk Course</span></a>
+      <nav class="nav-links">
+        <a href="../curriculum.html">Curriculum</a>
+        <a href="../clients.html">Clients</a>
+        <a href="../methodology.html">Methodology</a>
+        <a href="../reading.html">Reading</a>
+        <a href="../getting-started.html">Get started</a>
+        <a class="nav-cta" href="https://github.com/rdsciv/ClimateRiskCourse">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-hero">
+      <h1>Damage &amp; LGD anchors</h1>
+      <p>Training anchors for computed scenario bands</p>
+    </div>
+    <div class="prose">
+<p><strong>Status:</strong> Training anchors for simulated clients. Not a regulatory model.  </p>
+<p><strong>Use:</strong> Scenario engines may apply these bands when site-level engineering is unavailable. Always disclose.</p>
+<h2 id="physical-damage-bands-site-level-severity-loss-fraction-of-replacement-nav">Physical damage bands (site-level severity → loss fraction of replacement / NAV)</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>Severity</th>
+<th>Description</th>
+<th>Indicative damage fraction</th>
+</tr></thead><tbody>
+<tr>
+<td>S0</td>
+<td>Nuisance / short interruption</td>
+<td>0–2%</td>
+</tr>
+<tr>
+<td>S1</td>
+<td>Moderate repairable damage, days–weeks downtime</td>
+<td>5–15%</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>Major damage, months downtime</td>
+<td>20–40%</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>Severe / constructive total for vulnerable assets</td>
+<td>50–80%</td>
+</tr>
+</tbody></table></div>
+<p>Apply <strong>judgment</strong> if construction type is unknown: use midpoint and widen range.</p>
+<h2 id="credit-book-ironwood-lgd-rating-migration-sketch">Credit book (Ironwood) — LGD / rating migration sketch</h2>
+<p>When collateral is RE or operating assets in the affected geography:</p>
+<div class="table-wrap"><table><thead><tr>
+<th>Hazard severity on facility</th>
+<th>Drawn exposure impact (training default)</th>
+</tr></thead><tbody>
+<tr>
+<td>S1</td>
+<td>+50 to +150 bps risk premium (judgment band); watchlist</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>10–25% of drawn treated as elevated default risk for staging discussion</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>25–50% of drawn flagged for capital / limit action discussion</td>
+</tr>
+</tbody></table></div>
+<p>These are <strong>not</strong> PD models. They force a pricing/capital conversation, not a Basel number.</p>
+<h2 id="fund-book-strata-exit-cap-rate-nav-sketch">Fund book (Strata) — exit cap-rate / NAV sketch</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>Severity</th>
+<th>Training exit impact</th>
+</tr></thead><tbody>
+<tr>
+<td>S1</td>
+<td>+10 to +25 bps exit cap (judgment)</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>+25 to +75 bps; hold vs exit revisit</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>Walk-away or recap case; insurance non-renewal multiplies severity one step</td>
+</tr>
+</tbody></table></div>
+<h2 id="industrial-network-northwood-revenue-at-risk-sketch">Industrial network (Northwood) — revenue-at-risk sketch</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>Node criticality × severity</th>
+<th>Training outcome</th>
+</tr></thead><tbody>
+<tr>
+<td>critical × S2+</td>
+<td>Full <code>revenue_at_risk_usd</code> for 30–90 day horizon in scenario</td>
+</tr>
+<tr>
+<td>high × S2</td>
+<td>50% of RAR</td>
+</tr>
+<tr>
+<td>single-source tier-1 × S2+</td>
+<td>Add 1.5× multiplier for dual-source gap (judgment)</td>
+</tr>
+</tbody></table></div>
+<h2 id="insurance-transmission-all-tracks">Insurance transmission (all tracks)</h2>
+<p>If <code>insurance_status</code> in {<code>exclusions_flood</code>, <code>in_market_review</code>, <code>sublimited</code>} or facility <code>insured=0</code>:</p>
+<ul>
+<li>Increase effective severity <strong>one step</strong> (cap at S3)</li>
+<li>Document as institutional transmission, not physical science</li>
+</ul>
+<h2 id="prohibitions">Prohibitions</h2>
+<ul>
+<li>Do not present anchor midpoints as engineering truth.</li>
+<li>Do not invent tighter bands without a logged data source.</li>
+</ul>
+    </div>
+    <p style="margin:2rem 0 3rem;color:var(--muted)">
+      <a href="../reading.html">← Reading room</a> · <a href="../index.html">Home</a>
+    </p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div>Climate Risk Course · Grok Build</div>
+      <div><a href="../reading.html">Reading</a></div>
+    </div>
+  </footer>
+</body>
+</html>

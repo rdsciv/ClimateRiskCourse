@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>STD-01-acute-coastal-flood · Climate Risk Course</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../index.html"><span class="mark">CR</span><span>Climate Risk Course</span></a>
+      <nav class="nav-links">
+        <a href="../curriculum.html">Curriculum</a>
+        <a href="../clients.html">Clients</a>
+        <a href="../methodology.html">Methodology</a>
+        <a href="../reading.html">Reading</a>
+        <a href="../getting-started.html">Get started</a>
+        <a class="nav-cta" href="https://github.com/rdsciv/ClimateRiskCourse">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="page-hero">
+      <h1>STD-01-acute-coastal-flood</h1>
+      <p>Firm scenario card</p>
+    </div>
+    <div class="prose">
+<p><strong>Type:</strong> standard (for the record)  </p>
+<p><strong>Physical driver:</strong> Extreme flood event affecting coastal and riverine metros in the book  </p>
+<p><strong>Horizon:</strong> 0–12 months operational; multi-year repair for S2–S3 assets  </p>
+<h2 id="mechanism">Mechanism</h2>
+<p>Site inundation → asset damage and downtime → collateral / NAV / revenue impairment → secondary insurance friction.</p>
+<h2 id="precedent">Precedent</h2>
+<p>Public record patterns consistent with major U.S. flood disasters (e.g., Hurricane Harvey-class urban flooding). Training uses <strong>pattern</strong>, not a claim that any simulated site was in a specific historical footprint.</p>
+<h2 id="screening-rule">Screening rule</h2>
+<p>Include facilities where <code>hazard_bucket</code> contains <code>flood</code>, <code>coastal</code>, <code>hurricane</code>, or <code>slr</code>.</p>
+<h2 id="default-severity-mapping-training">Default severity mapping (training)</h2>
+<div class="table-wrap"><table><thead><tr>
+<th>hazard_bucket match</th>
+<th>Default severity</th>
+</tr></thead><tbody>
+<tr>
+<td>high_flood, flood_hurricane, hurricane_flood, hurricane_slr</td>
+<td>S2</td>
+</tr>
+<tr>
+<td>flood, coastal_flood, coastal</td>
+<td>S1</td>
+</tr>
+<tr>
+<td>others</td>
+<td>S0 (out of scope for this card)</td>
+</tr>
+</tbody></table></div>
+<h2 id="notes">Notes</h2>
+<p>Pair with TR-01 (insurance withdrawal) for transmission-aware runs.</p>
+    </div>
+    <p style="margin:2rem 0 3rem;color:var(--muted)">
+      <a href="../reading.html">← Reading room</a> · <a href="../index.html">Home</a>
+    </p>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div>Climate Risk Course · Grok Build</div>
+      <div><a href="../reading.html">Reading</a></div>
+    </div>
+  </footer>
+</body>
+</html>

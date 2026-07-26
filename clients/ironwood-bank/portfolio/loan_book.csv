@@ -1,0 +1,101 @@
+counterparty_id,name,sector,city,state,outstanding_usd,data_quality,lat,lon,hazard_bucket
+IW-CP-001,Healthcare Holdings 001 LLC,Healthcare Facilities,Seattle,WA,40571442.36,clean,47.53354171712918,-122.3496578807393,flood
+IW-CP-002,Datacenter Holdings 002 LLC,Datacenter / Tech RE,Boston,MA,16654267.76,clean,42.42327276024687,-71.05290038209746,coastal
+IW-CP-003,Healthcare Holdings 003 LLC,Healthcare Facilities,Denver,CO,67050579.62,incomplete,39.81849603623771,-105.00677910346886,wildfire_hail
+IW-CP-004,Datacenter Holdings 004 LLC,Datacenter / Tech RE,Chicago,IL,47100925.59,contradictory,41.8967940036879,-87.62082747392827,inland
+IW-CP-005,City of Memphis Utility Authority 005,Municipal / Public,Memphis,TN,57041119.98,incomplete,35.079277591082175,-90.07752249345144,flood
+IW-CP-006,Commercial Holdings 006 LLC,Commercial Real Estate,Los Angeles,CA,75355928.15,clean,34.065248266761685,-118.30769910545064,wildfire_quake
+IW-CP-007,City of New Orleans Utility Authority 007,Municipal / Public,New Orleans,LA,71765945.67,incomplete,29.955478278125515,-90.07440437392738,high_flood
+IW-CP-008,Logistics Holdings 008 LLC,Logistics,Houston,TX,40309726.15,contradictory,29.704908232586817,-95.3246895385244,high_flood
+IW-CP-009,City of Minneapolis Utility Authority 009,Municipal / Public,Minneapolis,MN,36427563.79,contradictory,44.90448794537105,-93.28826494815415,inland
+IW-CP-010,Datacenter Holdings 010 LLC,Datacenter / Tech RE,Norfolk,VA,36677807.91,incomplete,36.87982212135301,-76.30318266398777,flood
+IW-CP-011,Energy Holdings 011 LLC,Energy Midstream,Kansas City,MO,33567506.08,clean,39.11194419488522,-94.65584673082344,tornado_flood
+IW-CP-012,Manufacturing Holdings 012 LLC,Manufacturing,New York,NY,40740618.21,contradictory,40.73165747182378,-74.0860873793905,coastal
+IW-CP-013,City of Kansas City Utility Authority 013,Municipal / Public,Kansas City,MO,16703228.79,clean,39.07268821016726,-94.61888845248971,tornado_flood
+IW-CP-014,Agriculture Holdings 014 LLC,Agriculture,Sacramento,CA,24213289.48,clean,38.60324346291984,-121.43043900926774,wildfire_flood
+IW-CP-015,Manufacturing Holdings 015 LLC,Manufacturing,Denver,CO,30045214.68,clean,39.74742954627177,-105.01110245858139,wildfire_hail
+IW-CP-016,Energy Holdings 016 LLC,Energy Midstream,Tampa,FL,10754639.53,contradictory,27.947633213008867,-82.4179127431913,hurricane
+IW-CP-017,Hospitality Holdings 017 LLC,Hospitality,Norfolk,VA,13063686.58,incomplete,36.863979968796436,-76.33258162276492,flood
+IW-CP-018,Manufacturing Holdings 018 LLC,Manufacturing,Dallas,TX,78897213.76,clean,32.84044154335585,-96.79537563598227,heat_hail
+IW-CP-019,Energy Holdings 019 LLC,Energy Midstream,Atlanta,GA,47429549.15,contradictory,33.74297282124093,-84.40056237128934,inland
+IW-CP-020,Agriculture Holdings 020 LLC,Agriculture,Atlanta,GA,44798917.42,clean,33.76794256198916,-84.39484223985289,inland
+IW-CP-021,Manufacturing Holdings 021 LLC,Manufacturing,Portland,OR,3166125.39,contradictory,45.5760437534732,-122.66522899040753,wildfire
+IW-CP-022,Datacenter Holdings 022 LLC,Datacenter / Tech RE,Miami,FL,29700712.13,contradictory,25.72340794191276,-80.19543715070692,high_flood_hurricane
+IW-CP-023,Retail Holdings 023 LLC,Retail Trade,Tampa,FL,79952839.3,clean,27.961859999507244,-82.5216071745764,hurricane
+IW-CP-024,Logistics Holdings 024 LLC,Logistics,Portland,OR,75683158.34,incomplete,45.48833868540856,-122.6836641893909,wildfire
+IW-CP-025,Hospitality Holdings 025 LLC,Hospitality,Memphis,TN,20607838.4,clean,35.192697635232044,-89.99807601272332,flood
+IW-CP-026,Manufacturing Holdings 026 LLC,Manufacturing,Memphis,TN,76709810.15,clean,35.20128773296061,-90.08005291298362,flood
+IW-CP-027,Energy Holdings 027 LLC,Energy Midstream,Phoenix,AZ,39103616.27,clean,33.46276486794363,-112.10940507252157,heat_drought
+IW-CP-028,City of Miami Utility Authority 028,Municipal / Public,Miami,FL,46808024.5,incomplete,25.798105043855433,-80.1564015064814,high_flood_hurricane
+IW-CP-029,Hospitality Holdings 029 LLC,Hospitality,Sacramento,CA,75703164.1,clean,38.63147735682454,-121.5228265194347,wildfire_flood
+IW-CP-030,Retail Holdings 030 LLC,Retail Trade,Denver,CO,74287974.39,incomplete,39.79504526146219,-104.94139477850068,wildfire_hail
+IW-CP-031,Logistics Holdings 031 LLC,Logistics,Charleston,SC,65261923.54,incomplete,32.75469455868948,-79.92451444114025,hurricane
+IW-CP-032,Energy Holdings 032 LLC,Energy Midstream,Atlanta,GA,54530812.35,contradictory,33.79504133069572,-84.36103415946987,inland
+IW-CP-033,Logistics Holdings 033 LLC,Logistics,Memphis,TN,81184774.4,incomplete,35.162253860450754,-90.09800302323842,flood
+IW-CP-034,Agriculture Holdings 034 LLC,Agriculture,Boston,MA,82553806.07,contradictory,42.42133500074385,-71.05917633430819,coastal
+IW-CP-035,Manufacturing Holdings 035 LLC,Manufacturing,New Orleans,LA,84818101.86,contradictory,29.96226912250433,-90.11770672842589,high_flood
+IW-CP-036,Retail Holdings 036 LLC,Retail Trade,Houston,TX,30029269.41,incomplete,29.74992549841473,-95.35945538214014,high_flood
+IW-CP-037,Hospitality Holdings 037 LLC,Hospitality,Boston,MA,40893482.24,contradictory,42.28085218577322,-71.10105777624875,coastal
+IW-CP-038,Logistics Holdings 038 LLC,Logistics,Phoenix,AZ,10501316.19,clean,33.523458199564146,-112.03946158025082,heat_drought
+IW-CP-039,Agriculture Holdings 039 LLC,Agriculture,Miami,FL,46715866.09,incomplete,25.787826454522353,-80.22026757358401,high_flood_hurricane
+IW-CP-040,City of Phoenix Utility Authority 040,Municipal / Public,Phoenix,AZ,57356888.02,clean,33.37174102005332,-112.14505901401454,heat_drought
+IW-CP-041,Hospitality Holdings 041 LLC,Hospitality,Atlanta,GA,26345849.27,clean,33.74243467184114,-84.41276334005359,inland
+IW-CP-042,Retail Holdings 042 LLC,Retail Trade,Memphis,TN,3501215.28,clean,35.17825000572353,-89.98363415076,flood
+IW-CP-043,Commercial Holdings 043 LLC,Commercial Real Estate,Charleston,SC,80923909.51,incomplete,32.850429485027334,-79.97609095793968,hurricane
+IW-CP-044,Logistics Holdings 044 LLC,Logistics,Chicago,IL,19277309.28,incomplete,41.83551408499601,-87.60852244394387,inland
+IW-CP-045,Manufacturing Holdings 045 LLC,Manufacturing,Denver,CO,44467056.55,incomplete,39.702216781093576,-104.94367754766554,wildfire_hail
+IW-CP-046,Manufacturing Holdings 046 LLC,Manufacturing,Tampa,FL,49904592.28,contradictory,27.88714128291343,-82.43289508582512,hurricane
+IW-CP-047,Manufacturing Holdings 047 LLC,Manufacturing,Tampa,FL,56378196.12,incomplete,27.891770603971967,-82.41793297014391,hurricane
+IW-CP-048,Logistics Holdings 048 LLC,Logistics,Kansas City,MO,25415430.71,clean,39.04721988394532,-94.58723560208155,tornado_flood
+IW-CP-049,Hospitality Holdings 049 LLC,Hospitality,New Orleans,LA,6007658.86,incomplete,29.96598477440141,-90.05439723323398,high_flood
+IW-CP-050,Energy Holdings 050 LLC,Energy Midstream,Portland,OR,19727759.28,clean,45.513589036801484,-122.64133823263874,wildfire
+IW-CP-051,Energy Holdings 051 LLC,Energy Midstream,Minneapolis,MN,74401273.05,contradictory,44.96330582846089,-93.32858310193112,inland
+IW-CP-052,Manufacturing Holdings 052 LLC,Manufacturing,Atlanta,GA,63728269.93,clean,33.73125077001316,-84.3420557027472,inland
+IW-CP-053,Agriculture Holdings 053 LLC,Agriculture,Dallas,TX,69958806.82,incomplete,32.815188664164026,-96.87392318110021,heat_hail
+IW-CP-054,City of Portland Utility Authority 054,Municipal / Public,Portland,OR,78261649.17,incomplete,45.45669504946695,-122.67116524080741,wildfire
+IW-CP-055,Agriculture Holdings 055 LLC,Agriculture,Boston,MA,14244403.06,contradictory,42.357164665738765,-71.13005539914569,coastal
+IW-CP-056,Commercial Holdings 056 LLC,Commercial Real Estate,Boston,MA,8333702.21,incomplete,42.41050327041405,-71.0428278301491,coastal
+IW-CP-057,Retail Holdings 057 LLC,Retail Trade,Boston,MA,9685450.92,incomplete,42.30942421478999,-71.06074611020466,coastal
+IW-CP-058,City of Memphis Utility Authority 058,Municipal / Public,Memphis,TN,41507480.38,incomplete,35.19282930329087,-90.1120730261893,flood
+IW-CP-059,Hospitality Holdings 059 LLC,Hospitality,Chicago,IL,54136552.65,clean,41.938393034898816,-87.69868145464059,inland
+IW-CP-060,Logistics Holdings 060 LLC,Logistics,New Orleans,LA,67442860.56,contradictory,30.02003919371394,-90.05948562871825,high_flood
+IW-CP-061,Energy Holdings 061 LLC,Energy Midstream,Los Angeles,CA,58925059.82,clean,33.986759668559884,-118.22295963022823,wildfire_quake
+IW-CP-062,City of Portland Utility Authority 062,Municipal / Public,Portland,OR,24074352.48,clean,45.45947350379711,-122.61784418952108,wildfire
+IW-CP-063,Logistics Holdings 063 LLC,Logistics,Boston,MA,5446033.41,clean,42.34049377162478,-70.99618102400173,coastal
+IW-CP-064,Energy Holdings 064 LLC,Energy Midstream,Tampa,FL,75481426.13,contradictory,27.889964000795043,-82.41402823936986,hurricane
+IW-CP-065,Healthcare Holdings 065 LLC,Healthcare Facilities,Phoenix,AZ,36586808.85,clean,33.40710774374694,-112.0132423428615,heat_drought
+IW-CP-066,City of Memphis Utility Authority 066,Municipal / Public,Memphis,TN,3564023.8,clean,35.177998451296595,-90.05705523502237,flood
+IW-CP-067,Retail Holdings 067 LLC,Retail Trade,Memphis,TN,36164015.5,clean,35.09158474718675,-90.11436081001223,flood
+IW-CP-068,Logistics Holdings 068 LLC,Logistics,Boston,MA,84909570.2,clean,42.40637796609383,-71.12379146099144,coastal
+IW-CP-069,Healthcare Holdings 069 LLC,Healthcare Facilities,Norfolk,VA,31887376.85,incomplete,36.82733227358386,-76.25997385691818,flood
+IW-CP-070,Manufacturing Holdings 070 LLC,Manufacturing,Memphis,TN,38103584.67,incomplete,35.090461139250905,-90.08686973075729,flood
+IW-CP-071,Logistics Holdings 071 LLC,Logistics,Dallas,TX,33228050.57,clean,32.78199487100082,-96.87168910846356,heat_hail
+IW-CP-072,Hospitality Holdings 072 LLC,Hospitality,Phoenix,AZ,63637996.51,clean,33.5258201436986,-112.03961888116794,heat_drought
+IW-CP-073,Energy Holdings 073 LLC,Energy Midstream,Minneapolis,MN,23441701.6,clean,44.993039674040226,-93.23473390428526,inland
+IW-CP-074,Agriculture Holdings 074 LLC,Agriculture,Minneapolis,MN,51877060.81,clean,44.9690701035414,-93.34659520243898,inland
+IW-CP-075,Logistics Holdings 075 LLC,Logistics,Atlanta,GA,70249627.67,clean,33.82137169025339,-84.36827218114524,inland
+IW-CP-076,Energy Holdings 076 LLC,Energy Midstream,Seattle,WA,82647331.44,clean,47.56727895708688,-122.37174358351956,flood
+IW-CP-077,Manufacturing Holdings 077 LLC,Manufacturing,Miami,FL,83960960.58,clean,25.71523500430981,-80.17823622230569,high_flood_hurricane
+IW-CP-078,Datacenter Holdings 078 LLC,Datacenter / Tech RE,Chicago,IL,31965059.09,contradictory,41.88128375873016,-87.61456147372351,inland
+IW-CP-079,Datacenter Holdings 079 LLC,Datacenter / Tech RE,Tampa,FL,58011636.64,incomplete,28.025595366313873,-82.39510536189809,hurricane
+IW-CP-080,City of Charleston Utility Authority 080,Municipal / Public,Charleston,SC,76565048.21,clean,32.82763975162465,-79.85173165349158,hurricane
+IW-CP-081,Logistics Holdings 081 LLC,Logistics,New Orleans,LA,82882628.92,incomplete,29.97291856834921,-90.06129886763202,high_flood
+IW-CP-082,Manufacturing Holdings 082 LLC,Manufacturing,Memphis,TN,52356650.78,clean,35.08604379246217,-90.10445847633619,flood
+IW-CP-083,Manufacturing Holdings 083 LLC,Manufacturing,Los Angeles,CA,31950021.22,contradictory,34.12159999625363,-118.23413700248216,wildfire_quake
+IW-CP-084,Energy Holdings 084 LLC,Energy Midstream,New Orleans,LA,77007581.36,incomplete,30.024924105346496,-90.07182327433667,high_flood
+IW-CP-085,Hospitality Holdings 085 LLC,Hospitality,Minneapolis,MN,61399515.83,clean,44.942353269129974,-93.27827230888411,inland
+IW-CP-086,Retail Holdings 086 LLC,Retail Trade,New York,NY,39147108.1,contradictory,40.77660630898921,-74.02667821001572,coastal
+IW-CP-087,Datacenter Holdings 087 LLC,Datacenter / Tech RE,Los Angeles,CA,56325289.53,contradictory,34.12559097493164,-118.17363524179693,wildfire_quake
+IW-CP-088,City of New York Utility Authority 088,Municipal / Public,New York,NY,36302720.82,clean,40.77864098278161,-73.981048666189,coastal
+IW-CP-089,Logistics Holdings 089 LLC,Logistics,Atlanta,GA,8431599.16,clean,33.75584916398919,-84.43386684103616,inland
+IW-CP-090,Energy Holdings 090 LLC,Energy Midstream,Minneapolis,MN,60416827.1,contradictory,44.93611112817065,-93.23545387882167,inland
+IW-CP-091,Energy Holdings 091 LLC,Energy Midstream,Denver,CO,57840846.65,incomplete,39.67361441663054,-105.01350396397513,wildfire_hail
+IW-CP-092,Commercial Holdings 092 LLC,Commercial Real Estate,Dallas,TX,66234184.17,clean,32.76710628639146,-96.82649910758546,heat_hail
+IW-CP-093,Hospitality Holdings 093 LLC,Hospitality,Boston,MA,71054335.64,clean,42.29118858645558,-70.98533771881185,coastal
+IW-CP-094,Logistics Holdings 094 LLC,Logistics,Tampa,FL,24411971.94,contradictory,27.93177909829117,-82.47510911080492,hurricane
+IW-CP-095,Energy Holdings 095 LLC,Energy Midstream,Dallas,TX,58576953.2,clean,32.74882637768658,-96.83610600334073,heat_hail
+IW-CP-096,Hospitality Holdings 096 LLC,Hospitality,Sacramento,CA,71513952.01,incomplete,38.556342039751925,-121.51388856748278,wildfire_flood
+IW-CP-097,Logistics Holdings 097 LLC,Logistics,Denver,CO,8812624.01,incomplete,39.7733378005966,-104.99423213323405,wildfire_hail
+IW-CP-098,Hospitality Holdings 098 LLC,Hospitality,Miami,FL,24237494.75,incomplete,25.815515875689165,-80.15457500209453,high_flood_hurricane
+IW-CP-099,Agriculture Holdings 099 LLC,Agriculture,Charleston,SC,31185312.58,contradictory,32.719486977119985,-80.00587096318101,hurricane
+IW-CP-100,Healthcare Holdings 100 LLC,Healthcare Facilities,New Orleans,LA,54128052.98,contradictory,29.872260219707304,-90.13511120150002,high_flood
