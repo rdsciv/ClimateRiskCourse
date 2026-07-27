@@ -6,9 +6,9 @@
   "scripts": {
     "lint": "python3 scripts/course_lint.py",
     "seed": "python3 scripts/seed_all_clients.py",
-    "seed:ironwood": "python3 scripts/seed_ironwood.py",
-    "seed:strata": "python3 scripts/seed_strata.py",
-    "seed:northwood": "python3 scripts/seed_northwood.py",
+    "seed:colorado": "python3 scripts/seed_colorado.py",
+    "seed:kerrville": "python3 scripts/seed_kerrville.py",
+    "seed:datacenter": "python3 scripts/seed_datacenter.py",
     "list": "python3 scripts/list_exercises.py",
     "track": "python3 scripts/set_track.py",
     "docs": "python3 scripts/build_docs_site.py",

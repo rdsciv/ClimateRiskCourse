@@ -11,9 +11,9 @@ Lenders and bond investors reprice or restrict CRE, coastal industrial, and sing
 
 Post-disaster credit tightening cycles in heavily affected MSAs; CRE refinancing stress episodes.
 
-## Application (Ironwood primary)
+## Application (Kerrville / municipal primary)
 
-For counterparties with facilities ≥ S2 under a paired physical scenario:
+For facilities ≥ S2 under a paired flood scenario:
 
-- Flag refinancing risk if maturity_year ≤ scenario_year + 2
-- Apply judgment premium +75 to +200 bps for pricing discussion (not a live quote)
+- Flag insurance non-renewal and mortgage/financing friction on residential/commercial clusters
+- Apply judgment: reconstruction delay months and residual uninsured fraction (disclose range)

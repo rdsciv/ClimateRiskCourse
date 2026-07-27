@@ -32,13 +32,13 @@
       <p>Training anchors for computed scenario bands</p>
     </div>
     <div class="prose">
-<p><strong>Status:</strong> Training anchors for simulated clients. Not a regulatory model.  </p>
+<p><strong>Status:</strong> Training anchors for simulated clients. Not a regulatory or engineering model.  </p>
 <p><strong>Use:</strong> Scenario engines may apply these bands when site-level engineering is unavailable. Always disclose.</p>
-<h2 id="physical-damage-bands-site-level-severity-loss-fraction-of-replacement-nav">Physical damage bands (site-level severity → loss fraction of replacement / NAV)</h2>
+<h2 id="physical-damage-disruption-bands-severity-impact-fraction">Physical damage / disruption bands (severity → impact fraction)</h2>
 <div class="table-wrap"><table><thead><tr>
 <th>Severity</th>
 <th>Description</th>
-<th>Indicative damage fraction</th>
+<th>Indicative impact fraction</th>
 </tr></thead><tbody>
 <tr>
 <td>S0</td>
@@ -47,79 +47,80 @@
 </tr>
 <tr>
 <td>S1</td>
-<td>Moderate repairable damage, days–weeks downtime</td>
+<td>Moderate disruption, days–weeks</td>
 <td>5–15%</td>
 </tr>
 <tr>
 <td>S2</td>
-<td>Major damage, months downtime</td>
+<td>Major disruption, months or multi-season</td>
 <td>20–40%</td>
 </tr>
 <tr>
 <td>S3</td>
-<td>Severe / constructive total for vulnerable assets</td>
+<td>Severe / service failure for vulnerable assets</td>
 <td>50–80%</td>
 </tr>
 </tbody></table></div>
-<p>Apply <strong>judgment</strong> if construction type is unknown: use midpoint and widen range.</p>
-<h2 id="credit-book-ironwood-lgd-rating-migration-sketch">Credit book (Ironwood) — LGD / rating migration sketch</h2>
-<p>When collateral is RE or operating assets in the affected geography:</p>
+<p>Apply <strong>judgment</strong> if construction or operating detail is unknown: use midpoint and widen range.</p>
+<h2 id="colorado-river-reservoirs-redrock-basin-authority">Colorado River reservoirs (Redrock Basin Authority)</h2>
+<p>When storage / delivery nodes hit drought-heat severity:</p>
 <div class="table-wrap"><table><thead><tr>
-<th>Hazard severity on facility</th>
-<th>Drawn exposure impact (training default)</th>
+<th>Severity on node</th>
+<th>Training ops impact</th>
 </tr></thead><tbody>
 <tr>
 <td>S1</td>
-<td>+50 to +150 bps risk premium (judgment band); watchlist</td>
+<td>Watchlist; voluntary conservation messaging</td>
 </tr>
 <tr>
 <td>S2</td>
-<td>10–25% of drawn treated as elevated default risk for staging discussion</td>
+<td>Junior allocation cut discussion; hydropower derate band 10–25%</td>
 </tr>
 <tr>
 <td>S3</td>
-<td>25–50% of drawn flagged for capital / limit action discussion</td>
+<td>Senior/settlement stress; environmental pulse at risk; compact-sensitive delivery contingency</td>
 </tr>
 </tbody></table></div>
-<p>These are <strong>not</strong> PD models. They force a pricing/capital conversation, not a Basel number.</p>
-<h2 id="fund-book-strata-exit-cap-rate-nav-sketch">Fund book (Strata) — exit cap-rate / NAV sketch</h2>
+<h2 id="kerrville-flood-book-city-of-kerrville">Kerrville flood book (City of Kerrville)</h2>
+<p>When facilities hit flood severity:</p>
 <div class="table-wrap"><table><thead><tr>
 <th>Severity</th>
-<th>Training exit impact</th>
+<th>Training impact</th>
 </tr></thead><tbody>
 <tr>
 <td>S1</td>
-<td>+10 to +25 bps exit cap (judgment)</td>
+<td>Access delays; temporary facility workarounds</td>
 </tr>
 <tr>
 <td>S2</td>
-<td>+25 to +75 bps; hold vs exit revisit</td>
+<td>20–40% of replacement_usd treated as at-risk; critical-facility continuity plan</td>
 </tr>
 <tr>
 <td>S3</td>
-<td>Walk-away or recap case; insurance non-renewal multiplies severity one step</td>
+<td>Life-safety / access failure case; buyout vs defend decision forced</td>
 </tr>
 </tbody></table></div>
-<h2 id="industrial-network-northwood-revenue-at-risk-sketch">Industrial network (Northwood) — revenue-at-risk sketch</h2>
+<h2 id="texas-data-center-eis-horizon-grid">Texas data center EIS (Horizon Grid)</h2>
+<p>When campus elements hit heat/drought/grid or flood on staging:</p>
 <div class="table-wrap"><table><thead><tr>
-<th>Node criticality × severity</th>
-<th>Training outcome</th>
+<th>Severity</th>
+<th>Training EIS / project impact</th>
 </tr></thead><tbody>
 <tr>
-<td>critical × S2+</td>
-<td>Full <code>revenue_at_risk_usd</code> for 30–90 day horizon in scenario</td>
+<td>S1</td>
+<td>Elevated monitoring; design refinement</td>
 </tr>
 <tr>
-<td>high × S2</td>
-<td>50% of RAR</td>
+<td>S2</td>
+<td>Water or power alternative becomes material in EIS; receptor mitigation</td>
 </tr>
 <tr>
-<td>single-source tier-1 × S2+</td>
-<td>Add 1.5× multiplier for dual-source gap (judgment)</td>
+<td>S3</td>
+<td>Proposed Action reliability questioned vs Alt sites; board go/no-go input</td>
 </tr>
 </tbody></table></div>
-<h2 id="insurance-transmission-all-tracks">Insurance transmission (all tracks)</h2>
-<p>If <code>insurance_status</code> in {<code>exclusions_flood</code>, <code>in_market_review</code>, <code>sublimited</code>} or facility <code>insured=0</code>:</p>
+<h2 id="insurance-institutional-transmission-all-tracks">Insurance / institutional transmission (all tracks)</h2>
+<p>If uninsured, sublimited, or market-review style flags apply (Kerrville especially):</p>
 <ul>
 <li>Increase effective severity <strong>one step</strong> (cap at S3)</li>
 <li>Document as institutional transmission, not physical science</li>

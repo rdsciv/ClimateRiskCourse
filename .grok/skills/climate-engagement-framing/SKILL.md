@@ -1,6 +1,6 @@
 ---
 name: climate-engagement-framing
-description: Frame a climate risk engagement for Ironwood, Strata, or Northwood — AGENTS.md, scope, delivery plan.
+description: Frame a climate risk engagement for Colorado River reservoirs, Kerrville flood, or Texas data center EIS — AGENTS.md, scope, delivery plan.
 ---
 
 # Climate engagement framing

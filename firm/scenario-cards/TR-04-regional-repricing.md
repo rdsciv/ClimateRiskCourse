@@ -11,7 +11,8 @@ Buyers underwrite higher cap rates / lower willingness-to-pay in repeatedly hit 
 
 Observed coastal and wildfire-adjacent valuation discounts in repeated-event markets (literature and market reports; cite specifically when moving beyond training).
 
-## Application (Strata primary)
+## Application (Kerrville / Datacenter primary)
 
-- Assets with repeated high_flood / hurricane_slr / wildfire buckets: baseline +25 bps exit before acute scenario
+- Kerrville parcels with repeated flood_flash / high_flood: baseline discount or longer sale times (**judgment**)
+- Datacenter: chronic heat/drought corridors may reprice power and water contracts in EIS sensitivity tables
 - Stack with STD cards for acute-on-chronic cases

@@ -1,50 +1,52 @@
-# Anchors — damage bands and credit / economic transmission
+# Anchors — damage bands and decision transmission
 
-**Status:** Training anchors for simulated clients. Not a regulatory model.  
+**Status:** Training anchors for simulated clients. Not a regulatory or engineering model.  
 **Use:** Scenario engines may apply these bands when site-level engineering is unavailable. Always disclose.
 
-## Physical damage bands (site-level severity → loss fraction of replacement / NAV)
+## Physical damage / disruption bands (severity → impact fraction)
 
-| Severity | Description | Indicative damage fraction |
+| Severity | Description | Indicative impact fraction |
 |----------|-------------|----------------------------|
 | S0 | Nuisance / short interruption | 0–2% |
-| S1 | Moderate repairable damage, days–weeks downtime | 5–15% |
-| S2 | Major damage, months downtime | 20–40% |
-| S3 | Severe / constructive total for vulnerable assets | 50–80% |
+| S1 | Moderate disruption, days–weeks | 5–15% |
+| S2 | Major disruption, months or multi-season | 20–40% |
+| S3 | Severe / service failure for vulnerable assets | 50–80% |
 
-Apply **judgment** if construction type is unknown: use midpoint and widen range.
+Apply **judgment** if construction or operating detail is unknown: use midpoint and widen range.
 
-## Credit book (Ironwood) — LGD / rating migration sketch
+## Colorado River reservoirs (Redrock Basin Authority)
 
-When collateral is RE or operating assets in the affected geography:
+When storage / delivery nodes hit drought-heat severity:
 
-| Hazard severity on facility | Drawn exposure impact (training default) |
-|-----------------------------|------------------------------------------|
-| S1 | +50 to +150 bps risk premium (judgment band); watchlist |
-| S2 | 10–25% of drawn treated as elevated default risk for staging discussion |
-| S3 | 25–50% of drawn flagged for capital / limit action discussion |
+| Severity on node | Training ops impact |
+|------------------|---------------------|
+| S1 | Watchlist; voluntary conservation messaging |
+| S2 | Junior allocation cut discussion; hydropower derate band 10–25% |
+| S3 | Senior/settlement stress; environmental pulse at risk; compact-sensitive delivery contingency |
 
-These are **not** PD models. They force a pricing/capital conversation, not a Basel number.
+## Kerrville flood book (City of Kerrville)
 
-## Fund book (Strata) — exit cap-rate / NAV sketch
+When facilities hit flood severity:
 
-| Severity | Training exit impact |
-|----------|----------------------|
-| S1 | +10 to +25 bps exit cap (judgment) |
-| S2 | +25 to +75 bps; hold vs exit revisit |
-| S3 | Walk-away or recap case; insurance non-renewal multiplies severity one step |
+| Severity | Training impact |
+|----------|-----------------|
+| S1 | Access delays; temporary facility workarounds |
+| S2 | 20–40% of replacement_usd treated as at-risk; critical-facility continuity plan |
+| S3 | Life-safety / access failure case; buyout vs defend decision forced |
 
-## Industrial network (Northwood) — revenue-at-risk sketch
+## Texas data center EIS (Horizon Grid)
 
-| Node criticality × severity | Training outcome |
-|----------------------------|------------------|
-| critical × S2+ | Full `revenue_at_risk_usd` for 30–90 day horizon in scenario |
-| high × S2 | 50% of RAR |
-| single-source tier-1 × S2+ | Add 1.5× multiplier for dual-source gap (judgment) |
+When campus elements hit heat/drought/grid or flood on staging:
 
-## Insurance transmission (all tracks)
+| Severity | Training EIS / project impact |
+|----------|-------------------------------|
+| S1 | Elevated monitoring; design refinement |
+| S2 | Water or power alternative becomes material in EIS; receptor mitigation |
+| S3 | Proposed Action reliability questioned vs Alt sites; board go/no-go input |
 
-If `insurance_status` in {`exclusions_flood`, `in_market_review`, `sublimited`} or facility `insured=0`:
+## Insurance / institutional transmission (all tracks)
+
+If uninsured, sublimited, or market-review style flags apply (Kerrville especially):
 
 - Increase effective severity **one step** (cap at S3)
 - Document as institutional transmission, not physical science

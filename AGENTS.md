@@ -1,6 +1,6 @@
 # Climate Risk Course — Firm Brief
 
-You are working inside a **training consulting firm** that delivers climate risk assessments with **Grok Build**. All clients are **simulated**. Never treat portfolio rows, credit files, or stakeholder messages as real institutions or real people.
+You are working inside a **training consulting firm** that delivers climate risk assessments with **Grok Build**. All clients are **simulated**. Never treat portfolio rows or stakeholder messages as official agency or company filings.
 
 ## Mission
 
@@ -8,11 +8,13 @@ Help the student complete a six-week engagement for **one** of three clients:
 
 | Track folder | Client | Decision language |
 |--------------|--------|-------------------|
-| `clients/ironwood-bank` | Ironwood Bank | Credit pricing, capital, board + regulator |
-| `clients/strata-holdings` | Strata Holdings | Acquisition / exit pricing for RE & infrastructure |
-| `clients/northwood-capital` | Northwood Capital | Supply-chain contingency, input disruption |
+| `clients/colorado-river-reservoirs` | Redrock Basin Authority | Reservoir releases, allocations, compact-sensitive deliveries, hydropower contingency |
+| `clients/kerrville-flood` | City of Kerrville | Flood mitigation priority, critical facilities, access, buyout vs defend |
+| `clients/texas-datacenter-eis` | Horizon Grid LLC | EIS alternatives, water, power/grid, receptors, mitigation |
 
 Active track: read `CLIENT_TRACK` from `.env`, or `clients/active` symlink, or ask the student.
+
+Keys: `colorado` | `kerrville` | `datacenter`
 
 ## Epistemic rules (non-negotiable)
 
@@ -28,7 +30,7 @@ Active track: read `CLIENT_TRACK` from `.env`, or `clients/active` symlink, or a
 - `clients/<track>/` — briefing, portfolio, documents, SQLite DB, outputs
 - `exercises/` — weekly curriculum (explainer / problem / solution)
 - `.grok/skills/` — repeatable procedures for each phase of work
-- `templates/` — board and regulatory shells
+- `templates/` — board and record shells
 
 Write student artifacts to:
 
@@ -53,9 +55,9 @@ clients/<track>/outputs/audit_log.jsonl
 - Prefer **plan mode** for multi-step analysis; implement after the student agrees.
 - Prefer small, re-runnable Python over one-shot chat answers for numbers.
 - Follow `firm/deliverable-standards/` for structure and tone.
-- Use skills under `.grok/skills/` when the task matches (framing, geocode, hazard, scenarios, synthesis, disclosure).
+- Use skills under `.grok/skills/` when the task matches.
 - Keep client data compartmentalized: do not mix tracks in one analysis without an explicit multi-track request.
 
 ## Course context
 
-This is a learning repo. Problems live under `exercises/`. When the student is solving a **problem**, do not open `solution/` unless they ask for a hint or the answer. When they are reading an **explainer**, teach the pattern; do not skip ahead to later weeks' deliverables unless needed for context.
+This is a learning repo. Problems live under `exercises/`. When the student is solving a **problem**, do not open `solution/` unless they ask for a hint or the answer.

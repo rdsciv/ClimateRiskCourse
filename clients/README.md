@@ -4,14 +4,14 @@ You complete the **same six-week method** on **one** simulated client. Pick the 
 
 | Track key | Folder | Who they are | Decision language |
 |-----------|--------|--------------|-------------------|
-| `ironwood` | `ironwood-bank/` | Commercial bank credit book | Pricing, capital, limits, board + regulator |
-| `strata` | `strata-holdings/` | RE + infrastructure fund | Acquisition / hold / exit pricing, IC, LPs |
-| `northwood` | `northwood-capital/` | Industrial + supply chain | Contingency, dual-source, input disruption |
+| `colorado` | `colorado-river-reservoirs/` | Redrock Basin Authority — Colorado River–style multi-reservoir operations | Releases, allocations, compact-sensitive deliveries, hydropower |
+| `kerrville` | `kerrville-flood/` | City of Kerrville, TX — municipal flood risk | Mitigation priority, critical facilities, access, buyout vs defend |
+| `datacenter` | `texas-datacenter-eis/` | Horizon Grid LLC — Texas data center EIS | Alternatives, water, power/grid, receptors, mitigation |
 
 ## Activate a track
 
 ```bash
-python3 scripts/set_track.py ironwood   # or strata | northwood
+python3 scripts/set_track.py colorado   # or kerrville | datacenter
 python3 scripts/seed_all_clients.py     # once after clone
 ```
 
@@ -28,4 +28,4 @@ outputs/      your weekly deliverables
 AGENTS.md     track-specific agent brief
 ```
 
-All data is **simulated** and labeled as such.
+All data is **simulated** and labeled as such. Geography may reference real places (e.g. Kerrville, Texas) for realism; the books and figures are fictional training constructs.

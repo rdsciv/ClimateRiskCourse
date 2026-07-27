@@ -1,0 +1,56 @@
+facility_id,name,element_type,city,eis_alternative,mw_nameplate,water_mgy,hazard_bucket,data_quality,lat,lon
+DC-ELM-001,Primary Campus Pad A,building_pad,Abilene,Alt A — Midland,303.8,264.6,heat_drought_grid,incomplete,32.45,-99.73
+DC-ELM-002,Primary Campus Pad B,building_pad,Abilene,Alt B — Temple,288.2,121.8,heat_grid,incomplete,32.46,-99.72
+DC-ELM-003,Alt Site — Midland Spur,building_pad,Midland,Alt A — Midland,275.0,749.9,heat_drought,clean,31.99,-102.08
+DC-ELM-004,Alt Site — Temple Corridor,building_pad,Temple,Alt B — Temple,99.0,278.3,heat_flood,incomplete,31.1,-97.34
+DC-ELM-005,Water Supply Option — Municipal,water,Abilene,Alt B — Temple,0.0,363.1,drought,contradictory,32.45,-99.75
+DC-ELM-006,Water Supply Option — Aquifer,water,Abilene,Alt A — Midland,0.0,864.8,drought,clean,32.4,-99.8
+DC-ELM-007,Reclaimed Water Lateral,water,Abilene,Proposed Action,0.0,282.4,drought_heat,incomplete,32.48,-99.7
+DC-ELM-008,230kV Interconnect Point,power,Abilene,Proposed Action,167.2,0.0,grid_heat,clean,32.5,-99.68
+DC-ELM-009,Backup Gas Generation Parcel,power,Abilene,Alt A — Midland,108.5,0.0,heat,incomplete,32.44,-99.71
+DC-ELM-010,Fiber Hut East,telecom,Abilene,Proposed Action,0.0,0.0,heat,contradictory,32.47,-99.69
+DC-ELM-011,Construction Staging Yard,construction,Abilene,Alt A — Midland,0.0,0.0,heat_flood,incomplete,32.43,-99.74
+DC-ELM-012,Community Receptor — School,receptor,Abilene,Alt B — Temple,0.0,0.0,heat,contradictory,32.45,-99.76
+DC-ELM-013,Community Receptor — Neighborhood,receptor,Abilene,Proposed Action,0.0,0.0,heat,incomplete,32.46,-99.77
+DC-ELM-014,Wetland / Playa Buffer,environment,Abilene,Alt B — Temple,0.0,0.0,flood_drought,incomplete,32.42,-99.78
+DC-ELM-015,Transmission Corridor Segment 1,transmission,Taylor County,No Action,0.0,0.0,heat_grid,incomplete,32.55,-99.6
+DC-ELM-016,Transmission Corridor Segment 2,transmission,Taylor County,Alt B — Temple,0.0,0.0,heat,contradictory,32.6,-99.55
+DC-ELM-017,Alt Site — Temple Corridor Variant 17,building_pad,Temple,Alt B — Temple,57.7,119.3,heat_flood,incomplete,31.089029762381863,-97.3621839229607
+DC-ELM-018,Water Supply Option — Aquifer Variant 18,water,Abilene,Alt A — Midland,0.0,234.9,drought,clean,32.428535797914925,-99.72283685199788
+DC-ELM-019,Alt Site — Midland Spur Variant 19,building_pad,Midland,Alt A — Midland,246.8,715.1,heat_drought,incomplete,32.068929126862756,-102.0013889564038
+DC-ELM-020,Community Receptor — Neighborhood Variant 20,receptor,Abilene,No Action,0.0,0.0,heat,contradictory,32.47073661095302,-99.70187261638297
+DC-ELM-021,Water Supply Option — Aquifer Variant 21,water,Abilene,No Action,0.0,164.1,drought,clean,32.462411135504965,-99.85417649158632
+DC-ELM-022,Reclaimed Water Lateral Variant 22,water,Abilene,No Action,0.0,326.5,drought_heat,clean,32.54362917998684,-99.66605915415235
+DC-ELM-023,Alt Site — Midland Spur Variant 23,building_pad,Midland,Alt A — Midland,57.1,620.3,heat_drought,incomplete,31.936855571614867,-102.045580813083
+DC-ELM-024,Wetland / Playa Buffer Variant 24,environment,Abilene,Alt B — Temple,0.0,0.0,flood_drought,incomplete,32.34839512112105,-99.74152017760589
+DC-ELM-025,Backup Gas Generation Parcel Variant 25,power,Abilene,No Action,108.6,0.0,heat,clean,32.439025949103964,-99.73449665453326
+DC-ELM-026,Primary Campus Pad B Variant 26,building_pad,Abilene,Alt A — Midland,232.6,529.3,heat_grid,clean,32.42480518971971,-99.7484421598356
+DC-ELM-027,Community Receptor — Neighborhood Variant 27,receptor,Abilene,Alt A — Midland,0.0,0.0,heat,clean,32.38661754741134,-99.71416870991749
+DC-ELM-028,Transmission Corridor Segment 1 Variant 28,transmission,Taylor County,Alt B — Temple,0.0,0.0,heat_grid,incomplete,32.57446616585912,-99.60037807172309
+DC-ELM-029,Transmission Corridor Segment 1 Variant 29,transmission,Taylor County,No Action,0.0,0.0,heat_grid,incomplete,32.5074310319412,-99.66492083654256
+DC-ELM-030,Community Receptor — Neighborhood Variant 30,receptor,Abilene,Alt B — Temple,0.0,0.0,heat,incomplete,32.46048609149015,-99.84797330229162
+DC-ELM-031,Community Receptor — School Variant 31,receptor,Abilene,Proposed Action,0.0,0.0,heat,clean,32.4393515403115,-99.81414875466785
+DC-ELM-032,Backup Gas Generation Parcel Variant 32,power,Abilene,No Action,120.5,0.0,heat,incomplete,32.39021424886053,-99.63007080812785
+DC-ELM-033,Wetland / Playa Buffer Variant 33,environment,Abilene,No Action,0.0,0.0,flood_drought,clean,32.430513422719024,-99.76965252659355
+DC-ELM-034,Alt Site — Temple Corridor Variant 34,building_pad,Temple,Alt B — Temple,134.6,205.6,heat_flood,contradictory,31.1580248765332,-97.33802590993345
+DC-ELM-035,Community Receptor — Neighborhood Variant 35,receptor,Abilene,Alt B — Temple,0.0,0.0,heat,incomplete,32.532202561059066,-99.6926761410836
+DC-ELM-036,Fiber Hut East Variant 36,telecom,Abilene,Alt A — Midland,0.0,0.0,heat,clean,32.46733866248259,-99.64162198884793
+DC-ELM-037,Transmission Corridor Segment 1 Variant 37,transmission,Taylor County,No Action,0.0,0.0,heat_grid,incomplete,32.54410221569495,-99.54642066885499
+DC-ELM-038,Primary Campus Pad A Variant 38,building_pad,Abilene,Proposed Action,97.9,385.9,heat_drought_grid,clean,32.49041346494185,-99.7098282865362
+DC-ELM-039,Community Receptor — School Variant 39,receptor,Abilene,Alt A — Midland,0.0,0.0,heat,incomplete,32.49511561866405,-99.72584786915375
+DC-ELM-040,Alt Site — Temple Corridor Variant 40,building_pad,Temple,Alt B — Temple,105.0,517.5,heat_flood,clean,31.064079597114453,-97.37558187241403
+DC-ELM-041,230kV Interconnect Point Variant 41,power,Abilene,Alt B — Temple,234.5,0.0,grid_heat,incomplete,32.500386079191045,-99.7106887294356
+DC-ELM-042,Water Supply Option — Municipal Variant 42,water,Abilene,No Action,0.0,697.2,drought,clean,32.49448081601788,-99.68508638713452
+DC-ELM-043,Wetland / Playa Buffer Variant 43,environment,Abilene,Proposed Action,0.0,0.0,flood_drought,clean,32.40520371452954,-99.78473334576857
+DC-ELM-044,230kV Interconnect Point Variant 44,power,Abilene,Proposed Action,181.4,0.0,grid_heat,clean,32.465187522232625,-99.69581865050999
+DC-ELM-045,Primary Campus Pad B Variant 45,building_pad,Abilene,Alt B — Temple,185.1,289.5,heat_grid,contradictory,32.53948134269851,-99.66935691111313
+DC-ELM-046,Wetland / Playa Buffer Variant 46,environment,Abilene,Proposed Action,0.0,0.0,flood_drought,incomplete,32.46574334002281,-99.74250703698131
+DC-ELM-047,Alt Site — Temple Corridor Variant 47,building_pad,Temple,Alt B — Temple,95.6,748.0,heat_flood,clean,31.120910821765634,-97.26593622416247
+DC-ELM-048,Alt Site — Midland Spur Variant 48,building_pad,Midland,Alt A — Midland,145.4,117.1,heat_drought,incomplete,31.944724740148843,-102.04668902443228
+DC-ELM-049,Water Supply Option — Aquifer Variant 49,water,Abilene,No Action,0.0,513.8,drought,clean,32.42223437344281,-99.74725353635958
+DC-ELM-050,Community Receptor — Neighborhood Variant 50,receptor,Abilene,Proposed Action,0.0,0.0,heat,incomplete,32.46044417289163,-99.80640753661343
+DC-ELM-051,Alt Site — Temple Corridor Variant 51,building_pad,Temple,Alt B — Temple,206.7,894.3,heat_flood,clean,31.059673631612686,-97.36223050973973
+DC-ELM-052,Fiber Hut East Variant 52,telecom,Abilene,Proposed Action,0.0,0.0,heat,clean,32.40809786808587,-99.73392401049043
+DC-ELM-053,230kV Interconnect Point Variant 53,power,Abilene,Alt B — Temple,126.8,0.0,grid_heat,clean,32.561948175633844,-99.65813046900506
+DC-ELM-054,Wetland / Playa Buffer Variant 54,environment,Abilene,Proposed Action,0.0,0.0,flood_drought,clean,32.42462562570119,-99.75333330346064
+DC-ELM-055,Community Receptor — Neighborhood Variant 55,receptor,Abilene,Proposed Action,0.0,0.0,heat,incomplete,32.459801138495216,-99.74761244225989

@@ -10,9 +10,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TRACKS = {
-    "ironwood": "ironwood-bank",
-    "strata": "strata-holdings",
-    "northwood": "northwood-capital",
+    "colorado": "colorado-river-reservoirs",
+    "kerrville": "kerrville-flood",
+    "datacenter": "texas-datacenter-eis",
 }
 
 
@@ -22,13 +22,13 @@ def main() -> int:
         "track",
         nargs="?",
         choices=list(TRACKS.keys()),
-        help="ironwood | strata | northwood",
+        help="colorado | kerrville | datacenter",
     )
     args = parser.parse_args()
     if not args.track:
         print("Tracks:")
         for k, folder in TRACKS.items():
-            print(f"  {k:10} -> clients/{folder}")
+            print(f"  {k:12} -> clients/{folder}")
         env_path = ROOT / ".env"
         current = os.environ.get("CLIENT_TRACK", "")
         if env_path.is_file():
@@ -41,7 +41,7 @@ def main() -> int:
     folder = TRACKS[args.track]
     target = ROOT / "clients" / folder
     if not target.is_dir():
-        print(f"error: missing {target}", file=sys.stderr)
+        print(f"error: missing {target} — run scripts/seed_all_clients.py first", file=sys.stderr)
         return 1
 
     env_path = ROOT / ".env"

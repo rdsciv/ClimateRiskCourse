@@ -39,9 +39,9 @@ c(
 
     | Track | Folder | Decision language |
     |-------|--------|-------------------|
-    | Ironwood Bank | `clients/ironwood-bank` | Credit pricing & capital |
-    | Strata Holdings | `clients/strata-holdings` | Acquisition / exit pricing |
-    | Northwood Capital | `clients/northwood-capital` | Supply contingency |
+    | Redrock Basin Authority | `clients/colorado-river-reservoirs` | Reservoir releases & allocations |
+    | City of Kerrville | `clients/kerrville-flood` | Flood mitigation priority |
+    | Horizon Grid LLC | `clients/texas-datacenter-eis` | Data center EIS alternatives |
 
     Pick one track and stay with it. Plenary exercises are shared; data and financial questions differ.
 
@@ -101,7 +101,7 @@ c(
     ```bash
     python3 --version
     python3 scripts/seed_all_clients.py
-    python3 scripts/set_track.py ironwood
+    python3 scripts/set_track.py colorado
     python3 scripts/course_lint.py
     ```
 
@@ -141,17 +141,17 @@ c(
     """
     # Choose your client track
 
-    ## Ironwood Bank
+    ## Redrock Basin Authority (Colorado River reservoirs)
 
-    Commercial credit book with messy questionnaires. Best if you work in **banking, credit risk, or financial regulation**.
+    Multi-reservoir operations under drought and heat. Best if you work in **water resources, utilities, or river-basin management**.
 
-    ## Strata Holdings
+    ## City of Kerrville (flood risk)
 
-    Real estate and infrastructure assets. Best if you work in **funds, RE, infra, or insurance-linked property risk**.
+    Municipal flood corridor and critical facilities. Best if you work in **local government, emergency management, or floodplain planning**.
 
-    ## Northwood Capital
+    ## Horizon Grid LLC (Texas data center EIS)
 
-    Owned plants plus tier-1/2 suppliers across continents. Best if you work in **corporate climate, supply chain, or operations risk**.
+    Hyperscale campus environmental impact statement. Best if you work in **EIS/NEPA, energy, or data-center siting**.
 
     ## Switching later
 
@@ -168,7 +168,7 @@ c(
 
     1. Read `clients/README.md` and each track’s `briefing/engagement.md`.
     2. Pick one track.
-    3. Run `python3 scripts/set_track.py <ironwood|strata|northwood>`.
+    3. Run `python3 scripts/set_track.py <colorado|kerrville|datacenter>`.
     4. Write three sentences in `clients/<track>/outputs/week-0/track_choice.md`:
        - Why this track
        - The decision language you will use
@@ -215,7 +215,7 @@ c(
 
     ## Compartments
 
-    Treat `clients/<track>/` as the engagement room. Do not mix Ironwood numbers into a Strata memo.
+    Treat `clients/<track>/` as the engagement room. Do not mix Colorado River node numbers into a Kerrville flood memo.
 
     ## Plan mode
 
@@ -271,24 +271,24 @@ c(
 
     Encode **audience + decision language + paths + guardrails**. Keep it short enough that it always loads.
 
-    ## Ironwood sketch
+    ## Colorado sketch
 
     ```markdown
-    # Ironwood Bank (SIMULATED)
+    # Redrock Basin Authority (SIMULATED)
 
-    Commercial credit climate risk engagement.
-    Decision language: pricing, capital, limits.
-    Audiences: CRO, board, parent risk, regulator dry-run.
+    Colorado River–style reservoir operations climate risk engagement.
+    Decision language: releases, allocations, compact-sensitive deliveries.
+    Audiences: GM, boards, compact counsel, hydropower desk.
 
-    Data: db/portfolio.sqlite, portfolio/loan_book.csv, documents/
+    Data: db/portfolio.sqlite, portfolio/reservoir_nodes.csv, documents/
     Outputs: outputs/week-N/
     All data simulated. Computed figures from Python; judgments labeled.
-    Out of scope: full IFRS9 model rebuild; sovereign book; transition-only policy lobbying memo.
+    Out of scope: rewriting interstate compact law; real Reclamation account reconciliation.
     ```
 
-    ## Strata / Northwood
+    ## Kerrville / Datacenter
 
-    Swap decision language to exit pricing or contingency; keep the same structure.
+    Swap decision language to flood mitigation or EIS alternatives; keep the same structure.
 
     ## Check
 
@@ -329,13 +329,13 @@ c(
     import sqlite3
     from pathlib import Path
 
-    db = Path("clients/ironwood-bank/db/portfolio.sqlite")  # or active track
+    db = Path("clients/colorado-river-reservoirs/db/portfolio.sqlite")  # or active track
     conn = sqlite3.connect(db)
     print(conn.execute("SELECT COUNT(*) FROM counterparties").fetchone())
     # GROUP BY sector / data_quality; SUM(outstanding_usd)
     ```
 
-    Adapt table names: Ironwood `counterparties`/`exposures`, Strata `assets`, Northwood `facilities`.
+    Adapt table names: Colorado `facilities`/`allocations`, Kerrville `facilities`/`exposures`, Datacenter `facilities`/`impact_topics`.
 
     ## Tip
 
@@ -375,14 +375,14 @@ c(
 
     Prompt Grok: “Extract only facts present in these files. Cite paths. Separate facts from inferences.”
 
-    ## Example findings (Ironwood)
+    ## Example findings (Colorado)
 
-    - CRO wants pricing names + ECB-aware trail (`stakeholder_messages.md`)
-    - Dry-run week of 2026-10-13 (`regulatory_deadlines.md`)
-    - IW-CP-014 insurance vs facility contradiction (`credit_file_sample_IW-CP-014.md`)
+    - GM wants dry-year break points before spring ops call (`stakeholder_messages.md`)
+    - Compact counsel: no invented agency figures
+    - Hydropower desk: couple storage to generation shortfall
 
-    Strata: IC/LP pricing ask + insurance program sublimits.  
-    Northwood: COO contingency question + tier-2 visibility gap.
+    Kerrville: critical facilities + budget-cycle mitigation list.  
+    Datacenter: alternatives matrix + water/power for EIS counsel.
     """,
 )
 
@@ -815,9 +815,9 @@ c(
 
     ## Track hints
 
-    - Ironwood: flood CRE + TR-02 credit tightening
-    - Strata: coastal assets + TR-01 insurance + TR-04 repricing
-    - Northwood: supplier flood/heat + TR-03 input squeeze
+    - Colorado: drought/heat on storage + allocation cut transmission
+    - Kerrville: flash flood corridor + insurance / access transmission
+    - Datacenter: heat-drought-grid + water supply contingency across EIS alternatives
 
     ## Acceptance criteria
 
@@ -994,9 +994,9 @@ c(
 
     | Track | Language |
     |-------|----------|
-    | Ironwood | bps, limits, capital conversation, maturity walls |
-    | Strata | exit cap bps, hold/exit, insurance dependency |
-    | Northwood | contingency $ ROI, dual-source, inventory days |
+    | Colorado | release cuts, allocation priority, hydropower shortfall, compact risk |
+    | Kerrville | mitigation $ ROI, buyout vs defend, critical-facility uptime |
+    | Datacenter | EIS significance, water MGY risk, grid interconnect, receptor impact |
 
     Use anchors; label judgment bands.
 
@@ -1012,7 +1012,7 @@ c(
     """
     # Solution — Decision language
 
-    Example Ironwood: “For the $X drawn in S2+ under BES-01 with maturities ≤2029, open a pricing review in the +Y–Z bps band (**judgment**, TR-02 + anchors).”
+    Example Kerrville: “For $X replacement in S2+ under flash-flood BES-01, fund elevation/access projects before buyouts on the residual list (**judgment**, anchors + local precedent).”
     """,
 )
 
@@ -1302,9 +1302,9 @@ def main() -> None:
 
                             ## Track deltas
 
-                            - **Ironwood:** join on counterparties / facilities / exposures; $. = outstanding/drawn.
-                            - **Strata:** join on assets / valuations; $. = nav_usd.
-                            - **Northwood:** join on facilities / suppliers; $. = revenue_at_risk_usd.
+                            - **Colorado:** join on facilities / allocations; $. proxy = storage_kaf or allocation kaf.
+                            - **Kerrville:** join on facilities / exposures; $. = replacement_usd.
+                            - **Datacenter:** join on facilities / impact_topics; $. proxy = mw_nameplate / water_mgy.
 
                             ## Done when
 

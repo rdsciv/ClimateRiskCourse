@@ -11,8 +11,7 @@ Tier-1 outage or port/rail disruption → input price spike and allocation → r
 
 Post-disaster automotive and electronics supply interruptions; port closures after major storms.
 
-## Application (Northwood primary)
+## Application (Colorado / Datacenter primary)
 
-- Single-source tier-1 at ≥ S2: treat as critical path break
-- Multi-source with alt_qualified=0: partial break (judgment 40–70% of RAR)
-- Distribution hubs at S2: delay factor on all downstream product lines
+- Colorado: single-source delivery or transfer gate at ≥ S2 → allocation shortfall path
+- Datacenter: single water option or interconnect at ≥ S2 → EIS alternative stress; partial break if dual option exists (judgment 40–70%)

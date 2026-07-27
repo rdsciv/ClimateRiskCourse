@@ -2,7 +2,7 @@
 
 **Six weeks to a climate risk assessment** — a hands-on Grok Build course. You operate as a consultant for one of three simulated clients, shipping a weekly deliverable that becomes the input to the next, through a board/IC presentation and a regulatory-style record in week six.
 
-Inspired by the Kith Climate risk curriculum structure. **All clients and portfolio data are simulated.** This is an educational fork for Grok Build, not an official Kith product.
+**All clients and portfolio data are simulated.** Built as a hands-on Grok Build training course for climate risk assessment work.
 
 ## What you will build
 
@@ -20,9 +20,9 @@ Inspired by the Kith Climate risk curriculum structure. **All clients and portfo
 
 | Key | Client | Best if you work in… |
 |-----|--------|----------------------|
-| `ironwood` | Commercial bank credit book | Banking, credit, financial risk |
-| `strata` | RE + infrastructure fund | Funds, property, insurance |
-| `northwood` | Industrial + supply chain | Corporate climate, ops, procurement |
+| `colorado` | Redrock Basin Authority — Colorado River reservoirs | Water resources, utilities, basin ops |
+| `kerrville` | City of Kerrville — flood risk (TX) | Local government, emergency mgmt, floodplain |
+| `datacenter` | Horizon Grid — Texas data center EIS | EIS/NEPA, energy, data-center siting |
 
 Same method. Different data and decision language.
 
@@ -40,7 +40,7 @@ pip install pandas httpx pydantic python-dotenv         # optional extras
 python3 scripts/seed_all_clients.py
 
 # 4. Choose your track
-python3 scripts/set_track.py ironwood   # or strata | northwood
+python3 scripts/set_track.py colorado   # or kerrville | datacenter
 
 # 5. Validate structure
 python3 scripts/course_lint.py
@@ -73,7 +73,7 @@ Copy `.env.example` to `.env` if you want to pin `CLIENT_TRACK` by hand.
 
 ```text
 firm/              methodology, scenario cards, anchors, sample hazard, QA
-clients/           ironwood-bank | strata-holdings | northwood-capital
+clients/           colorado-river-reservoirs | kerrville-flood | texas-datacenter-eis
 exercises/         00 orientation → 06 delivery
 .grok/skills/      framing, geocode, hazard, scenarios, synthesis, disclosure
 scripts/           seed, lint, track, export
@@ -86,7 +86,7 @@ AGENTS.md          firm-level Grok brief
 | Command | Purpose |
 |---------|---------|
 | `python3 scripts/seed_all_clients.py` | Build all SQLite books + docs |
-| `python3 scripts/set_track.py <track>` | Activate ironwood \| strata \| northwood |
+| `python3 scripts/set_track.py <track>` | Activate colorado \| kerrville \| datacenter |
 | `python3 scripts/course_lint.py` | Structure checks |
 | `python3 scripts/list_exercises.py` | Print syllabus |
 | `python3 scripts/export_deliverable.py FILE.md` | Markdown → HTML |
@@ -128,4 +128,4 @@ python3 scripts/build_docs_site.py   # regenerate reading pages locally
 
 ## License / attribution
 
-Training materials and simulated data are provided for education. Curriculum structure inspired by publicly described Kith Climate risk programming. Not affiliated with or endorsed by Kith Climate unless separately stated.
+Training materials and simulated data are provided for education. Client names, portfolios, and documents are fictional.

@@ -3,15 +3,15 @@
 
 from __future__ import annotations
 
-from seed_ironwood import seed as seed_ironwood
-from seed_northwood import seed as seed_northwood
-from seed_strata import seed as seed_strata
+from seed_colorado import seed as seed_colorado
+from seed_datacenter import seed as seed_datacenter
+from seed_kerrville import seed as seed_kerrville
 
 
 def main() -> None:
-    seed_ironwood()
-    seed_strata()
-    seed_northwood()
+    seed_colorado()
+    seed_kerrville()
+    seed_datacenter()
     print("All clients seeded.")
 
 

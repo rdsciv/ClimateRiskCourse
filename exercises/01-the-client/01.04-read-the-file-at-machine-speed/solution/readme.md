@@ -4,11 +4,11 @@
 
 Prompt Grok: “Extract only facts present in these files. Cite paths. Separate facts from inferences.”
 
-## Example findings (Ironwood)
+## Example findings (Colorado)
 
-- CRO wants pricing names + ECB-aware trail (`stakeholder_messages.md`)
-- Dry-run week of 2026-10-13 (`regulatory_deadlines.md`)
-- IW-CP-014 insurance vs facility contradiction (`credit_file_sample_IW-CP-014.md`)
+- GM wants dry-year break points before spring ops call (`stakeholder_messages.md`)
+- Compact counsel: no invented agency figures
+- Hydropower desk: couple storage to generation shortfall
 
-Strata: IC/LP pricing ask + insurance program sublimits.  
-Northwood: COO contingency question + tier-2 visibility gap.
+Kerrville: critical facilities + budget-cycle mitigation list.  
+Datacenter: alternatives matrix + water/power for EIS counsel.

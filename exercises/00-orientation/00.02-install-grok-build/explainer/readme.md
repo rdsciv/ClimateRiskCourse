@@ -18,7 +18,7 @@ From the repo root:
 ```bash
 python3 --version
 python3 scripts/seed_all_clients.py
-python3 scripts/set_track.py ironwood
+python3 scripts/set_track.py colorado
 python3 scripts/course_lint.py
 ```
 

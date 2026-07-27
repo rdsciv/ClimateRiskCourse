@@ -28,50 +28,50 @@
   <main class="wrap">
     <div class="page-hero">
       <h1>Three client tracks</h1>
-      <p>Pick the world closest to your work. Stay with one track through the capstone.</p>
+      <p>Pick the world closest to your work. Stay with one track through the capstone. All books are simulated training data.</p>
     </div>
 
-    <article id="ironwood" class="card" style="margin-bottom:1rem">
-      <div class="tag">ironwood</div>
-      <h2 style="margin:0 0 0.5rem">Ironwood Bank</h2>
-      <p>U.S. commercial bank, subsidiary of a Frankfurt-based group. Tiered data quality, messy questionnaires, contradictory disclosures.</p>
+    <article id="colorado" class="card" style="margin-bottom:1rem">
+      <div class="tag">colorado</div>
+      <h2 style="margin:0 0 0.5rem">Redrock Basin Authority</h2>
+      <p>Colorado River–style multi-reservoir operations under drought and heat. Storage, diversions, deliveries, hydropower, and environmental pulse nodes.</p>
       <ul>
-        <li><strong>Scale:</strong> ~100 counterparties (training book)</li>
-        <li><strong>Decision language:</strong> credit pricing, capital, limits</li>
-        <li><strong>Audiences:</strong> CRO, board, parent risk, regulator dry-run</li>
-        <li><strong>Folder:</strong> <code>clients/ironwood-bank/</code></li>
+        <li><strong>Scale:</strong> ~48 system nodes</li>
+        <li><strong>Decision language:</strong> releases, allocations, compact-sensitive deliveries, hydropower contingency</li>
+        <li><strong>Audiences:</strong> GM, municipal/ag boards, compact counsel</li>
+        <li><strong>Folder:</strong> <code>clients/colorado-river-reservoirs/</code></li>
       </ul>
     </article>
 
-    <article id="strata" class="card" style="margin-bottom:1rem">
-      <div class="tag">strata</div>
-      <h2 style="margin:0 0 0.5rem">Strata Holdings</h2>
-      <p>Diversified real estate and infrastructure fund. Site-level physical risk mapped to acquisition and exit pricing.</p>
+    <article id="kerrville" class="card" style="margin-bottom:1rem">
+      <div class="tag">kerrville</div>
+      <h2 style="margin:0 0 0.5rem">City of Kerrville — flood risk</h2>
+      <p>Municipal flood resilience along the Guadalupe / Hill Country corridor (Texas). Critical facilities, neighborhoods, and access infrastructure.</p>
       <ul>
-        <li><strong>Scale:</strong> ~45 assets</li>
-        <li><strong>Decision language:</strong> acquisition / hold / exit, insurance transmission</li>
-        <li><strong>Audiences:</strong> IC, LPs, risk</li>
-        <li><strong>Folder:</strong> <code>clients/strata-holdings/</code></li>
+        <li><strong>Scale:</strong> ~80 facilities &amp; parcels (simulated)</li>
+        <li><strong>Decision language:</strong> mitigation priority, access, buyout vs defend</li>
+        <li><strong>Audiences:</strong> city manager, emergency management, finance/council</li>
+        <li><strong>Folder:</strong> <code>clients/kerrville-flood/</code></li>
       </ul>
     </article>
 
-    <article id="northwood" class="card" style="margin-bottom:2rem">
-      <div class="tag">northwood</div>
-      <h2 style="margin:0 0 0.5rem">Northwood Capital</h2>
-      <p>Mid-cap industrial with climate-exposed supply chain spanning multiple continents.</p>
+    <article id="datacenter" class="card" style="margin-bottom:2rem">
+      <div class="tag">datacenter</div>
+      <h2 style="margin:0 0 0.5rem">Horizon Grid LLC — Texas data center EIS</h2>
+      <p>Environmental impact statement support for a fictional Texas hyperscale campus: pads, water options, power, transmission, and community receptors.</p>
       <ul>
-        <li><strong>Scale:</strong> ~60 facilities / supplier nodes</li>
-        <li><strong>Decision language:</strong> contingency, dual-source, input disruption</li>
-        <li><strong>Audiences:</strong> COO, procurement, exec ops</li>
-        <li><strong>Folder:</strong> <code>clients/northwood-capital/</code></li>
+        <li><strong>Scale:</strong> ~55 EIS elements across alternatives</li>
+        <li><strong>Decision language:</strong> alternatives analysis, water, grid, receptors, mitigation</li>
+        <li><strong>Audiences:</strong> project board, environmental counsel, community liaison</li>
+        <li><strong>Folder:</strong> <code>clients/texas-datacenter-eis/</code></li>
       </ul>
     </article>
 
     <div class="prose">
       <h2>Activate a track</h2>
-      <pre><code>python3 scripts/set_track.py ironwood   # or strata | northwood
+      <pre><code>python3 scripts/set_track.py colorado   # or kerrville | datacenter
 python3 scripts/seed_all_clients.py     # once after clone</code></pre>
-      <p>All client data is <strong>simulated</strong> and labeled as such in briefings and meta tables.</p>
+      <p>All data is <strong>simulated</strong>. Real place names (e.g. Kerrville) anchor geography; figures and asset books are training constructs.</p>
     </div>
   </main>
 

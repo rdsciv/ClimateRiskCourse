@@ -32,7 +32,7 @@
       <p>Firm-level Grok brief for every session</p>
     </div>
     <div class="prose">
-<p>You are working inside a <strong>training consulting firm</strong> that delivers climate risk assessments with <strong>Grok Build</strong>. All clients are <strong>simulated</strong>. Never treat portfolio rows, credit files, or stakeholder messages as real institutions or real people.</p>
+<p>You are working inside a <strong>training consulting firm</strong> that delivers climate risk assessments with <strong>Grok Build</strong>. All clients are <strong>simulated</strong>. Never treat portfolio rows or stakeholder messages as official agency or company filings.</p>
 <h2 id="mission">Mission</h2>
 <p>Help the student complete a six-week engagement for <strong>one</strong> of three clients:</p>
 <div class="table-wrap"><table><thead><tr>
@@ -41,22 +41,23 @@
 <th>Decision language</th>
 </tr></thead><tbody>
 <tr>
-<td><code>clients/ironwood-bank</code></td>
-<td>Ironwood Bank</td>
-<td>Credit pricing, capital, board + regulator</td>
+<td><code>clients/colorado-river-reservoirs</code></td>
+<td>Redrock Basin Authority</td>
+<td>Reservoir releases, allocations, compact-sensitive deliveries, hydropower contingency</td>
 </tr>
 <tr>
-<td><code>clients/strata-holdings</code></td>
-<td>Strata Holdings</td>
-<td>Acquisition / exit pricing for RE &amp; infrastructure</td>
+<td><code>clients/kerrville-flood</code></td>
+<td>City of Kerrville</td>
+<td>Flood mitigation priority, critical facilities, access, buyout vs defend</td>
 </tr>
 <tr>
-<td><code>clients/northwood-capital</code></td>
-<td>Northwood Capital</td>
-<td>Supply-chain contingency, input disruption</td>
+<td><code>clients/texas-datacenter-eis</code></td>
+<td>Horizon Grid LLC</td>
+<td>EIS alternatives, water, power/grid, receptors, mitigation</td>
 </tr>
 </tbody></table></div>
 <p>Active track: read <code>CLIENT_TRACK</code> from <code>.env</code>, or <code>clients/active</code> symlink, or ask the student.</p>
+<p>Keys: <code>colorado</code> | <code>kerrville</code> | <code>datacenter</code></p>
 <h2 id="epistemic-rules-non-negotiable">Epistemic rules (non-negotiable)</h2>
 <ol>
 <li><strong>Computed figures</strong> come from Python scripts you write and save next to the output. Re-running the script must reproduce the number.</li>
@@ -71,7 +72,7 @@
 <li><code>clients/&lt;track&gt;/</code> — briefing, portfolio, documents, SQLite DB, outputs</li>
 <li><code>exercises/</code> — weekly curriculum (explainer / problem / solution)</li>
 <li><code>.grok/skills/</code> — repeatable procedures for each phase of work</li>
-<li><code>templates/</code> — board and regulatory shells</li>
+<li><code>templates/</code> — board and record shells</li>
 </ul>
 <p>Write student artifacts to:</p>
 <pre><code>clients/&lt;track&gt;/outputs/week-N/</code></pre>
@@ -84,11 +85,11 @@
 <li>Prefer <strong>plan mode</strong> for multi-step analysis; implement after the student agrees.</li>
 <li>Prefer small, re-runnable Python over one-shot chat answers for numbers.</li>
 <li>Follow <code>firm/deliverable-standards/</code> for structure and tone.</li>
-<li>Use skills under <code>.grok/skills/</code> when the task matches (framing, geocode, hazard, scenarios, synthesis, disclosure).</li>
+<li>Use skills under <code>.grok/skills/</code> when the task matches.</li>
 <li>Keep client data compartmentalized: do not mix tracks in one analysis without an explicit multi-track request.</li>
 </ul>
 <h2 id="course-context">Course context</h2>
-<p>This is a learning repo. Problems live under <code>exercises/</code>. When the student is solving a <strong>problem</strong>, do not open <code>solution/</code> unless they ask for a hint or the answer. When they are reading an <strong>explainer</strong>, teach the pattern; do not skip ahead to later weeks&#x27; deliverables unless needed for context.</p>
+<p>This is a learning repo. Problems live under <code>exercises/</code>. When the student is solving a <strong>problem</strong>, do not open <code>solution/</code> unless they ask for a hint or the answer.</p>
     </div>
     <p style="margin:2rem 0 3rem;color:var(--muted)">
       <a href="../reading.html">← Reading room</a> · <a href="../index.html">Home</a>

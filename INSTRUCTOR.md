@@ -4,7 +4,7 @@
 
 Teach the method once (computed vs judged, resolution ladder, standard vs bespoke, dual audience). Break out by track for demos.
 
-Suggested Friday demo rotation: one Ironwood, one Strata, one Northwood when cohort size allows.
+Suggested Friday demo rotation: one Colorado River reservoir case, one Kerrville flood case, one Texas data center EIS case when cohort size allows.
 
 ## Live build tips
 
@@ -14,9 +14,9 @@ Suggested Friday demo rotation: one Ironwood, one Strata, one Northwood when coh
 
 ## Common student failure modes
 
-1. Hazard scores without $ translation
+1. Hazard scores without decision translation
 2. Summing scenario losses
-3. Inventing “FEMA” numbers without a pull
+3. Inventing agency numbers without a pull
 4. Deep-diving every name (resolution plan missing)
 5. Board deck that is a methodology essay
 

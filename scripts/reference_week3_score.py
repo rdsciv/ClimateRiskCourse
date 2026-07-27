@@ -4,56 +4,35 @@
 from __future__ import annotations
 
 import csv
+import math
 import sqlite3
-from pathlib import Path
 
 from lib_common import ROOT, active_track, append_audit, client_dir
 
-# City → approximate sample county row (training shortcut)
 CITY_TO_COUNTY = {
-    "Houston": "Harris",
-    "Miami": "Miami-Dade",
-    "New Orleans": "Orleans",
-    "Tampa": "Hillsborough",
-    "Charleston": "Charleston",
-    "Norfolk": "Norfolk city",
-    "New York": "New York",
-    "Boston": "Suffolk",
-    "Chicago": "Cook",
-    "Dallas": "Dallas",
-    "Phoenix": "Maricopa",
-    "Denver": "Denver",
-    "Sacramento": "Sacramento",
-    "Los Angeles": "Los Angeles",
-    "Seattle": "King",
-    "Atlanta": "Fulton",
-    "Memphis": "Shelby",
-    "Kansas City": "Jackson",
-    "Minneapolis": "Hennepin",
-    "Portland": "Multnomah",
-    "Key West": "Monroe",
-    "Ashburn": "Loudoun",
-    "Austin": "Travis",
-    "Newark": "Essex",
-    "Pittsburgh": "Allegheny",
-    "Baton Rouge": "East Baton Rouge",
-    "Reno": "Washoe",
-    "Monterrey": "Monterrey-sim",
-    "Guadalajara": "Guadalajara-sim",
-    "Shenzhen": "Shenzhen-sim",
-    "Baotou": "Baotou-sim",
-    "Rotterdam": "Rotterdam-sim",
-    "Stuttgart": "Stuttgart-sim",
+    "Kerrville": "Kerr",
+    "Abilene": "Taylor",
+    "Midland": "Midland",
+    "Temple": "Bell",
+    "Taylor County": "Taylor",
+    # Colorado system nodes use state-level sample rows
+    "AZ": "Mohave-sim",
+    "UT": "Kane-sim",
+    "NV": "Clark-sim",
+    "CA": "Imperial-sim",
+    "CO": "Eagle-sim",
 }
 
 
 def scores_from_bucket(bucket: str | None) -> dict[str, float]:
-    """Fallback when city is not in the sample grid (documented gap path)."""
     b = (bucket or "").lower()
-    flood = 7.0 if "flood" in b or "slr" in b or "coastal" in b else 2.0
-    wildfire = 7.0 if "wildfire" in b else 1.0
-    heat = 7.5 if "heat" in b or "drought" in b or "grid" in b else 3.0
-    hurricane = 8.0 if "hurricane" in b or "typhoon" in b else 1.0
+    flood = 7.5 if "flood" in b or "flash" in b else 2.0
+    wildfire = 5.0 if "wildfire" in b else 1.5
+    heat = 8.0 if "heat" in b or "drought" in b or "grid" in b else 3.0
+    hurricane = 1.0
+    drought = 8.5 if "drought" in b else 3.0
+    # fold drought into heat channel for sample grid compatibility
+    heat = max(heat, drought * 0.9)
     return {
         "flood_score": flood,
         "wildfire_score": wildfire,
@@ -75,70 +54,59 @@ def entities(track: str) -> list[dict]:
     db = client_dir(track) / "db" / "portfolio.sqlite"
     conn = sqlite3.connect(db)
     conn.row_factory = sqlite3.Row
-    if track == "ironwood":
-        rows = conn.execute(
-            "SELECT id, city, state, lat, lon, hazard_bucket FROM facilities"
-        ).fetchall()
-        money = {
-            r["counterparty_id"]: r["outstanding_usd"]
-            for r in conn.execute(
-                "SELECT id AS counterparty_id, outstanding_usd FROM counterparties"
+    out: list[dict] = []
+    if track == "colorado":
+        for r in conn.execute(
+            "SELECT id, name, state, lat, lon, hazard_bucket, storage_kaf, criticality FROM facilities"
+        ):
+            dollars = float(r["storage_kaf"] or 0) * 1_000_000  # synthetic $ proxy for ranking
+            if r["criticality"] == "critical":
+                dollars *= 1.5
+            out.append(
+                {
+                    "entity_id": r["id"],
+                    "city": r["state"],
+                    "lat": r["lat"],
+                    "lon": r["lon"],
+                    "dollars": dollars,
+                    "hazard_bucket": r["hazard_bucket"],
+                }
             )
-        }
-        fac_cp = {
-            r["id"]: r["counterparty_id"]
-            for r in conn.execute("SELECT id, counterparty_id FROM facilities")
-        }
-        out = []
-        for r in rows:
+    elif track == "kerrville":
+        for r in conn.execute(
+            """SELECT f.id, f.city, f.lat, f.lon, f.hazard_bucket, e.replacement_usd
+               FROM facilities f JOIN exposures e ON e.facility_id=f.id"""
+        ):
             out.append(
                 {
                     "entity_id": r["id"],
                     "city": r["city"],
                     "lat": r["lat"],
                     "lon": r["lon"],
-                    "dollars": money.get(fac_cp[r["id"]], 0),
+                    "dollars": float(r["replacement_usd"]),
                     "hazard_bucket": r["hazard_bucket"],
                 }
             )
-        conn.close()
-        return out
-    if track == "strata":
-        rows = conn.execute(
-            "SELECT id, city, lat, lon, nav_usd, hazard_bucket FROM assets"
-        ).fetchall()
-        conn.close()
-        return [
-            {
-                "entity_id": r["id"],
-                "city": r["city"],
-                "lat": r["lat"],
-                "lon": r["lon"],
-                "dollars": r["nav_usd"],
-                "hazard_bucket": r["hazard_bucket"],
-            }
-            for r in rows
-        ]
-    rows = conn.execute(
-        "SELECT id, city, lat, lon, revenue_at_risk_usd, hazard_bucket FROM facilities"
-    ).fetchall()
+    else:
+        for r in conn.execute(
+            "SELECT id, city, lat, lon, hazard_bucket, mw_nameplate, water_mgy FROM facilities"
+        ):
+            dollars = float(r["mw_nameplate"] or 0) * 500_000 + float(r["water_mgy"] or 0) * 10_000
+            out.append(
+                {
+                    "entity_id": r["id"],
+                    "city": r["city"],
+                    "lat": r["lat"],
+                    "lon": r["lon"],
+                    "dollars": max(dollars, 100_000),
+                    "hazard_bucket": r["hazard_bucket"],
+                }
+            )
     conn.close()
-    return [
-        {
-            "entity_id": r["id"],
-            "city": r["city"],
-            "lat": r["lat"],
-            "lon": r["lon"],
-            "dollars": r["revenue_at_risk_usd"],
-            "hazard_bucket": r["hazard_bucket"],
-        }
-        for r in rows
-    ]
+    return out
 
 
 def main() -> None:
-    import math
-
     track = active_track()
     hazard = load_hazard()
     rows_out = []
@@ -148,14 +116,14 @@ def main() -> None:
         h = hazard.get(county or "", {})
         score_source = "firm_sample_grid"
         if not h:
-            # Training fallback: derive coarse scores from seeded hazard_bucket.
-            # Document as gap-path so students practice labeling thin data.
             unmatched += 1
             fb = scores_from_bucket(e.get("hazard_bucket"))
-            flood = fb["flood_score"]
-            wildfire = fb["wildfire_score"]
-            heat = fb["heat_score"]
-            hurricane = fb["hurricane_score"]
+            flood, wildfire, heat, hurricane = (
+                fb["flood_score"],
+                fb["wildfire_score"],
+                fb["heat_score"],
+                fb["hurricane_score"],
+            )
             score_source = "hazard_bucket_fallback"
         else:
             flood = float(h["flood_score"])

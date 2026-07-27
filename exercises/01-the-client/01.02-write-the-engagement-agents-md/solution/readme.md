@@ -4,24 +4,24 @@
 
 Encode **audience + decision language + paths + guardrails**. Keep it short enough that it always loads.
 
-## Ironwood sketch
+## Colorado sketch
 
 ```markdown
-# Ironwood Bank (SIMULATED)
+# Redrock Basin Authority (SIMULATED)
 
-Commercial credit climate risk engagement.
-Decision language: pricing, capital, limits.
-Audiences: CRO, board, parent risk, regulator dry-run.
+Colorado River–style reservoir operations climate risk engagement.
+Decision language: releases, allocations, compact-sensitive deliveries.
+Audiences: GM, boards, compact counsel, hydropower desk.
 
-Data: db/portfolio.sqlite, portfolio/loan_book.csv, documents/
+Data: db/portfolio.sqlite, portfolio/reservoir_nodes.csv, documents/
 Outputs: outputs/week-N/
 All data simulated. Computed figures from Python; judgments labeled.
-Out of scope: full IFRS9 model rebuild; sovereign book; transition-only policy lobbying memo.
+Out of scope: rewriting interstate compact law; real Reclamation account reconciliation.
 ```
 
-## Strata / Northwood
+## Kerrville / Datacenter
 
-Swap decision language to exit pricing or contingency; keep the same structure.
+Swap decision language to flood mitigation or EIS alternatives; keep the same structure.
 
 ## Check
 

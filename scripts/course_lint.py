@@ -90,9 +90,9 @@ def main() -> int:
         "AGENTS.md",
         "firm/methodology.md",
         "clients/README.md",
-        "clients/ironwood-bank/briefing/engagement.md",
-        "clients/strata-holdings/briefing/engagement.md",
-        "clients/northwood-capital/briefing/engagement.md",
+        "clients/colorado-river-reservoirs/briefing/engagement.md",
+        "clients/kerrville-flood/briefing/engagement.md",
+        "clients/texas-datacenter-eis/briefing/engagement.md",
     ]
     for rel in required:
         if not (ROOT / rel).is_file():

@@ -1,16 +1,16 @@
 # Choose your client track
 
-## Ironwood Bank
+## Redrock Basin Authority (Colorado River reservoirs)
 
-Commercial credit book with messy questionnaires. Best if you work in **banking, credit risk, or financial regulation**.
+Multi-reservoir operations under drought and heat. Best if you work in **water resources, utilities, or river-basin management**.
 
-## Strata Holdings
+## City of Kerrville (flood risk)
 
-Real estate and infrastructure assets. Best if you work in **funds, RE, infra, or insurance-linked property risk**.
+Municipal flood corridor and critical facilities. Best if you work in **local government, emergency management, or floodplain planning**.
 
-## Northwood Capital
+## Horizon Grid LLC (Texas data center EIS)
 
-Owned plants plus tier-1/2 suppliers across continents. Best if you work in **corporate climate, supply chain, or operations risk**.
+Hyperscale campus environmental impact statement. Best if you work in **EIS/NEPA, energy, or data-center siting**.
 
 ## Switching later
 

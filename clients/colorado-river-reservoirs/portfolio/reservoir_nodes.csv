@@ -1,0 +1,49 @@
+facility_id,name,node_type,state,storage_kaf,criticality,hazard_bucket,data_quality,lat,lon
+CR-NOD-001,Lake Redrock Main Pool,storage,AZ,101.91,medium,drought_heat,clean,36.05,-114.12
+CR-NOD-002,Canyon Reach Upper,storage,UT,57.65,high,drought,clean,37.2,-111.3
+CR-NOD-003,Desert Fork Intake,diversion,NV,0.0,critical,heat_drought,clean,36.1,-114.85
+CR-NOD-004,Mesa Municipal Delivery,delivery,AZ,0.0,medium,heat,incomplete,33.45,-112.07
+CR-NOD-005,Valley Ag District A,ag_allocation,CA,0.0,low,drought_heat,incomplete,33.0,-115.5
+CR-NOD-006,Valley Ag District B,ag_allocation,CA,0.0,medium,drought,clean,32.8,-115.4
+CR-NOD-007,Tribal Settlement Reach,delivery,AZ,0.0,high,drought,clean,34.5,-114.3
+CR-NOD-008,Powerplant Tailwater,hydropower,AZ,59.74,critical,drought_heat,incomplete,36.02,-114.74
+CR-NOD-009,Lower Basin Metering Hub,delivery,NV,0.0,high,heat,contradictory,35.95,-114.9
+CR-NOD-010,Upper Snowpack Proxy Node,inflow_proxy,CO,0.0,medium,drought,clean,39.2,-106.8
+CR-NOD-011,Interbasin Transfer Gate,transfer,CO,0.0,medium,drought,incomplete,39.5,-106.2
+CR-NOD-012,Environmental Pulse Reach,environmental,AZ,0.0,critical,heat_drought,incomplete,36.15,-113.9
+CR-NOD-013,Canyon Reach Upper Satellite 13,storage,UT,57.93,medium,drought,incomplete,37.179430804465994,-111.34159485555129
+CR-NOD-014,Interbasin Transfer Gate Satellite 14,transfer,CO,0.0,medium,drought,contradictory,39.56136953220633,-106.29540716556085
+CR-NOD-015,Canyon Reach Upper Satellite 15,storage,UT,39.8,medium,drought,clean,37.19254337703397,-111.42324910463398
+CR-NOD-016,Desert Fork Intake Satellite 16,diversion,NV,0.0,high,heat_drought,incomplete,36.071182097272064,-114.98399887325064
+CR-NOD-017,Desert Fork Intake Satellite 17,diversion,NV,0.0,critical,heat_drought,incomplete,36.004065868012766,-114.98241781332776
+CR-NOD-018,Mesa Municipal Delivery Satellite 18,delivery,AZ,0.0,critical,heat,incomplete,33.56930471247533,-112.00636091403564
+CR-NOD-019,Upper Snowpack Proxy Node Satellite 19,inflow_proxy,CO,0.0,medium,drought,incomplete,39.06950907893743,-106.86320846665996
+CR-NOD-020,Mesa Municipal Delivery Satellite 20,delivery,AZ,0.0,low,heat,clean,33.42843505751894,-112.2140906962592
+CR-NOD-021,Lower Basin Metering Hub Satellite 21,delivery,NV,0.0,medium,heat,clean,35.881889442713366,-114.7841655909712
+CR-NOD-022,Lake Redrock Main Pool Satellite 22,storage,AZ,87.04,high,drought_heat,contradictory,35.91065639469034,-114.18227073597409
+CR-NOD-023,Lake Redrock Main Pool Satellite 23,storage,AZ,119.0,low,drought_heat,incomplete,36.01729052150553,-114.23534531224755
+CR-NOD-024,Mesa Municipal Delivery Satellite 24,delivery,AZ,0.0,critical,heat,incomplete,33.459334144565105,-112.08219058039877
+CR-NOD-025,Powerplant Tailwater Satellite 25,hydropower,AZ,78.29,medium,drought_heat,clean,36.08153160556565,-114.63542071344337
+CR-NOD-026,Powerplant Tailwater Satellite 26,hydropower,AZ,151.34,high,drought_heat,contradictory,35.940183184889754,-114.86172656851731
+CR-NOD-027,Tribal Settlement Reach Satellite 27,delivery,AZ,0.0,medium,drought,contradictory,34.500911421544025,-114.44619994179679
+CR-NOD-028,Valley Ag District B Satellite 28,ag_allocation,CA,0.0,low,drought,clean,32.78003413808405,-115.50152891500224
+CR-NOD-029,Valley Ag District A Satellite 29,ag_allocation,CA,0.0,critical,drought_heat,contradictory,32.9066517166135,-115.35013276523974
+CR-NOD-030,Upper Snowpack Proxy Node Satellite 30,inflow_proxy,CO,0.0,medium,drought,incomplete,39.177266849351774,-106.89215403967052
+CR-NOD-031,Environmental Pulse Reach Satellite 31,environmental,AZ,0.0,high,heat_drought,clean,36.03254233195481,-113.9454380321972
+CR-NOD-032,Mesa Municipal Delivery Satellite 32,delivery,AZ,0.0,high,heat,clean,33.530441913106316,-111.96022742798509
+CR-NOD-033,Desert Fork Intake Satellite 33,diversion,NV,0.0,low,heat_drought,incomplete,35.98320848042998,-114.91289849322281
+CR-NOD-034,Desert Fork Intake Satellite 34,diversion,NV,0.0,low,heat_drought,incomplete,36.191258406374736,-114.86442465753152
+CR-NOD-035,Upper Snowpack Proxy Node Satellite 35,inflow_proxy,CO,0.0,critical,drought,clean,39.31634733331807,-106.94805887918342
+CR-NOD-036,Environmental Pulse Reach Satellite 36,environmental,AZ,0.0,low,heat_drought,clean,36.17846919646222,-113.8625013055325
+CR-NOD-037,Environmental Pulse Reach Satellite 37,environmental,AZ,0.0,medium,heat_drought,clean,36.241016583605266,-113.95227187700598
+CR-NOD-038,Valley Ag District A Satellite 38,ag_allocation,CA,0.0,high,drought_heat,contradictory,32.86238160319674,-115.50845114688184
+CR-NOD-039,Lower Basin Metering Hub Satellite 39,delivery,NV,0.0,medium,heat,clean,36.00971972862228,-114.78759720308186
+CR-NOD-040,Mesa Municipal Delivery Satellite 40,delivery,AZ,0.0,critical,heat,incomplete,33.58929782502449,-111.9600947390299
+CR-NOD-041,Powerplant Tailwater Satellite 41,hydropower,AZ,60.69,critical,drought_heat,incomplete,36.1045705436201,-114.73701123631825
+CR-NOD-042,Tribal Settlement Reach Satellite 42,delivery,AZ,0.0,medium,drought,incomplete,34.403483416594156,-114.21082195255453
+CR-NOD-043,Lake Redrock Main Pool Satellite 43,storage,AZ,31.94,low,drought_heat,incomplete,35.917836696446024,-114.11148985280063
+CR-NOD-044,Environmental Pulse Reach Satellite 44,environmental,AZ,0.0,high,heat_drought,clean,36.28566945477411,-113.88260467061
+CR-NOD-045,Upper Snowpack Proxy Node Satellite 45,inflow_proxy,CO,0.0,high,drought,clean,39.27029345882295,-106.76079220918943
+CR-NOD-046,Valley Ag District B Satellite 46,ag_allocation,CA,0.0,high,drought,incomplete,32.87728753745547,-115.52407306086191
+CR-NOD-047,Upper Snowpack Proxy Node Satellite 47,inflow_proxy,CO,0.0,medium,drought,incomplete,39.20235570779691,-106.67130375985575
+CR-NOD-048,Interbasin Transfer Gate Satellite 48,transfer,CO,0.0,critical,drought,clean,39.358732874892155,-106.17951420678745

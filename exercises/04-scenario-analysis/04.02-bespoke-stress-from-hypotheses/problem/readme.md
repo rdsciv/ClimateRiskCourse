@@ -10,9 +10,9 @@ Build **2–3** portfolio-specific scenarios from your week-2 register. Each mus
 
 ## Track hints
 
-- Ironwood: flood CRE + TR-02 credit tightening
-- Strata: coastal assets + TR-01 insurance + TR-04 repricing
-- Northwood: supplier flood/heat + TR-03 input squeeze
+- Colorado: drought/heat on storage + allocation cut transmission
+- Kerrville: flash flood corridor + insurance / access transmission
+- Datacenter: heat-drought-grid + water supply contingency across EIS alternatives
 
 ## Acceptance criteria
 

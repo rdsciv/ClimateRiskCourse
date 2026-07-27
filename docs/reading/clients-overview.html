@@ -40,26 +40,26 @@
 <th>Decision language</th>
 </tr></thead><tbody>
 <tr>
-<td><code>ironwood</code></td>
-<td><code>ironwood-bank/</code></td>
-<td>Commercial bank credit book</td>
-<td>Pricing, capital, limits, board + regulator</td>
+<td><code>colorado</code></td>
+<td><code>colorado-river-reservoirs/</code></td>
+<td>Redrock Basin Authority — Colorado River–style multi-reservoir operations</td>
+<td>Releases, allocations, compact-sensitive deliveries, hydropower</td>
 </tr>
 <tr>
-<td><code>strata</code></td>
-<td><code>strata-holdings/</code></td>
-<td>RE + infrastructure fund</td>
-<td>Acquisition / hold / exit pricing, IC, LPs</td>
+<td><code>kerrville</code></td>
+<td><code>kerrville-flood/</code></td>
+<td>City of Kerrville, TX — municipal flood risk</td>
+<td>Mitigation priority, critical facilities, access, buyout vs defend</td>
 </tr>
 <tr>
-<td><code>northwood</code></td>
-<td><code>northwood-capital/</code></td>
-<td>Industrial + supply chain</td>
-<td>Contingency, dual-source, input disruption</td>
+<td><code>datacenter</code></td>
+<td><code>texas-datacenter-eis/</code></td>
+<td>Horizon Grid LLC — Texas data center EIS</td>
+<td>Alternatives, water, power/grid, receptors, mitigation</td>
 </tr>
 </tbody></table></div>
 <h2 id="activate-a-track">Activate a track</h2>
-<pre><code>python3 scripts/set_track.py ironwood   # or strata | northwood
+<pre><code>python3 scripts/set_track.py colorado   # or kerrville | datacenter
 python3 scripts/seed_all_clients.py     # once after clone</code></pre>
 <p>This writes <code>CLIENT_TRACK</code> to <code>.env</code> and creates <code>clients/active</code> → your folder.</p>
 <h2 id="whats-in-each-client-folder">What’s in each client folder</h2>
@@ -69,7 +69,7 @@ documents/    messy real-world-style files
 db/           portfolio.sqlite
 outputs/      your weekly deliverables
 AGENTS.md     track-specific agent brief</code></pre>
-<p>All data is <strong>simulated</strong> and labeled as such.</p>
+<p>All data is <strong>simulated</strong> and labeled as such. Geography may reference real places (e.g. Kerrville, Texas) for realism; the books and figures are fictional training constructs.</p>
     </div>
     <p style="margin:2rem 0 3rem;color:var(--muted)">
       <a href="../reading.html">← Reading room</a> · <a href="../index.html">Home</a>

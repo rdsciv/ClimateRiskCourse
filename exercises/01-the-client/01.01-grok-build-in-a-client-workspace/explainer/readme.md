@@ -2,7 +2,7 @@
 
 ## Compartments
 
-Treat `clients/<track>/` as the engagement room. Do not mix Ironwood numbers into a Strata memo.
+Treat `clients/<track>/` as the engagement room. Do not mix Colorado River node numbers into a Kerrville flood memo.
 
 ## Plan mode
 

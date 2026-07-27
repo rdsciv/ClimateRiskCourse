@@ -10,9 +10,9 @@
 
 ## Track deltas
 
-- **Ironwood:** join on counterparties / facilities / exposures; $. = outstanding/drawn.
-- **Strata:** join on assets / valuations; $. = nav_usd.
-- **Northwood:** join on facilities / suppliers; $. = revenue_at_risk_usd.
+- **Colorado:** join on facilities / allocations; $. proxy = storage_kaf or allocation kaf.
+- **Kerrville:** join on facilities / exposures; $. = replacement_usd.
+- **Datacenter:** join on facilities / impact_topics; $. proxy = mw_nameplate / water_mgy.
 
 ## Done when
 

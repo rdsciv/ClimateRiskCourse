@@ -8,9 +8,9 @@ You are a consultant inside a simulated climate-risk firm. Over six weeks you an
 
 | Track | Folder | Decision language |
 |-------|--------|-------------------|
-| Ironwood Bank | `clients/ironwood-bank` | Credit pricing & capital |
-| Strata Holdings | `clients/strata-holdings` | Acquisition / exit pricing |
-| Northwood Capital | `clients/northwood-capital` | Supply contingency |
+| Redrock Basin Authority | `clients/colorado-river-reservoirs` | Reservoir releases & allocations |
+| City of Kerrville | `clients/kerrville-flood` | Flood mitigation priority |
+| Horizon Grid LLC | `clients/texas-datacenter-eis` | Data center EIS alternatives |
 
 Pick one track and stay with it. Plenary exercises are shared; data and financial questions differ.
 

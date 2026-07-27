@@ -33,3 +33,12 @@ XXSZX,Shenzhen-sim,CN,7.5,0.5,7.0,6.0,firm_sample_grid,v1
 XXBTO,Baotou-sim,CN,2.5,1.0,6.5,0.2,firm_sample_grid,v1
 XXRTM,Rotterdam-sim,NL,8.0,0.5,4.0,1.0,firm_sample_grid,v1
 XXSTR,Stuttgart-sim,DE,5.5,0.5,6.0,0.3,firm_sample_grid,v1
+48265,Kerr,TX,7.8,2.5,7.5,0.5,firm_sample_grid,v1
+48441,Taylor,TX,3.5,3.0,9.0,0.3,firm_sample_grid,v1
+48329,Midland,TX,2.5,2.0,9.2,0.2,firm_sample_grid,v1
+48027,Bell,TX,5.5,2.0,8.0,0.5,firm_sample_grid,v1
+XXMOH,Mohave-sim,AZ,4.0,4.0,9.5,0.2,firm_sample_grid,v1
+XXKAN,Kane-sim,UT,3.0,5.0,8.0,0.2,firm_sample_grid,v1
+XXCLK,Clark-sim,NV,3.5,3.5,9.3,0.2,firm_sample_grid,v1
+XXIMP,Imperial-sim,CA,6.0,2.0,9.0,0.3,firm_sample_grid,v1
+XXEAG,Eagle-sim,CO,4.5,4.5,6.5,0.2,firm_sample_grid,v1

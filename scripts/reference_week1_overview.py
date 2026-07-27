@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import sqlite3
-from collections import Counter
 
 from lib_common import active_track, append_audit, client_dir
 
@@ -16,43 +15,44 @@ def main() -> None:
     conn.row_factory = sqlite3.Row
     lines = [f"# Book overview — {track}", f"DB: {db}", ""]
 
-    if track == "ironwood":
-        n = conn.execute("SELECT COUNT(*) c FROM counterparties").fetchone()["c"]
-        total = conn.execute("SELECT SUM(outstanding_usd) s FROM counterparties").fetchone()["s"]
-        lines += [f"Counterparties: {n}", f"Total outstanding USD: {total:,.2f}", "", "## By sector"]
-        for r in conn.execute(
-            "SELECT sector, COUNT(*) n, SUM(outstanding_usd) s FROM counterparties GROUP BY sector ORDER BY s DESC"
-        ):
-            lines.append(f"- {r['sector']}: n={r['n']}  ${r['s']:,.0f}")
-        lines += ["", "## Data quality"]
-        for r in conn.execute(
-            "SELECT data_quality, COUNT(*) n FROM counterparties GROUP BY data_quality"
-        ):
-            lines.append(f"- {r['data_quality']}: {r['n']}")
-    elif track == "strata":
-        n = conn.execute("SELECT COUNT(*) c FROM assets").fetchone()["c"]
-        total = conn.execute("SELECT SUM(nav_usd) s FROM assets").fetchone()["s"]
-        lines += [f"Assets: {n}", f"Total NAV USD: {total:,.2f}", "", "## By type"]
-        for r in conn.execute(
-            "SELECT asset_type, COUNT(*) n, SUM(nav_usd) s FROM assets GROUP BY asset_type ORDER BY s DESC"
-        ):
-            lines.append(f"- {r['asset_type']}: n={r['n']}  ${r['s']:,.0f}")
-        lines += ["", "## Data quality"]
-        for r in conn.execute("SELECT data_quality, COUNT(*) n FROM assets GROUP BY data_quality"):
-            lines.append(f"- {r['data_quality']}: {r['n']}")
-    else:
+    if track == "colorado":
         n = conn.execute("SELECT COUNT(*) c FROM facilities").fetchone()["c"]
-        total = conn.execute("SELECT SUM(revenue_at_risk_usd) s FROM facilities").fetchone()["s"]
-        lines += [f"Facilities: {n}", f"Total revenue-at-risk USD: {total:,.2f}", "", "## By country"]
+        total = conn.execute("SELECT SUM(storage_kaf) s FROM facilities").fetchone()["s"] or 0
+        lines += [f"Nodes: {n}", f"Storage KAF (sum of storage-type nodes): {total:,.2f}", "", "## By node type"]
         for r in conn.execute(
-            "SELECT country, COUNT(*) n, SUM(revenue_at_risk_usd) s FROM facilities GROUP BY country ORDER BY s DESC"
+            "SELECT node_type, COUNT(*) n, SUM(storage_kaf) s FROM facilities GROUP BY node_type ORDER BY n DESC"
         ):
-            lines.append(f"- {r['country']}: n={r['n']}  ${r['s']:,.0f}")
-        lines += ["", "## Criticality"]
+            lines.append(f"- {r['node_type']}: n={r['n']}  storage_kaf={r['s'] or 0:,.1f}")
+        lines += ["", "## Data quality"]
+        for r in conn.execute("SELECT data_quality, COUNT(*) n FROM facilities GROUP BY data_quality"):
+            lines.append(f"- {r['data_quality']}: {r['n']}")
+    elif track == "kerrville":
+        n = conn.execute("SELECT COUNT(*) c FROM facilities").fetchone()["c"]
+        total = conn.execute("SELECT SUM(replacement_usd) s FROM exposures").fetchone()["s"] or 0
+        lines += [f"Facilities: {n}", f"Replacement USD: {total:,.2f}", "", "## By facility type"]
         for r in conn.execute(
-            "SELECT criticality, COUNT(*) n FROM facilities GROUP BY criticality"
+            """SELECT f.facility_type, COUNT(*) n, SUM(e.replacement_usd) s
+               FROM facilities f JOIN exposures e ON e.facility_id=f.id
+               GROUP BY f.facility_type ORDER BY s DESC"""
         ):
-            lines.append(f"- {r['criticality']}: {r['n']}")
+            lines.append(f"- {r['facility_type']}: n={r['n']}  ${r['s']:,.0f}")
+        lines += ["", "## Data quality"]
+        for r in conn.execute("SELECT data_quality, COUNT(*) n FROM facilities GROUP BY data_quality"):
+            lines.append(f"- {r['data_quality']}: {r['n']}")
+    else:  # datacenter
+        n = conn.execute("SELECT COUNT(*) c FROM facilities").fetchone()["c"]
+        mw = conn.execute("SELECT SUM(mw_nameplate) s FROM facilities").fetchone()["s"] or 0
+        water = conn.execute("SELECT SUM(water_mgy) s FROM facilities").fetchone()["s"] or 0
+        lines += [f"EIS elements: {n}", f"Nameplate MW (sum): {mw:,.1f}", f"Water MGY (sum): {water:,.1f}", "", "## By element type"]
+        for r in conn.execute(
+            "SELECT element_type, COUNT(*) n FROM facilities GROUP BY element_type ORDER BY n DESC"
+        ):
+            lines.append(f"- {r['element_type']}: n={r['n']}")
+        lines += ["", "## By EIS alternative"]
+        for r in conn.execute(
+            "SELECT eis_alternative, COUNT(*) n FROM facilities GROUP BY eis_alternative"
+        ):
+            lines.append(f"- {r['eis_alternative']}: {r['n']}")
 
     conn.close()
     out_dir = client_dir(track) / "outputs" / "week-1"

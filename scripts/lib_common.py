@@ -11,9 +11,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 TRACK_FOLDERS = {
-    "ironwood": "ironwood-bank",
-    "strata": "strata-holdings",
-    "northwood": "northwood-capital",
+    "colorado": "colorado-river-reservoirs",
+    "kerrville": "kerrville-flood",
+    "datacenter": "texas-datacenter-eis",
+}
+
+TRACK_LABELS = {
+    "colorado": "Redrock Basin Authority — Colorado River reservoirs",
+    "kerrville": "City of Kerrville — flood risk",
+    "datacenter": "Horizon Grid LLC — Texas data center EIS",
 }
 
 
@@ -43,7 +49,7 @@ def active_track() -> str:
         for k, v in TRACK_FOLDERS.items():
             if v == name:
                 return k
-    return "ironwood"
+    return "colorado"
 
 
 def connect_db(track: str) -> sqlite3.Connection:

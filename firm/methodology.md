@@ -6,7 +6,7 @@ All training clients are **simulated**. The method is real.
 
 ## What we optimize for
 
-1. **Decisions, not scores.** A hazard percentile without pricing, capital, contingency, or exit implications is incomplete.
+1. **Decisions, not scores.** A hazard percentile without operational, capital, mitigation, or permitting implications is incomplete.
 2. **Legible epistemology.** Every material number is either **computed** (script + data) or **judged** (mechanism + precedent + label).
 3. **Assurability.** A skeptical reviewer can re-run computations and inspect judgment rationale without trusting the presenter’s CV.
 4. **Graceful degradation.** Thin data widens ranges and grows the watchlist; it does not authorize silent invention.
@@ -65,8 +65,8 @@ Document why names were escalated or left at screen level.
 
 | Audience | Artifact | Carries |
 |----------|----------|---------|
-| Board / IC / exec | Presentation | Judgment, priorities, decisions |
-| Regulator / LP / assurance | Submission pack | Record, lineage, assumptions, gaps |
+| Board / council / project exec | Presentation | Judgment, priorities, decisions |
+| Regulator / grant / EIS administrative record | Submission pack | Record, lineage, assumptions, gaps |
 
 ## Tooling
 

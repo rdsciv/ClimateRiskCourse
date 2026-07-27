@@ -6,9 +6,9 @@ Translate findings into the track’s decision language in `outputs/week-5/prici
 
 | Track | Language |
 |-------|----------|
-| Ironwood | bps, limits, capital conversation, maturity walls |
-| Strata | exit cap bps, hold/exit, insurance dependency |
-| Northwood | contingency $ ROI, dual-source, inventory days |
+| Colorado | release cuts, allocation priority, hydropower shortfall, compact risk |
+| Kerrville | mitigation $ ROI, buyout vs defend, critical-facility uptime |
+| Datacenter | EIS significance, water MGY risk, grid interconnect, receptor impact |
 
 Use anchors; label judgment bands.
 

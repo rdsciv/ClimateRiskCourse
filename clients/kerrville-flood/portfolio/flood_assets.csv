@@ -1,0 +1,81 @@
+facility_id,name,facility_type,flood_zone_hint,replacement_usd,hazard_bucket,data_quality,lat,lon
+KV-FAC-001,Fire / EMS station 001,critical_facility,AO,31991981.85,flood_flash,contradictory,30.045069253068224,-99.08720938055502
+KV-FAC-002,Multifamily 002,residential,A,3300349.74,flood,contradictory,30.018213173602554,-99.18385319822018
+KV-FAC-003,River park & trailhead 003,infrastructure,X_shaded,14771747.95,high_flood,contradictory,30.051829933397794,-99.11106744741303
+KV-FAC-004,Hospital / clinic 004,critical_facility,A,53546435.51,flood,incomplete,30.029954944802952,-99.2171968748317
+KV-FAC-005,Downtown retail block 005,commercial,X,7606034.64,inland,clean,30.0048310319412,-99.22145104567821
+KV-FAC-006,Electrical substation 006,critical_facility,A,22322830.9,heat,incomplete,29.997614248860536,-99.04038851015981
+KV-FAC-007,Wastewater plant 007,critical_facility,X,50773916.31,flood,incomplete,30.090302353656696,-99.06711828532339
+KV-FAC-008,Downtown retail block 008,commercial,X_shaded,4820204.73,heat,incomplete,30.117741934960925,-99.12274789110448
+KV-FAC-009,Riverfront lodging 009,commercial,X,21380579.87,inland,clean,30.04289272166302,-99.0944089218372
+KV-FAC-010,Riverfront lodging 010,commercial,AE,25286105.64,flood,contradictory,30.055235609489095,-99.08065657689477
+KV-FAC-011,Public school campus 011,school,AE,37403076.74,high_flood,clean,30.047898554540975,-99.16279024561645
+KV-FAC-012,Fire / EMS station 012,critical_facility,X,59635528.82,inland,contradictory,30.058325756380032,-99.11285484849104
+KV-FAC-013,Fire / EMS station 013,critical_facility,X,33585150.43,flood,incomplete,29.983529128009646,-99.15614116598249
+KV-FAC-014,Multifamily 014,residential,X_shaded,5202305.02,heat,clean,30.09239511038077,-99.16211444391793
+KV-FAC-015,Riverfront lodging 015,commercial,X_shaded,2599720.5,heat,clean,30.057158859688638,-99.16267528731443
+KV-FAC-016,Downtown retail block 016,commercial,AO,44583812.84,flood_flash,incomplete,30.017995556981962,-99.13844544021899
+KV-FAC-017,Downtown retail block 017,commercial,X,20741384.79,flood,incomplete,30.036826119004413,-99.08406566108094
+KV-FAC-018,Fire / EMS station 018,critical_facility,A,60893224.79,high_flood,clean,30.016442702451563,-99.12033577655734
+KV-FAC-019,Wastewater plant 019,critical_facility,X,46331712.39,inland,contradictory,29.994478655313973,-99.18726699821005
+KV-FAC-020,Multifamily 020,residential,X,4360396.94,heat,contradictory,30.076042179766606,-99.11455017842067
+KV-FAC-021,Multifamily 021,residential,AO,29481154.72,flood,clean,30.029621495306046,-99.13249901364671
+KV-FAC-022,RV / mobile home park 022,residential,A,18956160.65,heat,contradictory,30.102885834109838,-99.2186379320481
+KV-FAC-023,Hospital / clinic 023,critical_facility,A,13067176.75,flood,contradictory,29.99661179992449,-99.0698019482406
+KV-FAC-024,Downtown retail block 024,commercial,A,2930280.86,inland,clean,30.075302777981594,-99.20307068510405
+KV-FAC-025,Bridge / low-water crossing 025,infrastructure,AE,30227026.64,flood_flash,clean,30.021830427660568,-99.16059144318547
+KV-FAC-026,Downtown retail block 026,commercial,AO,2124908.05,flood_flash,clean,30.06590037155923,-99.1807668189638
+KV-FAC-027,Public school campus 027,school,A,7245798.38,heat,clean,30.11957899788696,-99.13820192570068
+KV-FAC-028,Multifamily 028,residential,X_shaded,28904843.04,flood,clean,30.042951026674206,-99.12523208456159
+KV-FAC-029,Bridge / low-water crossing 029,infrastructure,X_shaded,21398238.06,flood,incomplete,30.12176820129312,-99.17143968098692
+KV-FAC-030,Water treatment 030,critical_facility,AO,45514727.11,high_flood,incomplete,30.04683552215565,-99.09517433145574
+KV-FAC-031,Electrical substation 031,critical_facility,AO,25926650.12,high_flood,incomplete,30.026013797158853,-99.14996178844588
+KV-FAC-032,Single-family cluster 032,residential,X,9141161.59,inland,incomplete,30.05313825441087,-99.04242673030913
+KV-FAC-033,Fire / EMS station 033,critical_facility,X_shaded,61059715.88,flood,clean,30.06337652430282,-99.09684387176456
+KV-FAC-034,River park & trailhead 034,infrastructure,X_shaded,33287867.73,flood,incomplete,30.061403384489655,-99.08758091536055
+KV-FAC-035,Fire / EMS station 035,critical_facility,X_shaded,44156080.64,flood,clean,30.04220875517803,-99.1226976368762
+KV-FAC-036,Bridge / low-water crossing 036,infrastructure,X_shaded,40115165.3,inland,clean,30.08927595581202,-99.09822938276359
+KV-FAC-037,Multifamily 037,residential,X,8804686.53,inland,incomplete,30.07079616605188,-99.17288702613206
+KV-FAC-038,Single-family cluster 038,residential,X,2592738.6,heat,clean,29.996852098779065,-99.08071485403447
+KV-FAC-039,RV / mobile home park 039,residential,A,33859241.4,high_flood,incomplete,30.061258891795436,-99.16554419274455
+KV-FAC-040,Public school campus 040,school,A,10501890.23,high_flood,incomplete,30.031274425738225,-99.17593204107176
+KV-FAC-041,Hospital / clinic 041,critical_facility,X_shaded,43765127.48,heat,incomplete,30.034965089903356,-99.17003800482418
+KV-FAC-042,Wastewater plant 042,critical_facility,A,57300116.39,high_flood,clean,30.064973599595916,-99.14866976923487
+KV-FAC-043,Public school campus 043,school,X,37064381.59,flood,clean,30.015919049545424,-99.1857551349419
+KV-FAC-044,Bridge / low-water crossing 044,infrastructure,A,28379558.47,flood,clean,30.099388547154536,-99.14837368231193
+KV-FAC-045,Public school campus 045,school,A,37872931.79,flood_flash,clean,30.009633711564355,-99.1347617962016
+KV-FAC-046,Fire / EMS station 046,critical_facility,A,6574061.33,high_flood,incomplete,30.022950019899096,-99.08890778727664
+KV-FAC-047,Downtown retail block 047,commercial,AO,28750884.35,flood_flash,contradictory,30.025578695078835,-99.10607864609838
+KV-FAC-048,River park & trailhead 048,infrastructure,AE,34769014.21,flood_flash,incomplete,30.034932531511988,-99.1405746127393
+KV-FAC-049,RV / mobile home park 049,residential,AO,23624913.31,flood,incomplete,30.03687880304415,-99.08885000755296
+KV-FAC-050,Electrical substation 050,critical_facility,AO,35429945.36,flood_flash,incomplete,30.012281582287894,-99.12941625910926
+KV-FAC-051,Light industrial yard 051,industrial,A,10795305.52,flood,clean,30.02450171435277,-99.0864324529393
+KV-FAC-052,Hospital / clinic 052,critical_facility,AO,28573027.6,high_flood,clean,30.03142856304906,-99.10836087723362
+KV-FAC-053,Light industrial yard 053,industrial,X_shaded,34834124.29,flood,clean,30.031482497888724,-99.1024105929898
+KV-FAC-054,Fire / EMS station 054,critical_facility,AO,28950589.53,flood_flash,incomplete,30.02539670798484,-99.1407664493979
+KV-FAC-055,River park & trailhead 055,infrastructure,X_shaded,8308808.94,flood,contradictory,30.107978599866765,-99.07002438909068
+KV-FAC-056,Downtown retail block 056,commercial,X,17602396.1,heat,contradictory,29.980968837100573,-99.04751514034575
+KV-FAC-057,Riverfront lodging 057,commercial,X,31565588.97,inland,clean,30.025641526803085,-99.20035711976439
+KV-FAC-058,Water treatment 058,critical_facility,X_shaded,13856434.43,flood,clean,30.013692983012252,-99.15153053193706
+KV-FAC-059,Single-family cluster 059,residential,X,2911837.0,inland,incomplete,30.0185646015496,-99.13384562853703
+KV-FAC-060,Public school campus 060,school,A,40896466.55,flood,clean,30.041918820339312,-99.17647687028956
+KV-FAC-061,Wastewater plant 061,critical_facility,X,1466864.25,heat,contradictory,30.067517393013883,-99.13664478300639
+KV-FAC-062,Single-family cluster 062,residential,X_shaded,2533431.34,heat,contradictory,30.09439972930079,-99.13426760580231
+KV-FAC-063,Riverfront lodging 063,commercial,A,33382281.63,inland,incomplete,30.0554475295437,-99.22353311353457
+KV-FAC-064,Electrical substation 064,critical_facility,X,37091148.32,inland,clean,29.98677473800952,-99.19104486759376
+KV-FAC-065,Public school campus 065,school,X,15848906.69,heat,clean,30.06248949024652,-99.07246931480307
+KV-FAC-066,Riverfront lodging 066,commercial,X_shaded,40366282.18,high_flood,clean,30.018333208500998,-99.1168181368638
+KV-FAC-067,Riverfront lodging 067,commercial,A,28039170.19,heat,incomplete,29.97638099051205,-99.09800547719843
+KV-FAC-068,Bridge / low-water crossing 068,infrastructure,X,19711145.73,flood,clean,30.006510064041855,-99.05571298294929
+KV-FAC-069,Light industrial yard 069,industrial,A,9390078.33,flood,contradictory,30.064239242397232,-99.11503260021543
+KV-FAC-070,Bridge / low-water crossing 070,infrastructure,A,35661008.99,flood,clean,30.02605594410617,-99.1133050677945
+KV-FAC-071,Hospital / clinic 071,critical_facility,A,18904814.73,flood_flash,clean,30.04389025851644,-99.08937185290183
+KV-FAC-072,Fire / EMS station 072,critical_facility,X_shaded,58712981.03,flood,incomplete,30.048200426570954,-99.17742645472003
+KV-FAC-073,Multifamily 073,residential,A,33448643.63,heat,clean,29.986540968307,-99.13288978816108
+KV-FAC-074,Riverfront lodging 074,commercial,AE,36481273.99,flood_flash,clean,30.035067211887448,-99.14479945904174
+KV-FAC-075,Multifamily 075,residential,AO,6095133.4,flood_flash,contradictory,30.05360850716558,-99.12353446849744
+KV-FAC-076,Wastewater plant 076,critical_facility,X,17120299.54,heat,incomplete,30.0664578901805,-99.15823544809932
+KV-FAC-077,Light industrial yard 077,industrial,AE,43382165.14,flood_flash,incomplete,30.061550785132678,-99.1276493875872
+KV-FAC-078,Multifamily 078,residential,A,1511258.4,flood,clean,30.03457118311111,-99.14784742316178
+KV-FAC-079,Public school campus 079,school,AE,14055696.84,high_flood,contradictory,30.059570181513912,-99.17366720373718
+KV-FAC-080,Riverfront lodging 080,commercial,A,35868270.36,flood_flash,clean,30.042881269299798,-99.13934998384151
