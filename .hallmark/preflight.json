@@ -1,0 +1,7 @@
+{
+  "scanned": "2026-07-27",
+  "framework": "vanilla HTML static site via scripts/build_cool_site.py",
+  "fonts": "Newsreader + IBM Plex Sans + JetBrains Mono (Google Fonts)",
+  "motion": "none (motion-cut)",
+  "package_managers": ["uv", "npm scripts for mintlify"]
+}

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Build a high-energy static docs site into site/ for GitHub Pages."""
+"""Build Hallmark public site into site/ for GitHub Pages.
+
+Hallmark · genre: editorial · macrostructure: Narrative Workflow
+theme: custom field-report-after-dark · nav: N9 · footer: Ft5
+enrichment: none
+"""
 
 from __future__ import annotations
 
@@ -7,524 +12,638 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "site"
+TOKENS = (ROOT / "tokens.css").read_text(encoding="utf-8")
 
-CSS = r"""
-:root {
-  --bg: #05080f;
-  --bg2: #0a1220;
-  --card: rgba(16, 28, 48, 0.72);
-  --stroke: rgba(140, 170, 210, 0.16);
-  --text: #edf3ff;
-  --muted: #93a4bd;
-  --mint: #2ee6a6;
-  --mint2: #7cffd4;
-  --blue: #5b8cff;
-  --amber: #ffc14d;
-  --pink: #ff6bcb;
-  --radius: 18px;
-  --font: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, monospace;
-  --max: 1120px;
-}
+CSS = TOKENS + r"""
+html, body { overflow-x: clip; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  color: var(--text);
-  font-family: var(--font);
-  line-height: 1.6;
-  background: var(--bg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-ink);
+  background: var(--color-paper);
   min-height: 100vh;
-  overflow-x: hidden;
 }
-body::before {
-  content: "";
-  position: fixed; inset: 0; z-index: -2;
-  background:
-    radial-gradient(900px 520px at 8% -8%, rgba(46,230,166,.22), transparent 55%),
-    radial-gradient(800px 480px at 92% 0%, rgba(91,140,255,.20), transparent 50%),
-    radial-gradient(700px 500px at 50% 110%, rgba(255,107,203,.10), transparent 45%),
-    linear-gradient(180deg, #05080f 0%, #070d18 50%, #05080f 100%);
+a {
+  color: var(--color-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
 }
-body::after {
-  content: "";
-  position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
-  opacity: .55;
+a:hover { color: var(--color-ink); }
+a:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
 }
-a { color: var(--mint); text-decoration: none; }
-a:hover { color: var(--mint2); }
-.wrap { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+.skip {
+  position: absolute; left: -999px; top: 0;
+  background: var(--color-accent); color: var(--color-accent-ink);
+  padding: var(--space-xs) var(--space-sm);
+}
+.skip:focus { left: var(--page-gutter); top: var(--space-sm); z-index: 100; }
 
-/* NAV */
+/* N9 — edge-aligned minimal mast */
 .nav {
-  position: sticky; top: 0; z-index: 50;
-  backdrop-filter: blur(16px) saturate(1.2);
-  background: rgba(5,8,15,.72);
-  border-bottom: 1px solid var(--stroke);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--page-gutter);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+  background: var(--color-paper);
 }
-.nav-inner {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 1rem; padding: .85rem 0;
+.wordmark {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 600;
+  font-size: var(--text-lg);
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  text-decoration: none;
 }
-.brand {
-  display: flex; align-items: center; gap: .7rem;
-  color: var(--text); font-weight: 700; letter-spacing: -.01em;
+.wordmark:hover { color: var(--color-ink); }
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-lg);
+  justify-content: flex-end;
 }
-.brand:hover { color: var(--text); }
-.mark {
-  width: 36px; height: 36px; border-radius: 11px;
-  background: linear-gradient(135deg, var(--mint), var(--blue));
-  display: grid; place-items: center; color: #041018; font-weight: 800; font-size: .85rem;
-  box-shadow: 0 0 24px rgba(46,230,166,.35);
+.nav-links a {
+  color: var(--color-muted);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  white-space: nowrap;
 }
-.nav-links { display: flex; flex-wrap: wrap; gap: .35rem 1rem; align-items: center; }
-.nav-links a { color: var(--muted); font-size: .94rem; font-weight: 500; }
-.nav-links a:hover, .nav-links a.active { color: var(--text); }
-.nav-cta {
-  border: 1px solid rgba(46,230,166,.45) !important;
-  background: linear-gradient(135deg, rgba(46,230,166,.18), rgba(91,140,255,.12));
-  color: var(--mint2) !important;
-  padding: .42rem .85rem; border-radius: 999px; font-weight: 700 !important;
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--color-ink);
+}
+.nav-links a[aria-current="page"] {
+  box-shadow: inset 0 -2px 0 var(--color-accent);
 }
 
-/* HERO */
-.hero { padding: 4.5rem 0 2.5rem; position: relative; }
-.eyebrow {
-  display: inline-flex; align-items: center; gap: .5rem;
-  font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-  color: var(--mint); margin-bottom: 1rem;
-  padding: .35rem .7rem; border-radius: 999px;
-  border: 1px solid rgba(46,230,166,.28);
-  background: rgba(46,230,166,.08);
+.wrap {
+  width: min(var(--max), 100%);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
 }
-.hero h1 {
-  font-size: clamp(2.6rem, 6.5vw, 4.2rem);
-  line-height: 1.02; letter-spacing: -.04em; margin: 0 0 1.1rem;
-  max-width: 14ch;
-  background: linear-gradient(120deg, #fff 10%, var(--mint2) 45%, var(--blue) 90%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+
+/* Narrative Workflow — stages */
+.mast {
+  padding: var(--space-3xl) var(--page-gutter) var(--space-2xl);
+  border-bottom: var(--rule-thick) solid var(--color-rule);
 }
-.lede { font-size: 1.18rem; color: var(--muted); max-width: 48ch; margin: 0 0 1.75rem; }
-.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 2.2rem; }
+.mast__meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0 0 var(--space-md);
+}
+.mast h1 {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 500;
+  font-size: var(--text-display);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 0 0 var(--space-md);
+  max-width: 16ch;
+  color: var(--color-ink);
+}
+.mast__lede {
+  max-width: var(--measure);
+  color: var(--color-ink-soft);
+  font-size: var(--text-md);
+  margin: 0 0 var(--space-xl);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
 .btn {
-  display: inline-flex; align-items: center; gap: .45rem;
-  padding: .85rem 1.2rem; border-radius: 999px; font-weight: 700;
-  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  border: var(--rule-hair) solid var(--color-rule);
+  background: transparent;
+  color: var(--color-ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
 }
+.btn:hover { border-color: var(--color-muted); background: var(--color-paper-2); color: var(--color-ink); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
 .btn-primary {
-  background: linear-gradient(135deg, var(--mint), #1bbf8c);
-  color: #041018 !important;
-  box-shadow: 0 10px 30px rgba(46,230,166,.28);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-ink);
 }
-.btn-primary:hover { filter: brightness(1.05); color: #041018 !important; }
-.btn-ghost {
-  border-color: var(--stroke); color: var(--text) !important;
-  background: rgba(255,255,255,.03);
+.btn-primary:hover {
+  filter: brightness(1.05);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  border-color: var(--color-accent);
 }
-.stats {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: .75rem; max-width: 760px;
-}
-.stat {
-  padding: 1rem; border-radius: var(--radius);
-  border: 1px solid var(--stroke);
-  background: linear-gradient(180deg, rgba(255,255,255,.05), transparent 55%), var(--card);
-  backdrop-filter: blur(10px);
-}
-.stat strong {
-  display: block; font-size: 1.55rem; letter-spacing: -.02em;
-  background: linear-gradient(90deg, var(--mint2), var(--blue));
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-}
-.stat span { color: var(--muted); font-size: .9rem; }
 
-/* SECTIONS */
-section { padding: 2.4rem 0; }
-.section-title {
-  margin: 0 0 .35rem; font-size: clamp(1.5rem, 3vw, 2rem);
-  letter-spacing: -.025em;
+.stage {
+  padding: var(--space-3xl) var(--page-gutter);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
 }
-.section-sub { color: var(--muted); margin: 0 0 1.4rem; max-width: 58ch; }
-.grid-3 {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;
+.stage__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-sm);
+  font-weight: 500;
 }
-.card {
-  position: relative; overflow: hidden;
-  background: linear-gradient(165deg, rgba(255,255,255,.06), transparent 42%), var(--card);
-  border: 1px solid var(--stroke);
-  border-radius: calc(var(--radius) + 2px);
-  padding: 1.25rem 1.3rem;
-  backdrop-filter: blur(12px);
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+.stage h2 {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 500;
+  font-size: var(--text-display-s);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-md);
+  max-width: 22ch;
+  overflow-wrap: anywhere;
+  min-width: 0;
 }
-.card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(46,230,166,.35);
-  box-shadow: 0 20px 50px rgba(0,0,0,.35), 0 0 0 1px rgba(46,230,166,.08);
+.stage p {
+  max-width: var(--measure);
+  color: var(--color-ink-soft);
+  margin: 0 0 var(--space-md);
 }
-.card .tag {
-  display: inline-block; font-size: .72rem; font-weight: 800;
-  letter-spacing: .08em; text-transform: uppercase;
-  color: var(--blue); margin-bottom: .5rem;
-}
-.card h3 { margin: 0 0 .4rem; font-size: 1.12rem; letter-spacing: -.01em; }
-.card p { margin: 0; color: var(--muted); }
-.card a.stretch { position: absolute; inset: 0; }
+.stage h2 + p { margin-top: 0; }
 
-/* TIMELINE */
-.timeline { display: grid; gap: .7rem; }
-.week {
-  display: grid; grid-template-columns: 96px 1fr; gap: 1rem;
-  border: 1px solid var(--stroke); border-radius: var(--radius);
-  background: var(--card); padding: 1rem 1.15rem;
-  transition: border-color .15s ease;
+.week-list {
+  list-style: none;
+  margin: var(--space-xl) 0 0;
+  padding: 0;
+  border-top: var(--rule-hair) solid var(--color-rule);
 }
-.week:hover { border-color: rgba(91,140,255,.4); }
-.week-num {
-  font-weight: 800; color: var(--mint);
-  font-size: .95rem; letter-spacing: .04em;
+.week-list li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+  min-width: 0;
 }
-.week h3 { margin: 0 0 .2rem; font-size: 1.05rem; }
-.week p { margin: 0; color: var(--muted); font-size: .95rem; }
+.week-list .n {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+.week-list strong {
+  display: block;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 600;
+  font-size: var(--text-md);
+  color: var(--color-ink);
+  margin-bottom: var(--space-2xs);
+}
+.week-list span { color: var(--color-ink-soft); font-size: var(--text-sm); }
 
-/* PROSE */
-.page-hero {
-  padding: 2.8rem 0 1.2rem;
-  border-bottom: 1px solid var(--stroke);
-  margin-bottom: 1.5rem;
+.track-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-lg);
+  font-size: var(--text-sm);
 }
-.page-hero h1 {
-  margin: 0 0 .5rem; font-size: clamp(2rem, 4vw, 2.8rem);
-  letter-spacing: -.03em;
+.track-table th,
+.track-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) 0;
+  border-bottom: var(--rule-hair) solid var(--color-rule);
 }
-.page-hero p { margin: 0; color: var(--muted); max-width: 62ch; }
-.prose {
-  background: var(--card);
-  border: 1px solid var(--stroke);
-  border-radius: calc(var(--radius) + 4px);
-  padding: 1.5rem 1.6rem 2rem;
-  backdrop-filter: blur(10px);
+.track-table th {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-weight: 500;
 }
+.track-table code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--color-accent);
+}
+
+pre, .cmd {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  background: var(--color-paper-2);
+  border: var(--rule-hair) solid var(--color-rule);
+  padding: var(--space-md);
+  overflow-x: auto;
+  color: var(--color-ink-soft);
+  margin: var(--space-md) 0;
+}
+code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+.prose p { max-width: var(--measure); color: var(--color-ink-soft); }
+.prose h1, .prose h2, .prose h3 {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+.prose h1 { font-size: var(--text-display-s); margin: 0 0 var(--space-md); }
 .prose h2 {
-  margin-top: 1.7rem; padding-top: .5rem;
-  border-top: 1px solid var(--stroke);
-  font-size: 1.3rem; letter-spacing: -.02em;
+  font-size: var(--text-xl);
+  margin: var(--space-2xl) 0 var(--space-sm);
+  padding-top: var(--space-lg);
+  border-top: var(--rule-hair) solid var(--color-rule);
 }
-.prose h2:first-child { margin-top: 0; border: 0; padding-top: 0; }
-.prose h3 { margin-top: 1.2rem; }
-.prose p, .prose li { color: #d4deef; }
-.prose code, code {
-  font-family: var(--mono); font-size: .88em;
-  background: rgba(46,230,166,.1);
-  border: 1px solid rgba(46,230,166,.18);
-  padding: .1rem .35rem; border-radius: 6px; color: var(--mint2);
+.prose h2:first-of-type { margin-top: var(--space-xl); }
+.prose ul, .prose ol { color: var(--color-ink-soft); max-width: var(--measure); }
+.note {
+  border-left: var(--rule-thick) solid var(--color-accent);
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-lg) 0;
+  color: var(--color-ink-soft);
+  max-width: var(--measure);
+  background: var(--color-paper-2);
 }
-.prose pre {
-  font-family: var(--mono); font-size: .86rem;
-  background: #04070e; border: 1px solid var(--stroke);
-  border-radius: 12px; padding: 1rem; overflow-x: auto; color: #d7e3f4;
-}
-.prose pre code { background: none; border: 0; padding: 0; color: inherit; }
-.banner {
-  background: rgba(255,193,77,.1);
-  border: 1px solid rgba(255,193,77,.35);
-  color: #ffe2a0;
-  padding: .8rem 1rem; border-radius: 12px; margin: 1rem 0;
-}
-.table-wrap {
-  overflow-x: auto; border: 1px solid var(--stroke);
-  border-radius: var(--radius); background: rgba(0,0,0,.25);
-}
-table { width: 100%; border-collapse: collapse; font-size: .95rem; }
-th, td {
-  text-align: left; padding: .85rem 1rem;
-  border-bottom: 1px solid var(--stroke); vertical-align: top;
-}
-th { color: var(--muted); font-weight: 600; background: rgba(255,255,255,.02); }
-tr:last-child td { border-bottom: 0; }
-
-footer {
-  border-top: 1px solid var(--stroke);
-  padding: 2rem 0 3rem; color: var(--muted); font-size: .92rem; margin-top: 2rem;
-}
-footer .wrap {
-  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
+.page {
+  padding: var(--space-3xl) var(--page-gutter) var(--space-4xl);
 }
 
-@media (max-width: 720px) {
-  .week { grid-template-columns: 1fr; }
+/* Ft5 Statement */
+.foot-stmt {
+  padding: var(--space-3xl) var(--page-gutter) var(--space-2xl);
+  border-top: var(--rule-thick) solid var(--color-rule);
+  display: grid;
+  gap: var(--space-xl);
+}
+.foot-stmt__line {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+  margin: 0;
+  color: var(--color-ink);
+}
+.foot-stmt__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  align-items: baseline;
+  padding-block-start: var(--space-md);
+  border-top: var(--rule-hair) solid var(--color-rule);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+.foot-stmt__meta a { color: var(--color-muted); text-decoration: none; }
+.foot-stmt__meta a:hover { color: var(--color-accent); }
+
+@media (max-width: 640px) {
+  .nav { flex-direction: column; align-items: flex-start; }
+  .nav-links { justify-content: flex-start; }
+  .week-list li { grid-template-columns: 1fr; gap: var(--space-2xs); }
+  .actions { flex-direction: column; align-items: stretch; }
+  .btn { justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 """
 
-NAV_LINKS = [
-    ("index.html", "Home"),
-    ("quickstart.html", "Quickstart"),
-    ("curriculum.html", "Curriculum"),
-    ("clients.html", "Clients"),
-    ("methodology.html", "Method"),
-]
-
 
 def nav(active: str) -> str:
+    items = [
+        ("index.html", "Home"),
+        ("quickstart.html", "Start"),
+        ("curriculum.html", "Weeks"),
+        ("clients.html", "Tracks"),
+        ("methodology.html", "Method"),
+    ]
     links = []
-    for href, label in NAV_LINKS:
-        cls = ' class="active"' if href == active else ""
-        links.append(f'<a href="{href}"{cls}>{label}</a>')
+    for href, label in items:
+        cur = ' aria-current="page"' if href == active else ""
+        links.append(f'<a href="{href}"{cur}>{label}</a>')
     return f"""
+<a class="skip" href="#main">Skip to content</a>
 <header class="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="index.html"><span class="mark">CR</span><span>Climate Risk Course</span></a>
-    <nav class="nav-links">
-      {"".join(links)}
-      <a class="nav-cta" href="https://github.com/rdsciv/ClimateRiskCourse" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-  </div>
+  <a class="wordmark" href="index.html">Climate Risk Course</a>
+  <nav class="nav-links" aria-label="Primary">{"".join(links)}</nav>
 </header>
 """
 
 
-def page(title: str, active: str, body: str, description: str = "") -> str:
-    desc = description or title
+def footer() -> str:
+    return """
+<footer class="foot-stmt">
+  <p class="foot-stmt__line">Ship the judgment. Keep the trail.</p>
+  <div class="foot-stmt__meta">
+    <span>Climate Risk Course · MIT</span>
+    <span>
+      <a href="https://github.com/rdsciv/ClimateRiskCourse">GitHub</a>
+      · <a href="quickstart.html">Start</a>
+    </span>
+  </div>
+</footer>
+"""
+
+
+def page(title: str, active: str, body: str, description: str) -> str:
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>{title} · Climate Risk Course</title>
-  <meta name="description" content="{desc}"/>
+  <meta name="description" content="{description}"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/site.css"/>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
 </head>
 <body>
 {nav(active)}
-<main>
+<main id="main">
 {body}
 </main>
-<footer>
-  <div class="wrap">
-    <div><strong style="color:var(--text)">Climate Risk Course</strong><br/>Mintlify source in <code>docs/</code> · Grok Build training</div>
-    <div><a href="quickstart.html">Quickstart</a> · <a href="https://github.com/rdsciv/ClimateRiskCourse">Repo</a></div>
-  </div>
-</footer>
+{footer()}
 </body>
 </html>
 """
 
 
-def write(name: str, title: str, body: str, description: str = "") -> None:
+def write(name: str, title: str, body: str, description: str) -> None:
     (OUT / name).write_text(page(title, name, body, description), encoding="utf-8")
 
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "assets").mkdir(exist_ok=True)
-    (OUT / "assets" / "site.css").write_text(CSS, encoding="utf-8")
+    assets = OUT / "assets"
+    assets.mkdir(exist_ok=True)
+    (assets / "site.css").write_text(CSS, encoding="utf-8")
     fav = ROOT / "docs" / "favicon.svg"
     if fav.is_file():
-        (OUT / "assets" / "favicon.svg").write_text(fav.read_text(encoding="utf-8"), encoding="utf-8")
+        (assets / "favicon.svg").write_text(fav.read_text(encoding="utf-8"), encoding="utf-8")
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
 
     write(
         "index.html",
         "Home",
         """
-<section class="hero wrap">
-  <div class="eyebrow">Grok Build · Six-week residency format</div>
-  <h1>Climate risk, end to end.</h1>
-  <p class="lede">Not a chat tutorial. A consulting engagement you run with Grok Build — hazard signal through to decisions your client can take.</p>
+<section class="mast">
+  <p class="mast__meta">Grok Build training · six weeks · three tracks</p>
+  <h1>From client file to board pack.</h1>
+  <p class="mast__lede">A climate-risk consulting engagement you run yourself — with Grok Build as the harness, uv for the environment, and a firm methodology that separates computed figures from judgment.</p>
   <div class="actions">
-    <a class="btn btn-primary" href="quickstart.html">Start Day 1 →</a>
-    <a class="btn btn-ghost" href="curriculum.html">See curriculum</a>
-  </div>
-  <div class="stats">
-    <div class="stat"><strong>6</strong><span>weeks · chained deliverables</span></div>
-    <div class="stat"><strong>3</strong><span>original client tracks</span></div>
-    <div class="stat"><strong>36</strong><span>guided exercises</span></div>
-    <div class="stat"><strong>2</strong><span>capstone audiences</span></div>
+    <a class="btn btn-primary" href="quickstart.html">Start at stage 1</a>
+    <a class="btn" href="https://github.com/rdsciv/ClimateRiskCourse">View on GitHub</a>
   </div>
 </section>
 
-<section class="wrap">
-  <h2 class="section-title">Pick your battlefield</h2>
-  <p class="section-sub">Same method. Different decision language. Stay with one track through the capstone.</p>
-  <div class="grid-3">
-    <div class="card">
-      <div class="tag">colorado</div>
-      <h3>Colorado River reservoirs</h3>
-      <p>Redrock Basin Authority. Drought ops, releases, allocations, hydropower contingency.</p>
-      <a class="stretch" href="clients.html#colorado" aria-label="Colorado track"></a>
-    </div>
-    <div class="card">
-      <div class="tag">kerrville</div>
-      <h3>Kerrville flood risk</h3>
-      <p>City of Kerrville. Critical facilities, access, mitigation priority, buyout vs defend.</p>
-      <a class="stretch" href="clients.html#kerrville" aria-label="Kerrville track"></a>
-    </div>
-    <div class="card">
-      <div class="tag">datacenter</div>
-      <h3>Texas data center EIS</h3>
-      <p>Horizon Grid. Alternatives analysis, water, power/grid, community receptors.</p>
-      <a class="stretch" href="clients.html#datacenter" aria-label="Datacenter track"></a>
-    </div>
-  </div>
+<section class="stage" id="tracks">
+  <p class="stage__label">1.0 · Choose the book</p>
+  <h2>One track. Stay with it.</h2>
+  <p>Same six-week method. Different decision language. All data is simulated training material.</p>
+  <table class="track-table">
+    <thead>
+      <tr><th>Key</th><th>Client</th><th>You decide in terms of…</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>colorado</code></td>
+        <td>Redrock Basin Authority — Colorado River reservoirs</td>
+        <td>Releases, allocations, hydropower contingency</td>
+      </tr>
+      <tr>
+        <td><code>kerrville</code></td>
+        <td>City of Kerrville — flood risk (TX)</td>
+        <td>Mitigation priority, access, buyout vs defend</td>
+      </tr>
+      <tr>
+        <td><code>datacenter</code></td>
+        <td>Horizon Grid — Texas data center EIS</td>
+        <td>Alternatives, water, grid, receptors</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
-<section class="wrap">
-  <h2 class="section-title">The engagement arc</h2>
-  <p class="section-sub">Each week answers a question the client would pay for. Deliverables chain.</p>
-  <div class="timeline">
-    <article class="week"><div class="week-num">WEEK 1</div><div><h3>The Client</h3><p>Scope the engagement. Brief Grok. Ship framing &amp; delivery plan.</p></div></article>
-    <article class="week"><div class="week-num">WEEK 2</div><div><h3>Portfolio mapping</h3><p>Geocode, classify, screen the book, form risk hypotheses.</p></div></article>
-    <article class="week"><div class="week-num">WEEK 3</div><div><h3>Hazard data</h3><p>Pull and organize asset-level exposure with a full audit trail.</p></div></article>
-    <article class="week"><div class="week-num">WEEK 4</div><div><h3>Scenarios</h3><p>Standard for the record. Bespoke for <em>this</em> book.</p></div></article>
-    <article class="week"><div class="week-num">WEEK 5</div><div><h3>Synthesis</h3><p>Concentration, priorities, decision language, recommendations.</p></div></article>
-    <article class="week"><div class="week-num">WEEK 6</div><div><h3>Delivery</h3><p>Board judgment pack + regulatory-style record with lineage.</p></div></article>
-  </div>
+<section class="stage" id="weeks">
+  <p class="stage__label">2.0 · Run the engagement</p>
+  <h2>Each week answers a paid question.</h2>
+  <p>Deliverables chain. Week six produces judgment for the board and a record for reviewers.</p>
+  <ol class="week-list">
+    <li><span class="n">00</span><div><strong>Orientation</strong><span>Install, clone, pick a track.</span></div></li>
+    <li><span class="n">01</span><div><strong>The client</strong><span>Framing and delivery plan.</span></div></li>
+    <li><span class="n">02</span><div><strong>Portfolio mapping</strong><span>Geocode, classify, hypotheses.</span></div></li>
+    <li><span class="n">03</span><div><strong>Hazard data</strong><span>Scores, joins, audit log.</span></div></li>
+    <li><span class="n">04</span><div><strong>Scenarios</strong><span>Standard set + bespoke stresses.</span></div></li>
+    <li><span class="n">05</span><div><strong>Synthesis</strong><span>Concentration and decisions.</span></div></li>
+    <li><span class="n">06</span><div><strong>Delivery</strong><span>Board pack + record with lineage.</span></div></li>
+  </ol>
+  <p style="margin-top:var(--space-xl)"><a class="btn" href="curriculum.html">Full curriculum</a></p>
 </section>
 
-<section class="wrap">
-  <h2 class="section-title">Built for Grok Build</h2>
-  <div class="grid-3">
-    <div class="card"><h3>AGENTS.md + skills</h3><p>Firm brief and phase skills so every session inherits methodology, not vibes.</p></div>
-    <div class="card"><h3>Computed vs judged</h3><p><code>uv run</code> scripts for re-runnable numbers. Judgment labeled with mechanism + precedent.</p></div>
-    <div class="card"><h3>Assurable trail</h3><p>Audit logs, figure lineage, dual-audience packs that survive cold review.</p></div>
-  </div>
+<section class="stage" id="rules">
+  <p class="stage__label">3.0 · Hold the line</p>
+  <h2>Epistemic rules travel with every deliverable.</h2>
+  <p><strong style="color:var(--color-ink)">Computed</strong> figures come from scripts you re-run with <code>uv run</code>. <strong style="color:var(--color-ink)">Judged</strong> figures carry mechanism, precedent, and the word judgment. Gaps stay gaps. Scenario losses never sum.</p>
+  <p><a class="btn" href="methodology.html">Read the method</a></p>
 </section>
 """,
-        "Six weeks to a climate risk assessment — Grok Build course.",
+        "Six-week climate risk assessment course for Grok Build.",
     )
 
     write(
         "quickstart.html",
-        "Quickstart",
+        "Start",
         """
-<div class="wrap">
-  <div class="page-hero">
-    <h1>Quickstart</h1>
-    <p>About 30 minutes. Exact clone URL. uv only. No system Python circus.</p>
-  </div>
-  <div class="prose">
-    <h2>0. Install uv (once)</h2>
-    <pre><code>curl -LsSf https://astral.sh/uv/install.sh | sh
-uv --version</code></pre>
-    <h2>1. Clone the course</h2>
-    <p>Copy these two lines exactly:</p>
-    <pre><code>git clone https://github.com/rdsciv/ClimateRiskCourse.git
-cd ClimateRiskCourse</code></pre>
-    <h2>2. Install with uv</h2>
-    <pre><code>uv sync</code></pre>
-    <div class="banner">Use <strong>uv run</strong> for every script. Do not call system python3 or pip.</div>
-    <h2>3. Seed + pick a track</h2>
-    <pre><code>uv run scripts/seed_all_clients.py
+<div class="page prose">
+  <p class="stage__label">Day one · about thirty minutes</p>
+  <h1>Clone, sync, seed, open Grok.</h1>
+
+  <h2>Requirements</h2>
+  <ul>
+    <li><a href="https://git-scm.com/">Git</a></li>
+    <li><a href="https://docs.astral.sh/uv/">uv</a></li>
+    <li><a href="https://x.ai">Grok Build</a> authenticated</li>
+  </ul>
+
+  <h2>Install uv once</h2>
+<pre>curl -LsSf https://astral.sh/uv/install.sh | sh
+uv --version</pre>
+
+  <h2>1 · Clone the course</h2>
+  <p>Two lines. First downloads the repo. Second enters it.</p>
+<pre>git clone https://github.com/rdsciv/ClimateRiskCourse.git
+cd ClimateRiskCourse</pre>
+
+  <h2>2 · Install with uv</h2>
+<pre>uv sync</pre>
+  <div class="note">Use <strong>uv run</strong> for every script. Do not call system python3 or pip.</div>
+
+  <h2>3 · Seed and pick a track</h2>
+<pre>uv run scripts/seed_all_clients.py
 uv run scripts/set_track.py colorado   # or kerrville | datacenter
-uv run scripts/course_lint.py</code></pre>
-    <h2>4. Open Grok Build</h2>
-    <p>In the <code>ClimateRiskCourse</code> folder, ask:</p>
-    <pre><code>Summarize firm/methodology.md in five bullets.
-Do not open any exercises/**/solution/ folders.</code></pre>
-    <h2>5. Orientation</h2>
-    <p>Work through <code>exercises/00-orientation/</code>, then week 1. Explainers → problems → solutions only after an honest attempt.</p>
-  </div>
+uv run scripts/course_lint.py</pre>
+
+  <h2>4 · Open Grok Build</h2>
+  <p>In the <code>ClimateRiskCourse</code> folder:</p>
+<pre>Summarize firm/methodology.md in five bullets.
+Do not open any exercises/**/solution/ folders.</pre>
+
+  <h2>5 · Orientation</h2>
+  <p>Work through <code>exercises/00-orientation/</code>, then week 1. Explainers first, problems next, solutions only after an honest attempt. Outputs go to <code>clients/&lt;track&gt;/outputs/week-N/</code>.</p>
 </div>
 """,
+        "Clone the Climate Risk Course and start Day 1 with uv.",
     )
 
     write(
         "curriculum.html",
-        "Curriculum",
+        "Weeks",
         """
-<div class="wrap">
-  <div class="page-hero">
-    <h1>Curriculum</h1>
-    <p>Three phases: the client, the analysis, the delivery.</p>
-  </div>
-  <div class="table-wrap" style="margin-bottom:2rem">
-    <table>
-      <thead><tr><th>Week</th><th>Question</th><th>Deliverable</th></tr></thead>
-      <tbody>
-        <tr><td><strong>0</strong></td><td>How do I take this?</td><td>Environment + track</td></tr>
-        <tr><td><strong>1</strong></td><td>What does the client need?</td><td>Framing &amp; delivery plan</td></tr>
-        <tr><td><strong>2</strong></td><td>Where does risk concentrate?</td><td>Mapped book + hypotheses</td></tr>
-        <tr><td><strong>3</strong></td><td>Which hazard data matters?</td><td>Hazard dataset + audit log</td></tr>
-        <tr><td><strong>4</strong></td><td>Which scenarios bite?</td><td>Standard + bespoke results</td></tr>
-        <tr><td><strong>5</strong></td><td>What should change?</td><td>Synthesis + decisions</td></tr>
-        <tr><td><strong>6</strong></td><td>Will it stand up?</td><td>Board judgment + record</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="prose">
-    <p>Hands-on exercises live in <code>exercises/</code> as explainer / problem / solution variants. Full week guides also exist as Mintlify MDX under <code>docs/weeks/</code>.</p>
-  </div>
+<div class="page prose">
+  <p class="stage__label">Curriculum</p>
+  <h1>Six stages. One chain.</h1>
+  <p>Hands-on work lives under <code>exercises/</code> as explainer, problem, and solution variants.</p>
+
+  <ol class="week-list" style="margin-top:var(--space-2xl)">
+    <li><span class="n">00</span><div><strong>Orientation</strong><span>Environment ready; track chosen.</span></div></li>
+    <li><span class="n">01</span><div><strong>The Client</strong><span>What does this client need? Framing &amp; delivery plan.</span></div></li>
+    <li><span class="n">02</span><div><strong>Mapping</strong><span>Where does risk concentrate? Mapped book + hypotheses.</span></div></li>
+    <li><span class="n">03</span><div><strong>Hazard</strong><span>Which data matters? Organized hazard dataset + audit log.</span></div></li>
+    <li><span class="n">04</span><div><strong>Scenarios</strong><span>Standard for the record; bespoke for this book.</span></div></li>
+    <li><span class="n">05</span><div><strong>Synthesis</strong><span>What should change? Concentration and decisions.</span></div></li>
+    <li><span class="n">06</span><div><strong>Delivery</strong><span>Board judgment + regulatory-style record.</span></div></li>
+  </ol>
+
+  <h2>Mintlify source</h2>
+  <p>Structured week and track pages also live in <code>docs/</code> for local Mintlify preview:</p>
+<pre>cd docs && npx mintlify dev</pre>
 </div>
 """,
+        "Six-week curriculum for the climate risk course.",
     )
 
     write(
         "clients.html",
-        "Clients",
+        "Tracks",
         """
-<div class="wrap">
-  <div class="page-hero">
-    <h1>Client tracks</h1>
-    <p>Original training worlds — not franchise clones.</p>
-  </div>
-  <article id="colorado" class="card" style="margin-bottom:1rem">
-    <div class="tag">colorado</div>
-    <h3>Redrock Basin Authority</h3>
-    <p>Colorado River–style multi-reservoir operations. ~48 nodes. Releases, allocations, hydropower contingency.</p>
-    <p style="margin-top:.6rem"><code>uv run scripts/set_track.py colorado</code></p>
-  </article>
-  <article id="kerrville" class="card" style="margin-bottom:1rem">
-    <div class="tag">kerrville</div>
-    <h3>City of Kerrville — flood risk</h3>
-    <p>Guadalupe / Hill Country corridor. ~80 facilities. Mitigation priority, access, buyout vs defend.</p>
-    <p style="margin-top:.6rem"><code>uv run scripts/set_track.py kerrville</code></p>
-  </article>
-  <article id="datacenter" class="card" style="margin-bottom:2rem">
-    <div class="tag">datacenter</div>
-    <h3>Horizon Grid — Texas data center EIS</h3>
-    <p>~55 EIS elements across alternatives. Water, power/grid, receptors, mitigation.</p>
-    <p style="margin-top:.6rem"><code>uv run scripts/set_track.py datacenter</code></p>
-  </article>
+<div class="page prose">
+  <p class="stage__label">Client tracks</p>
+  <h1>Three books. One method.</h1>
+
+  <h2>Colorado River reservoirs</h2>
+  <p><code>colorado</code> · <code>clients/colorado-river-reservoirs/</code></p>
+  <p>Redrock Basin Authority (simulated). Multi-reservoir operations under drought and heat. Releases, allocations, compact-sensitive deliveries, hydropower contingency.</p>
+<pre>uv run scripts/set_track.py colorado</pre>
+
+  <h2>Kerrville flood risk</h2>
+  <p><code>kerrville</code> · <code>clients/kerrville-flood/</code></p>
+  <p>City of Kerrville (simulated asset book; real geography). Critical facilities, access, mitigation priority, buyout vs defend.</p>
+<pre>uv run scripts/set_track.py kerrville</pre>
+
+  <h2>Texas data center EIS</h2>
+  <p><code>datacenter</code> · <code>clients/texas-datacenter-eis/</code></p>
+  <p>Horizon Grid LLC (simulated). Alternatives analysis, water supply, grid interconnect, receptors, mitigation commitments.</p>
+<pre>uv run scripts/set_track.py datacenter</pre>
+
+  <div class="note">Stay with one track through week six. Mixing books mid-engagement breaks the chain.</div>
 </div>
 """,
+        "Colorado River, Kerrville flood, and Texas data center EIS tracks.",
     )
 
     write(
         "methodology.html",
-        "Methodology",
+        "Method",
         """
-<div class="wrap">
-  <div class="page-hero">
-    <h1>Firm methodology</h1>
-    <p>Decision-grade climate risk. Computed vs judged. Dual audiences.</p>
-  </div>
-  <div class="prose">
-    <h2>Rules that don't bend</h2>
-    <ol>
-      <li><strong>Decisions, not scores.</strong></li>
-      <li><strong>Computed</strong> from <code>uv run</code> scripts you can re-run. <strong>Judged</strong> labeled with mechanism + precedent.</li>
-      <li><strong>Assurable trail</strong> — cold review without trusting the presenter's CV.</li>
-      <li><strong>Gaps</strong> become watchlist items — never silent invention.</li>
-      <li><strong>Do not sum scenario losses.</strong></li>
-    </ol>
-    <h2>Dual audiences</h2>
-    <p><strong>Board / council / exec</strong> gets judgment. <strong>Regulator / grant / EIS record</strong> gets lineage.</p>
-    <p>Full library: <code>firm/</code> in the repo · Mintlify pages in <code>docs/</code>.</p>
-  </div>
+<div class="page prose">
+  <p class="stage__label">Firm methodology</p>
+  <h1>Decision-grade, not score-led.</h1>
+  <p>Hazard signal joins to operations or capital questions. Disclosure falls out of the work; it is not the product.</p>
+
+  <h2>What we optimize for</h2>
+  <ol>
+    <li><strong>Decisions, not scores.</strong></li>
+    <li><strong>Legible epistemology</strong> — computed from scripts; judged with mechanism and precedent.</li>
+    <li><strong>Assurability</strong> — a cold reviewer can re-run numbers without trusting the presenter.</li>
+    <li><strong>Graceful degradation</strong> — thin data widens ranges and grows the watchlist.</li>
+  </ol>
+
+  <h2>Dual audiences</h2>
+  <p>Board, council, or project exec get the judgment. Regulator, grant, or EIS administrative record get the lineage.</p>
+
+  <h2>In the repo</h2>
+  <p>Full library under <code>firm/</code> — methodology, scenario cards, anchors, QA protocols, sample hazard grids.</p>
 </div>
 """,
+        "Firm methodology for climate risk assessments.",
     )
 
-    print(f"Built cool site → {OUT}")
+    # Project memory for Hallmark diversification
+    hallmark = ROOT / ".hallmark"
+    hallmark.mkdir(exist_ok=True)
+    (hallmark / "log.json").write_text(
+        """[
+  {
+    "date": "2026-07-27",
+    "macrostructure": "Narrative Workflow",
+    "theme": "custom",
+    "theme_axes": "dark / roman-serif / warm",
+    "vibe": "field report after dark",
+    "enrichment": "none",
+    "nav": "N9",
+    "footer": "Ft5",
+    "brief": "Climate Risk Course public site redesign"
+  }
+]
+""",
+        encoding="utf-8",
+    )
+    (hallmark / "preflight.json").write_text(
+        """{
+  "scanned": "2026-07-27",
+  "framework": "vanilla HTML static site via scripts/build_cool_site.py",
+  "fonts": "Newsreader + IBM Plex Sans + JetBrains Mono (Google Fonts)",
+  "motion": "none (motion-cut)",
+  "package_managers": ["uv", "npm scripts for mintlify"]
+}
+""",
+        encoding="utf-8",
+    )
+
+    print(f"Built Hallmark site → {OUT}")
 
 
 if __name__ == "__main__":
