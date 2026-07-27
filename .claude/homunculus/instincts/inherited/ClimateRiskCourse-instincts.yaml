@@ -1,0 +1,462 @@
+# Instincts generated from https://github.com/rdsciv/ClimateRiskCourse
+# Generated: 2026-07-27T18:36:12.550Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: ClimateRiskCourse-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/rdsciv/ClimateRiskCourse
+---
+
+# ClimateRiskCourse Commit Length
+
+## Action
+
+Write moderate-length commit messages (~50 characters)
+
+## Evidence
+
+- Average commit message length: 50 chars
+- Based on 5 commits
+
+---
+id: ClimateRiskCourse-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/rdsciv/ClimateRiskCourse
+---
+
+# ClimateRiskCourse Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: ClimateRiskCourse-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/rdsciv/ClimateRiskCourse
+---
+
+# ClimateRiskCourse Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: ClimateRiskCourse-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/rdsciv/ClimateRiskCourse
+---
+
+# ClimateRiskCourse Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: ClimateRiskCourse-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/rdsciv/ClimateRiskCourse
+---
+
+# ClimateRiskCourse Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: ClimateRiskCourse-workflow-add-or-update-client-track
+trigger: "when doing add or update client track"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rdsciv/ClimateRiskCourse
+---
+
+# ClimateRiskCourse Workflow Add Or Update Client Track
+
+## Action
+
+Follow the add-or-update-client-track workflow:
+1. Add or update directories under clients/ with AGENTS.md, briefing, db, documents, outputs, portfolio, and summary files.
+2. Update docs/clients.html, docs/reading/clients-overview.html, and related docs/reading/ex-00.03-choose-your-client-track.html.
+3. Update exercises/00-orientation/00.03-choose-your-client-track/problem/readme.md and explainer/readme.md.
+4. Update or add scripts/seed_<client>.py and scripts/seed_all_clients.py.
+5. Update README.md and clients/README.md to reflect new tracks.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: clients/*/AGENTS.md, clients/*/briefing/engagement.md, clients/*/db/portfolio.sqlite
+
+---
+id: ClimateRiskCourse-workflow-update-or-expand-curriculum-and-exercises
+trigger: "when doing update or expand curriculum and exercises"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rdsciv/ClimateRiskCourse
+---
+
+# ClimateRiskCourse Workflow Update Or Expand Curriculum And Exercises
+
+## Action
+
+Follow the update-or-expand-curriculum-and-exercises workflow:
+1. Add or update files in exercises/<module>/<exercise>/<type>/readme.md.
+2. Update docs/reading/ex-*.html and docs/reading/ex-*.mdx for corresponding curriculum readings.
+3. Update or add scripts/generate_exercises.py and related scripts.
+4. Update docs/curriculum.html and docs/weeks/week-*.mdx as needed.
+5. Update README.md and CONTRIBUTING.md to reflect curriculum changes.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: exercises/*/*/*/readme.md, docs/reading/ex-*.html, docs/reading/ex-*.mdx
+
+---
+id: ClimateRiskCourse-workflow-docs-site-revamp-or-content-sync
+trigger: "when doing docs site revamp or content sync"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rdsciv/ClimateRiskCourse
+---
+
+# ClimateRiskCourse Workflow Docs Site Revamp Or Content Sync
+
+## Action
+
+Follow the docs-site-revamp-or-content-sync workflow:
+1. Add or update files in docs/ (HTML, MDX, CSS, JS, assets).
+2. Update or add scripts/build_docs_site.py or scripts/build_cool_site.py.
+3. Update .github/workflows/pages.yml for CI/CD deployment.
+4. Update README.md to document site changes.
+5. Update docs/docs.json or similar config for docs frameworks.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: docs/**/*, scripts/build_docs_site.py, scripts/build_cool_site.py
+
+---
+id: ClimateRiskCourse-workflow-course-setup-and-onboarding-improvement
+trigger: "when doing course setup and onboarding improvement"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rdsciv/ClimateRiskCourse
+---
+
+# ClimateRiskCourse Workflow Course Setup And Onboarding Improvement
+
+## Action
+
+Follow the course-setup-and-onboarding-improvement workflow:
+1. Update README.md, CONTRIBUTING.md, and INSTRUCTOR.md with new setup steps.
+2. Update package.json, pyproject.toml, and uv.lock for dependency management.
+3. Update or add scripts relevant to setup (e.g., scripts/generate_exercises.py).
+4. Update .github/workflows/pages.yml if CI/CD setup changes.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: README.md, CONTRIBUTING.md, INSTRUCTOR.md
+
+---
+id: climateriskcourse-instinct-file-naming-camelCase
+trigger: "When creating a new Python file or renaming an existing one"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase (e.g., generateExercises.py)
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+- Seen in scripts/generate_exercises.py
+
+---
+id: climateriskcourse-instinct-function-naming-camelCase
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase (e.g., seedAllClients)
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: climateriskcourse-instinct-class-naming-PascalCase
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase (e.g., ClientPortfolio)
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: climateriskcourse-instinct-constant-naming-SCREAMING_SNAKE_CASE
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Constant Naming SCREAMING_SNAKE_CASE
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE (e.g., DEFAULT_PORTFOLIO_PATH)
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: climateriskcourse-instinct-import-style-relative
+trigger: "When importing modules within the package"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Import Style Relative
+
+## Action
+
+Use relative imports (e.g., from .module import function)
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: climateriskcourse-instinct-export-style-named
+trigger: "When exporting functions or classes from a module"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Export Style Named
+
+## Action
+
+Use named exports (explicitly list exported symbols)
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: climateriskcourse-instinct-testing-separate-folder
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Testing Separate Folder
+
+## Action
+
+Place test files in a separate test folder, not mixed with source files
+
+## Evidence
+
+- Pattern in architecture.testLocation: separate
+
+---
+id: climateriskcourse-instinct-git-freeform-commits
+trigger: "When writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Git Freeform Commits
+
+## Action
+
+Use a concise, freeform message without a strict prefix, focusing on the main change (e.g., 'Polish README with readme-wizard structure')
+
+## Evidence
+
+- Pattern in commits.type: freeform
+- Examples: 'Polish README with readme-wizard structure'
+
+---
+id: climateriskcourse-instinct-git-short-commits
+trigger: "When composing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Git Short Commits
+
+## Action
+
+Keep the commit message brief (average ~50 characters)
+
+## Evidence
+
+- Pattern in commits.averageLength: 50
+
+---
+id: climateriskcourse-instinct-add-or-update-client-track
+trigger: "When a new client scenario is introduced or existing client tracks are significantly revised"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Add Or Update Client Track
+
+## Action
+
+Update or add all relevant client directories, docs, exercises, seed scripts, and README files as per the workflow
+
+## Evidence
+
+- Workflow: add-or-update-client-track
+- Commit sequence and files in workflow example
+
+---
+id: climateriskcourse-instinct-update-or-expand-curriculum
+trigger: "When new exercises or curriculum content are added or existing ones updated"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Update Or Expand Curriculum
+
+## Action
+
+Update exercises, corresponding docs, scripts, and curriculum overview files as per the workflow
+
+## Evidence
+
+- Workflow: update-or-expand-curriculum-and-exercises
+- Commit sequence and files in workflow example
+
+---
+id: climateriskcourse-instinct-docs-site-revamp
+trigger: "When launching a new docs site version, migrating docs framework, or syncing large content changes"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Docs Site Revamp
+
+## Action
+
+Update docs site files, build scripts, CI/CD config, and document changes in README and docs config
+
+## Evidence
+
+- Workflow: docs-site-revamp-or-content-sync
+- Commit sequence and files in workflow example
+
+---
+id: climateriskcourse-instinct-course-setup-onboarding
+trigger: "When improving onboarding or updating setup instructions/tools"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: rdsciv/ClimateRiskCourse
+---
+
+# Climateriskcourse Instinct Course Setup Onboarding
+
+## Action
+
+Update setup guides, dependency files, relevant scripts, and CI/CD config as per the workflow
+
+## Evidence
+
+- Workflow: course-setup-and-onboarding-improvement
+- Commit sequence and files in workflow example
+
