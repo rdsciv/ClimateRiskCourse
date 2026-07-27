@@ -36,3 +36,6 @@ clients/active
 .cache/
 clients/*/db/*.sqlite-journal
 *.log
+
+# Generated public site (CI builds)
+site/

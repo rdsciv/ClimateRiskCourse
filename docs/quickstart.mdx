@@ -1,0 +1,97 @@
+---
+title: "Quickstart"
+description: "Clone the course, install with uv, seed clients, open Grok Build."
+---
+
+About **30 minutes** to a working environment and your first engagement session.
+
+## Requirements
+
+- [Git](https://git-scm.com/)
+- [uv](https://docs.astral.sh/uv/)
+- [Grok Build](https://x.ai) CLI authenticated
+
+## Install uv (once per machine)
+
+If `uv` is not already on your PATH:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Open a new terminal, then:
+
+```bash
+uv --version
+```
+
+## Day-1 steps
+
+<Steps>
+  <Step title="Clone the course">
+    Copy these two lines exactly. First downloads the repo; second enters it.
+
+    ```bash
+    git clone https://github.com/rdsciv/ClimateRiskCourse.git
+    cd ClimateRiskCourse
+    ```
+  </Step>
+
+  <Step title="Install dependencies with uv">
+    ```bash
+    uv sync
+    ```
+
+    That creates the project environment from `pyproject.toml`.
+
+    <Warning>
+    Use **`uv run`** for every script. Do not call system `python3` or `pip`.
+    </Warning>
+  </Step>
+
+  <Step title="Seed clients and pick a track">
+    ```bash
+    uv run scripts/seed_all_clients.py
+    uv run scripts/set_track.py colorado   # or kerrville | datacenter
+    uv run scripts/course_lint.py
+    ```
+  </Step>
+
+  <Step title="Open Grok Build">
+    Start Grok in the `ClimateRiskCourse` folder (repo root). Root `AGENTS.md` loads automatically. Ask:
+
+    ```text
+    Summarize firm/methodology.md in five bullets.
+    Do not open any exercises/**/solution/ folders.
+    ```
+  </Step>
+
+  <Step title="Orientation">
+    Work through `exercises/00-orientation/`, then week 1.
+
+    - Read **explainer** variants first
+    - Complete **problem** with Grok
+    - Open **solution** only after an honest attempt
+    - Write outputs to `clients/<track>/outputs/week-N/`
+  </Step>
+</Steps>
+
+## Epistemic rules
+
+1. **Computed** figures come from saved scripts run with `uv run`.
+2. **Judged** figures carry mechanism + precedent + the word *judgment*.
+3. Never invent government/vendor data pulls.
+4. Document gaps; do not fill them silently.
+5. Do not sum losses across scenarios.
+
+## Optional reference pipelines
+
+```bash
+uv run scripts/reference_week1_overview.py
+uv run scripts/reference_week3_score.py
+uv run scripts/reference_week4_scenarios.py
+```
+
+<Tip>
+These show a clean path — attempt problems yourself before leaning on them.
+</Tip>

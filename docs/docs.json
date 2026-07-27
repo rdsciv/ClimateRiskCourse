@@ -1,0 +1,111 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Climate Risk Course",
+  "theme": "palm",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#2EE6A6",
+    "light": "#7CFFD4",
+    "dark": "#0B3D2E"
+  },
+  "fonts": {
+    "heading": {
+      "family": "Space Grotesk"
+    },
+    "body": {
+      "family": "IBM Plex Sans"
+    }
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": false
+  },
+  "background": {
+    "color": {
+      "dark": "#070B12",
+      "light": "#F4FBF8"
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/rdsciv/ClimateRiskCourse"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Clone the course",
+      "href": "https://github.com/rdsciv/ClimateRiskCourse"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/rdsciv/ClimateRiskCourse"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Course",
+        "groups": [
+          {
+            "group": "Start here",
+            "pages": [
+              "index",
+              "quickstart",
+              "how-it-works"
+            ]
+          },
+          {
+            "group": "Curriculum",
+            "pages": [
+              "curriculum",
+              "weeks/week-0",
+              "weeks/week-1",
+              "weeks/week-2",
+              "weeks/week-3",
+              "weeks/week-4",
+              "weeks/week-5",
+              "weeks/week-6"
+            ]
+          },
+          {
+            "group": "Client tracks",
+            "pages": [
+              "clients",
+              "tracks/colorado",
+              "tracks/kerrville",
+              "tracks/datacenter"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Method",
+        "groups": [
+          {
+            "group": "Firm library",
+            "pages": [
+              "methodology",
+              "firm/anchors",
+              "firm/scenarios",
+              "firm/qa",
+              "firm/deliverables"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "seo": {
+    "metatags": {
+      "description": "Six weeks to a climate risk assessment. Grok Build course with Colorado River reservoirs, Kerrville flood risk, and Texas data center EIS tracks.",
+      "og:image": "/images/og.png"
+    }
+  }
+}

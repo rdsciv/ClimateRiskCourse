@@ -1,0 +1,32 @@
+---
+title: "Client tracks"
+description: "Colorado River reservoirs, Kerrville flood, Texas data center EIS."
+---
+
+Same six-week method. Different data and decision language.
+
+<CardGroup cols={1}>
+  <Card title="Redrock Basin Authority" icon="water" href="/tracks/colorado">
+    Colorado River–style multi-reservoir operations under drought and heat.
+    **Track key:** `colorado` · **Folder:** `clients/colorado-river-reservoirs/`
+  </Card>
+  <Card title="City of Kerrville — flood risk" icon="house-flood-water" href="/tracks/kerrville">
+    Municipal flood resilience on the Guadalupe / Hill Country corridor.
+    **Track key:** `kerrville` · **Folder:** `clients/kerrville-flood/`
+  </Card>
+  <Card title="Horizon Grid — Texas data center EIS" icon="server" href="/tracks/datacenter">
+    EIS for a fictional Texas hyperscale campus: water, power, receptors.
+    **Track key:** `datacenter` · **Folder:** `clients/texas-datacenter-eis/`
+  </Card>
+</CardGroup>
+
+## Activate a track
+
+```bash
+uv run scripts/set_track.py colorado   # or kerrville | datacenter
+uv run scripts/seed_all_clients.py     # once after clone
+```
+
+<Note>
+All books are **simulated**. Real place names anchor geography; figures are training constructs.
+</Note>

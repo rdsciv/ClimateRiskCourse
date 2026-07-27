@@ -24,23 +24,13 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
-      - name: Sync project
-        run: uv sync
-
-      - name: Build reading pages
-        run: uv run scripts/build_docs_site.py
-
-      - name: Add Pages base path rewrite note
-        run: |
-          # For project sites at /ClimateRiskCourse/, ensure relative links work
-          # (site uses relative paths; no rewrite needed)
-          touch docs/.nojekyll
-          cp docs/index.html docs/404.html || true
+      - name: Build cool static site
+        run: uv run scripts/build_cool_site.py
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: site
 
   deploy:
     needs: build

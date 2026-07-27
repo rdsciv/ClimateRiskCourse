@@ -1,0 +1,22 @@
+/* Climate Risk Course — Mintlify custom accents */
+:root {
+  --crc-mint: #2ee6a6;
+  --crc-blue: #5b8cff;
+  --crc-amber: #f0b429;
+}
+
+/* Slightly punchier prose */
+.prose h1,
+.prose h2 {
+  letter-spacing: -0.02em;
+}
+
+/* Hero feel on landing cards */
+.card {
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}

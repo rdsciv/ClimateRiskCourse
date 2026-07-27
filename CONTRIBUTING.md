@@ -8,13 +8,12 @@ cd ClimateRiskCourse
 uv sync
 uv run scripts/seed_all_clients.py
 uv run scripts/course_lint.py
-uv run scripts/build_docs_site.py
 ```
 
-Open `docs/index.html` or serve:
+Docs (Mintlify):
 
 ```bash
-uv run python -m http.server 8080 --directory docs
+cd docs && npx mintlify dev
 ```
 
 ## Regenerating curriculum text
@@ -23,7 +22,7 @@ Exercise readmes are generated from `scripts/generate_exercises.py` + `scripts/c
 
 ```bash
 uv run scripts/generate_exercises.py
-uv run scripts/build_docs_site.py
+# update docs/*.mdx if curriculum copy changes
 ```
 
 ## Pull requests

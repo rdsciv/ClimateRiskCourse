@@ -11,8 +11,10 @@
     "seed:datacenter": "uv run scripts/seed_datacenter.py",
     "list": "uv run scripts/list_exercises.py",
     "track": "uv run scripts/set_track.py",
-    "docs": "uv run scripts/build_docs_site.py",
-    "build": "uv run scripts/build_docs_site.py"
+    "docs": "cd docs && npx mintlify dev",
+    "docs:export": "cd docs && npx mintlify export",
+    "site": "uv run scripts/build_cool_site.py",
+    "build": "uv run scripts/build_cool_site.py"
   },
   "engines": {
     "node": ">=18"

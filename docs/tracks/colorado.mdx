@@ -1,0 +1,37 @@
+---
+title: "Colorado River reservoirs"
+description: "Redrock Basin Authority — multi-reservoir operations under drought and heat."
+---
+
+**Client:** Redrock Basin Authority (simulated)  
+**Track key:** `colorado`  
+**Folder:** `clients/colorado-river-reservoirs/`
+
+## Who they are
+
+A multi-reservoir operator on a Colorado River–style system: storage, diversions, deliveries, hydropower, environmental pulse nodes.
+
+## Scale
+
+~48 system nodes with allocations and compact-sensitive flags.
+
+## Decision language
+
+Releases · allocation cuts · compact-sensitive deliveries · hydropower contingency · environmental pulse risk.
+
+## Audiences
+
+General manager · municipal/ag boards · compact counsel · hydropower desk.
+
+## Activate
+
+```bash
+uv run scripts/set_track.py colorado
+```
+
+## Portfolio files
+
+- `portfolio/reservoir_nodes.csv`
+- `db/portfolio.sqlite`
+- `documents/stakeholder_messages.md`
+- `documents/ops_constraints.md`

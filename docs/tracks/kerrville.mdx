@@ -1,0 +1,37 @@
+---
+title: "Kerrville flood risk"
+description: "City of Kerrville — municipal flood resilience, Guadalupe corridor."
+---
+
+**Client:** City of Kerrville (simulated asset book; real geography)  
+**Track key:** `kerrville`  
+**Folder:** `clients/kerrville-flood/`
+
+## Who they are
+
+Municipal government working flood risk along the Guadalupe / Hill Country corridor — critical facilities, neighborhoods, access infrastructure.
+
+## Scale
+
+~80 facilities and parcels with replacement values and flood-zone hints.
+
+## Decision language
+
+Mitigation priority · critical-facility continuity · access resilience · buyout vs defend · insurance gaps.
+
+## Audiences
+
+City manager · emergency management · finance / council · grant reviewers.
+
+## Activate
+
+```bash
+uv run scripts/set_track.py kerrville
+```
+
+## Portfolio files
+
+- `portfolio/flood_assets.csv`
+- `db/portfolio.sqlite`
+- `documents/stakeholder_messages.md`
+- `documents/floodplain_notes.md`
