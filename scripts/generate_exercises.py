@@ -86,9 +86,9 @@ c(
     ## What you need
 
     - Grok Build CLI authenticated and working in a terminal
-    - Python 3.11+
+    - [uv](https://docs.astral.sh/uv/) on your PATH
     - Git
-    - This repository cloned
+    - This repository cloned (`git clone https://github.com/rdsciv/ClimateRiskCourse.git` then `cd ClimateRiskCourse`)
 
     ## Project rules
 
@@ -96,13 +96,14 @@ c(
 
     ## Verify
 
-    From the repo root:
+    From the repo root (after clone + `cd ClimateRiskCourse`):
 
     ```bash
-    python3 --version
-    python3 scripts/seed_all_clients.py
-    python3 scripts/set_track.py colorado
-    python3 scripts/course_lint.py
+    uv --version
+    uv sync
+    uv run scripts/seed_all_clients.py
+    uv run scripts/set_track.py colorado
+    uv run scripts/course_lint.py
     ```
 
     Then start Grok in this directory and ask:
@@ -123,10 +124,11 @@ c(
     ## TODO
 
     1. Authenticate Grok Build and open a session in this repo.
-    2. Run `python3 scripts/seed_all_clients.py`.
-    3. Run `python3 scripts/set_track.py <your-track>`.
-    4. Confirm `clients/active` points at your folder and `.env` has `CLIENT_TRACK`.
-    5. Ask Grok to read `AGENTS.md` and restate the five epistemic rules.
+    2. Run `uv sync` (if you have not already).
+    3. Run `uv run scripts/seed_all_clients.py`.
+    4. Run `uv run scripts/set_track.py <your-track>`.
+    5. Confirm `clients/active` points at your folder and `.env` has `CLIENT_TRACK`.
+    6. Ask Grok to read `AGENTS.md` and restate the five epistemic rules.
 
     ## Acceptance criteria
 
@@ -168,7 +170,7 @@ c(
 
     1. Read `clients/README.md` and each track’s `briefing/engagement.md`.
     2. Pick one track.
-    3. Run `python3 scripts/set_track.py <colorado|kerrville|datacenter>`.
+    3. Run `uv run scripts/set_track.py <colorado|kerrville|datacenter>`.
     4. Write three sentences in `clients/<track>/outputs/week-0/track_choice.md`:
        - Why this track
        - The decision language you will use

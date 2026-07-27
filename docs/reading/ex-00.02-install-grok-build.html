@@ -35,18 +35,19 @@
 <h2 id="what-you-need">What you need</h2>
 <ul>
 <li>Grok Build CLI authenticated and working in a terminal</li>
-<li>Python 3.11+</li>
+<li><a href="https://docs.astral.sh/uv/">uv</a> on your PATH</li>
 <li>Git</li>
-<li>This repository cloned</li>
+<li>This repository cloned (<code>git clone https://github.com/rdsciv/ClimateRiskCourse.git</code> then <code>cd ClimateRiskCourse</code>)</li>
 </ul>
 <h2 id="project-rules">Project rules</h2>
 <p>This repo’s root <code>AGENTS.md</code> is loaded by Grok automatically. It tells the agent you are in a <strong>training firm</strong> with epistemic rules. Do not delete it.</p>
 <h2 id="verify">Verify</h2>
-<p>From the repo root:</p>
-<pre><code>python3 --version
-python3 scripts/seed_all_clients.py
-python3 scripts/set_track.py colorado
-python3 scripts/course_lint.py</code></pre>
+<p>From the repo root (after clone + <code>cd ClimateRiskCourse</code>):</p>
+<pre><code>uv --version
+uv sync
+uv run scripts/seed_all_clients.py
+uv run scripts/set_track.py colorado
+uv run scripts/course_lint.py</code></pre>
 <p>Then start Grok in this directory and ask:</p>
 <blockquote>Summarize firm/methodology.md in five bullets. Do not open any solution folders.</blockquote>
     </div>

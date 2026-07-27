@@ -8,7 +8,7 @@ Suggested Friday demo rotation: one Colorado River reservoir case, one Kerrville
 
 ## Live build tips
 
-- Seed before class: `python3 scripts/seed_all_clients.py`
+- Seed before class: `uv run scripts/seed_all_clients.py`
 - Use plan mode for week-4 multi-scenario runs
 - Cold QA subagent on week-6 is the highest-leverage teaching moment
 

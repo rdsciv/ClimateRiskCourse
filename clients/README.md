@@ -11,8 +11,8 @@ You complete the **same six-week method** on **one** simulated client. Pick the 
 ## Activate a track
 
 ```bash
-python3 scripts/set_track.py colorado   # or kerrville | datacenter
-python3 scripts/seed_all_clients.py     # once after clone
+uv run scripts/set_track.py colorado   # or kerrville | datacenter
+uv run scripts/seed_all_clients.py     # once after clone
 ```
 
 This writes `CLIENT_TRACK` to `.env` and creates `clients/active` → your folder.

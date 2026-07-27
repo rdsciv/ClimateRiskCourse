@@ -35,26 +35,36 @@
       <h2>Requirements</h2>
       <ul>
         <li><a href="https://x.ai">Grok Build</a> CLI authenticated</li>
-        <li>Python 3.11+</li>
-        <li>Git</li>
-        <li>Access to this private repository</li>
+        <li><a href="https://docs.astral.sh/uv/">uv</a> (install below if needed)</li>
+        <li><a href="https://git-scm.com/">Git</a></li>
       </ul>
 
-      <h2>1. Clone</h2>
+      <h2>0. Install uv (once per machine)</h2>
+      <p>If <code>uv</code> is not already on your PATH:</p>
+      <pre><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
+      <p>Then open a new terminal (or follow the installer&#8217;s PATH note) and check:</p>
+      <pre><code>uv --version</code></pre>
+
+      <h2>1. Clone the course</h2>
+      <p>Copy these two lines exactly. The first downloads the repo; the second moves you into it.</p>
       <pre><code>git clone https://github.com/rdsciv/ClimateRiskCourse.git
 cd ClimateRiskCourse</code></pre>
 
-      <h2>2. Seed clients</h2>
-      <pre><code>python3 scripts/seed_all_clients.py
-python3 scripts/set_track.py colorado   # or kerrville | datacenter
-python3 scripts/course_lint.py</code></pre>
+      <h2>2. Install dependencies with uv</h2>
+      <pre><code>uv sync</code></pre>
+      <p>That creates a project environment and installs everything from <code>pyproject.toml</code>. Use <strong><code>uv run</code></strong> for every script below — do not call system <code>python3</code> or <code>pip</code>.</p>
 
-      <h2>3. Open Grok Build</h2>
-      <p>Start Grok in the repo root. Root <code>AGENTS.md</code> loads automatically. Ask:</p>
+      <h2>3. Seed clients and pick a track</h2>
+      <pre><code>uv run scripts/seed_all_clients.py
+uv run scripts/set_track.py colorado   # or kerrville | datacenter
+uv run scripts/course_lint.py</code></pre>
+
+      <h2>4. Open Grok Build</h2>
+      <p>Start Grok in the <code>ClimateRiskCourse</code> folder (repo root). Root <code>AGENTS.md</code> loads automatically. Ask:</p>
       <pre><code>Summarize firm/methodology.md in five bullets.
 Do not open any exercises/**/solution/ folders.</code></pre>
 
-      <h2>4. Orientation</h2>
+      <h2>5. Orientation</h2>
       <p>Work through <code>exercises/00-orientation/</code>, then week 1.</p>
       <ul>
         <li>Read <strong>explainer</strong> variants first</li>
@@ -65,7 +75,7 @@ Do not open any exercises/**/solution/ folders.</code></pre>
 
       <h2>Epistemic rules</h2>
       <ol>
-        <li><strong>Computed</strong> figures come from saved Python scripts.</li>
+        <li><strong>Computed</strong> figures come from saved scripts run with <code>uv run</code>.</li>
         <li><strong>Judged</strong> figures carry mechanism + precedent + the word <em>judgment</em>.</li>
         <li>Never invent government/vendor data pulls.</li>
         <li>Document gaps; do not fill them silently.</li>
@@ -73,14 +83,14 @@ Do not open any exercises/**/solution/ folders.</code></pre>
       </ol>
 
       <h2>Reference pipelines (optional)</h2>
-      <pre><code>python3 scripts/reference_week1_overview.py
-python3 scripts/reference_week3_score.py
-python3 scripts/reference_week4_scenarios.py</code></pre>
+      <pre><code>uv run scripts/reference_week1_overview.py
+uv run scripts/reference_week3_score.py
+uv run scripts/reference_week4_scenarios.py</code></pre>
 
       <div class="banner">These references show a clean path — attempt problems yourself before relying on them.</div>
 
       <h2>Need help?</h2>
-      <p>See <a href="reading.html">Reading</a> for methodology and exercise guides, or open an issue in the private repo.</p>
+      <p>See <a href="reading.html">Reading</a> for methodology and exercise guides, or open an issue on the repo.</p>
     </div>
   </main>
 

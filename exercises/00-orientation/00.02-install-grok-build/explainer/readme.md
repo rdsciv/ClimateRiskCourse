@@ -3,9 +3,9 @@
 ## What you need
 
 - Grok Build CLI authenticated and working in a terminal
-- Python 3.11+
+- [uv](https://docs.astral.sh/uv/) on your PATH
 - Git
-- This repository cloned
+- This repository cloned (`git clone https://github.com/rdsciv/ClimateRiskCourse.git` then `cd ClimateRiskCourse`)
 
 ## Project rules
 
@@ -13,13 +13,14 @@ This repo’s root `AGENTS.md` is loaded by Grok automatically. It tells the age
 
 ## Verify
 
-From the repo root:
+From the repo root (after clone + `cd ClimateRiskCourse`):
 
 ```bash
-python3 --version
-python3 scripts/seed_all_clients.py
-python3 scripts/set_track.py colorado
-python3 scripts/course_lint.py
+uv --version
+uv sync
+uv run scripts/seed_all_clients.py
+uv run scripts/set_track.py colorado
+uv run scripts/course_lint.py
 ```
 
 Then start Grok in this directory and ask:

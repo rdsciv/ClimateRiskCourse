@@ -28,30 +28,43 @@ Same method. Different data and decision language.
 
 ## Day-1 setup (30 minutes)
 
+### Requirements
+
+- [Git](https://git-scm.com/)
+- [uv](https://docs.astral.sh/uv/) — install once if you do not have it:
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+- [Grok Build](https://x.ai) CLI authenticated
+
+### Steps
+
 ```bash
-# 1. Clone and enter
+# 1. Clone the course, then enter the folder
+git clone https://github.com/rdsciv/ClimateRiskCourse.git
 cd ClimateRiskCourse
 
-# 2. Python deps (optional; stdlib is enough for seed + lint)
-python3 -m venv .venv && source .venv/bin/activate   # optional
-pip install pandas httpx pydantic python-dotenv         # optional extras
+# 2. Install dependencies with uv
+uv sync
 
 # 3. Seed all simulated clients
-python3 scripts/seed_all_clients.py
+uv run scripts/seed_all_clients.py
 
 # 4. Choose your track
-python3 scripts/set_track.py colorado   # or kerrville | datacenter
+uv run scripts/set_track.py colorado   # or kerrville | datacenter
 
 # 5. Validate structure
-python3 scripts/course_lint.py
+uv run scripts/course_lint.py
 
 # 6. List the syllabus
-python3 scripts/list_exercises.py
+uv run scripts/list_exercises.py
 
 # 7. Open Grok Build in this repo and start exercises/00-orientation
 ```
 
 Copy `.env.example` to `.env` if you want to pin `CLIENT_TRACK` by hand.
+
+Run every course script with **`uv run`** (not bare system Python).
 
 ## How to take the course
 
@@ -85,12 +98,13 @@ AGENTS.md          firm-level Grok brief
 
 | Command | Purpose |
 |---------|---------|
-| `python3 scripts/seed_all_clients.py` | Build all SQLite books + docs |
-| `python3 scripts/set_track.py <track>` | Activate colorado \| kerrville \| datacenter |
-| `python3 scripts/course_lint.py` | Structure checks |
-| `python3 scripts/list_exercises.py` | Print syllabus |
-| `python3 scripts/export_deliverable.py FILE.md` | Markdown → HTML |
-| `python3 scripts/generate_exercises.py` | Regenerate exercise readmes from generator |
+| `uv run scripts/seed_all_clients.py` | Build all SQLite books + docs |
+| `uv run scripts/set_track.py <track>` | Activate colorado \| kerrville \| datacenter |
+| `uv run scripts/course_lint.py` | Structure checks |
+| `uv run scripts/list_exercises.py` | Print syllabus |
+| `uv run scripts/export_deliverable.py FILE.md` | Markdown → HTML |
+| `uv run scripts/generate_exercises.py` | Regenerate exercise readmes from generator |
+| `uv run scripts/build_docs_site.py` | Rebuild GitHub Pages reading room |
 
 ## Grok skills
 
@@ -106,7 +120,7 @@ Project skills under `.grok/skills/` activate when relevant:
 ## Requirements
 
 - [Grok Build](https://x.ai) CLI
-- Python 3.11+
+- [uv](https://docs.astral.sh/uv/) (manages Python + dependencies)
 - Git
 
 No paid climate-data subscription required. Offline sample hazard grids ship in `firm/sample-hazard/`.
@@ -120,7 +134,7 @@ Branded course docs live in `docs/` and deploy automatically on push to `main`:
 - Getting started
 
 ```bash
-python3 scripts/build_docs_site.py   # regenerate reading pages locally
+uv run scripts/build_docs_site.py   # regenerate reading pages locally
 # open docs/index.html
 ```
 
